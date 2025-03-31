@@ -1,8 +1,8 @@
-# ACS 4220 AI Engineering & Frameworks
+# ACS 4220: AI Engineering & Frameworks
 
 ## Course Description
 
-## Prerequisites:  
+## Prerequisites
 
 - [ACS 1220]()
 
@@ -18,78 +18,44 @@ By the end of the course, you will be able to ...
 
 ## Schedule
 
-**Course Dates:** Monday, May 31 – Wednesday, July 14, 2021 (7 weeks)
-
-**Class Times:** Monday, Wednesday at 4:00pm–5:30pm (12 class sessions)
+**Course Dates:** Monday, March 24 – Wednesday, May 14, 2025 (7 weeks) <br>
+**Class Times:** Monday, Wednesday at 1:00pm–3:30pm (15 class sessions)
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
-|  1 |  Wed, June 2         | [Lesson 1] |
-|  2 |  Mon, June 7         | [Lesson 2] |
-|  3 |  Wed, June 9         | [Lesson 3] |
-|  4 |  Mon, June 14        | [Lesson 4] |
-|  5 |  Wed, June 16        | [Lesson 5] |
-|  6 |  Mon, June 21        | [Lesson 6] |
-|  7 |  Wed, June 23        | [Lesson 7] |
-|  8 |  Mon, June 28        | [Lesson 8] |
-|  9 |  Wed, June 30        | [Lesson 9] |
-| 10 |  Wed, July 7         | [Lesson 10] |
-| 11 |  Mon, July 12        | [Lesson 11] |
-| 12 |  Wed, July 14        | Presentations |
+|  1 |  Mon, March 24         | [Lesson 1] |
+|  2 |  Wed, Narch 26         | [Lesson 2] |
+|  3 |  Mon, Narch 31         | [Lesson 3] |
+|  4 |  Wed, April 2        | NO CLASS |
+|  5 |  Mon, April 7         | [Lesson 5] |
+|  6 |  Wed, April 9        | [Lesson 6] |
+|  7 |  Mon, April 14        | [Lesson 7] |
+|  8 |  Mon, April 16        | [Lesson 8] |
+|  9 |  Wed, April 21        | [Lesson 9] |
+| 10 |  Wed, April 23         | [Lesson 10] |
+| 11 |  Mon, April 28        | [Lesson 11] |
+| 12 |  Wed, April 30        | [Lesson 12]  |
+| 13 | Mon, May 5 | [Lesson 13] |
+| 14 | Wed, May 7 | [Lesson 14] |
+| 15 | Wed, May 12 | LAB DAY - Presentations |
+| 16 | Wed, May 14 | Presentations |
 
 
-[Lesson 1]: Lessons/Lesson1.md
-[Lesson 2]: Lessons/Lesson2.md
-[Lesson 3]: Lessons/Lesson3.md
+[Lesson 1]: https://thebullshitmachines.com/lesson-1-autocomplete-in-overdrive/index.html
+[Lesson 2]: https://thebullshitmachines.com/lesson-2-the-nature-of-bullshit/index.html
+[Lesson 3]: https://thebullshitmachines.com/lesson-3-turing-tests-and-bullshit-benchmarks/index.html
 [Lesson 4]: Lessons/Lesson4.md
-[Lesson 5]: Lessons/Lesson5.md
-[Lesson 6]: Lessons/Lesson6.md
-[Lesson 7]: Lessons/Lesson7.md
-[Lesson 8]: Lessons/Lesson8.md
-[Lesson 9]: Lessons/Lesson9.md
-[Lesson 10]: Lessons/Lesson10.md
-[Lesson 11]: Lessons/Lesson11.md
-[Lesson 12]: Lessons/Lesson12.md
-[Lesson 13]: Lessons/Lesson13.md
-[Lesson 14]: Lessons/Lesson14.md
-[Lesson 15]: Lessons/Lesson14.md
-[Lesson 16]: Lessons/Lesson14.md
+[Lesson 5]: https://thebullshitmachines.com/lesson-5-hard-to-understand-harder-to-fix/index.html
+[Lesson 6]: https://thebullshitmachines.com/lesson-6-no-theyre-not-doing-that/index.html
+[Lesson 7]: https://thebullshitmachines.com/lesson-7-from-voice-cloning-to-shrimp-jesus/index.html
+[Lesson 8]: https://thebullshitmachines.com/lesson-8-poisonous-mushrooms-and-doggie-passports/index.html
+[Lesson 9]: https://thebullshitmachines.com/lesson-9-blue-links-matter/index.html
+[Lesson 10]: https://thebullshitmachines.com/lesson-10-the-human-art-of-writing/index.html
+[Lesson 11]: https://thebullshitmachines.com/lesson-11-transforming-education/index.html
+[Lesson 12]: https://thebullshitmachines.com/lesson-12-the-ai-scientist/index.html
+[Lesson 13]: https://thebullshitmachines.com/lesson-13-bullshit-machines-for-bullshit-work/index.html
+[Lesson 14]: https://thebullshitmachines.com/lesson-14-authenticity/index.html
 
-
-<!-- omit in toc -->
-### **Section B: INSTRUCTOR NAME**
-
-**Course Dates:** Tuesday, June 1 – Thursday, July 15, 2021 (7 weeks)
-
-**Class Times:** Tuesday, Thursday at 4:00pm–5:30pm (14 class sessions)
-
-
-| Class |          Date          |                 Topics                  |
-|:-----:|:----------------------:|:---------------------------------------:|
-|  1 |  Tue, June 1         | [Lesson 1] |
-|  2 |  Thu, June 3         | [Lesson 2] |
-|  3 |  Tue, June 8         | [Lesson 3] |
-|  4 |  Thu, June 10        | [Lesson 4] |
-|  5 |  Tue, June 15        | [Lesson 5] |
-|  6 |  Thu, June 17        | [Lesson 6] |
-|  7 |  Tue, June 22        | [Lesson 7] |
-|  8 |  Thu, June 24        | [Lesson 8] |
-|  9 |  Tue, June 29        | [Lesson 9] |
-| 10 |  Thu, July 1         | [Lesson 10] |
-| 11 |  Tue, July 6         | [Lesson 11] |
-| 12 |  Thu, July 8         | [Lesson 12] |
-| 13 |  Tue, July 13        | [Lesson 13] |
-| 14 |  Thu, July 15        | Final Exam/Presentations |
-
-<!-- tabs:end -->
-
-## Assignment Schedule 
-
-**[INSTRUCTOR NOTE] REPLACE THE BELOW WITH LINKS TO YOUR ASSIGNMENTS, CORRECT DATES, AND SUBMISSION FORM**
-
-|                        Assignment                         |            Submission Form           |
-|:---------------------------------------------------------:|:------------------------------------:|
-| - | - | - | - |
 
 ## Class Assignments
 
@@ -107,12 +73,12 @@ Your Gradescope login is your Make School email, and your password can be change
 
 To pass this course you must meet the following requirements:
 
-- Complete all required assignments 
+- Complete all required assignments
 - Pass all projects according to the associated project rubric
-- Pass the final summative assessment according to the rubric as specified in this class
-    - This will be further explained in the [study guide](ADD_STUDY_GUIDE_LNK)
 - Actively participate in class and abide by the attendance policy
 - Make up all classwork from all absences
 
-##  Information Resources
+## Information Resources
 
+- **Textbook**: [BS Machines, or Modern Day Oracles?](https://thebullshitmachines.com/index.html)
+- **Instructor Guide**: <https://thebullshitmachines.com/instructor-guide/index.html>
