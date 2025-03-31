@@ -2,10 +2,14 @@
 
 ## Course Description
 
+This advanced course focuses on the practical application of AI by utilizing pre-trained models and exploring emerging AI frameworks. Students will gain hands-on experience with established and emerging tools for integrating, fine-tuning, and deploying state-of-the-art AI models. Emphasis will be placed on transfer learning, model interpretability, and real-world deployment scenarios. Additionally, students will explore emerging frameworks that enhance the scalability, performance, and ethical integration of AI solutions in various industries. This course prepares students to implement cutting-edge AI solutions using existing model libraries and evolving tools.
+
+
 ## Prerequisites
 
 - [ACS 1220]()
 
+<!--
 ## Learning Outcomes
 
 By the end of the course, you will be able to ...
@@ -15,6 +19,8 @@ By the end of the course, you will be able to ...
 1. Compare & Contrast
 1. Design & Implement
 1. Practice
+
+-->
 
 ## Schedule
 
