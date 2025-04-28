@@ -7,7 +7,7 @@ This advanced course focuses on the practical application of AI by utilizing pre
 
 ## Prerequisites
 
-- [ACS 1220]()
+- [ACS 1220](https://github.com/Tech-at-DU/ACS-1220-Authentication-and-Associations)
 
 <!--
 ## Learning Outcomes
@@ -24,26 +24,26 @@ By the end of the course, you will be able to ...
 
 ## Schedule
 
-**Course Dates:** Monday, March 24 – Wednesday, May 14, 2025 (7 weeks) <br>
+**Course Dates:** Monday, March 24 through Wednesday, May 14, 2025 (7 weeks) <br>
 **Class Times:** Monday, Wednesday at 1:00pm–3:30pm (15 class sessions)
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
-|  1 |  Mon, March 24         | [Lesson 1] |
-|  2 |  Wed, Narch 26         | [Lesson 2] |
-|  3 |  Mon, Narch 31         | [Lesson 3] |
+|  1 |  Mon, March 24         | [Lesson 1]: Autocomplete in Overdrive |
+|  2 |  Wed, Narch 26         | [Lesson 2]: The Nature of Nonsense |
+|  3 |  Mon, Narch 31         | [Lesson 3]: Turing Tests & Other Benchmarks |
 |  4 |  Wed, April 2        | NO CLASS |
-|  5 |  Mon, April 7         | [Lesson 5] |
-|  6 |  Wed, April 9        | [Lesson 6] |
-|  7 |  Mon, April 14        | [Lesson 7] |
-|  8 |  Mon, April 16        | [Lesson 8] |
-|  9 |  Wed, April 21        | [Lesson 9] |
-| 10 |  Wed, April 23         | [Lesson 10] |
-| 11 |  Mon, April 28        | [Lesson 11] |
-| 12 |  Wed, April 30        | [Lesson 12]  |
-| 13 | Mon, May 5 | [Lesson 13] |
-| 14 | Wed, May 7 | [Lesson 14] |
-| 15 | Wed, May 12 | LAB DAY - Presentations |
+|  5 |  Mon, April 7         | [Lesson 5]: Hard to Understand, Harder to Fix |
+|  6 |  Wed, April 9        | [Lesson 6]: No, They're Not Doing That |
+|  7 |  Mon, April 14        | [Lesson 7]: From Voice Cloning to Shrimp Jesus |
+|  8 |  Mon, April 16        | [Lesson 8]: Poisonous Mushrooms & Doggy Passports |
+|  9 |  Wed, April 21        | [Lesson 9]: Blue Links Matter |
+| 10 |  Wed, April 23         | [Lesson 10]: Human Art of Writing |
+| 11 |  Mon, April 28        | [Lesson 11]: Transforming Education |
+| 12 |  Wed, April 30        | [Lesson 12]: The AI Scientist  |
+| 13 | Mon, May 5 | [Lesson 13]: The Future of Work |
+| 14 | Wed, May 7 | [Lesson 14]: Authenticity |
+| 15 | Wed, May 12 | **LAB DAY, NO ZOOM** <br>Work on Project Presentations |
 | 16 | Wed, May 14 | Presentations |
 
 
@@ -73,7 +73,7 @@ Your Gradescope login is your Dominican email, and your password can be changed 
 
 ### Tutorials
 
-### Projects
+Tutorials and challenges will be introduced throughout the course from the following repositiory containing the most up-to-date techniques for crafting AI agents: <https://github.com/NirDiamant/GenAI_Agents>
 
 ## Evaluation
 
