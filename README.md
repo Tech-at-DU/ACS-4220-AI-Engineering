@@ -9,18 +9,15 @@ This advanced course focuses on the practical application of AI by utilizing pre
 
 - [ACS 1220](https://github.com/Tech-at-DU/ACS-1220-Authentication-and-Associations)
 
-<!--
 ## Learning Outcomes
 
-By the end of the course, you will be able to ...
+By the end of the course, you will be able to&hellip;
 
-1. Identify & Describe
-1. Explain
-1. Compare & Contrast
-1. Design & Implement
-1. Practice
+1. Explain how a Large Language Model sources data and determines conclusions.
+1. Compare and contrast human generated and LLM based output to determine the practical applications of AI.
+1. Design and implement several agentic AI based feature for use in a new or existing projects.
+1. Practice interacting with modern agentic AI offerings.
 
--->
 
 ## Schedule
 
@@ -28,7 +25,7 @@ By the end of the course, you will be able to ...
 **Class Times:** Monday, Wednesday at 1:00pm–3:30pm (15 class sessions)
 
 | Class |          Date          |                 Topics                  |
-|:-----:|:----------------------:|:---------------------------------------:|
+|:-----:|:----------------------|:---------------------------------------|
 |  1 |  Mon, March 24         | [Lesson 1]: Autocomplete in Overdrive |
 |  2 |  Wed, Narch 26         | [Lesson 2]: The Nature of Nonsense |
 |  3 |  Mon, Narch 31         | [Lesson 3]: Turing Tests & Other Benchmarks |
