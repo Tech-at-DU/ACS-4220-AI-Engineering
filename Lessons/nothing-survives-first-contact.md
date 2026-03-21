@@ -113,7 +113,7 @@ Each team shares: which change was hardest? What architectural decision made it 
 
 ## Wrap Up (5 min)
 
-- **Assignment 1 due next class (Wed, Apr 8)**
+- **Assignment 1 ([firstbuild](../Assignments/firstbuild.md)) due today**
 - The best architecture is the one that tolerates the changes you didn't predict
 
 <!-- > -->

@@ -58,7 +58,7 @@ Pick at least 5 of 7:
 
 ### Presentation (Day 14 — Wed, May 6)
 
-Each student: 10 minutes + 5 minutes Q&A.
+Each student: 7 minutes + 3 minutes Q&A.
 
 1. **Demo** (3 min) — show it working.
 2. **Walkthrough** (4 min) — spec, config, test-first approach. Show how your setup shaped what you built.
