@@ -69,7 +69,7 @@ _ALL deliverables **must** be submitted to Gradescope by **11:59PM PST** on the 
 :mortar_board: **[Tutorial 3: Mastering Claude AI](Assignments/tutorial-3-mastering-claude-ai.md)** :star: | [Requirements](Assignments/tutorial-3-mastering-claude-ai.md) | April 27, 2026 _(Monday)_
 **[wiredup](Assignments/wiredup.md)** | [Requirements](Assignments/wiredup.md) | April 29, 2026 _(Wednesday)_
 **Final Presentation** | [Requirements](Assignments/MakeAnything.md) | May 6, 2026 _(Wednesday)_
-**Final Project** | [Requirements](Assignments/MakeAnything.md) | May 10, 2026 _(Sunday)_
+**Final Project** | [Requirements](Assignments/MakeAnything.md) | May 8, 2026 _(Friday)_
 
 ## Evaluation
 
