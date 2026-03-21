@@ -1,17 +1,31 @@
 - **[Syllabus](README.md)**
-- **Lessons**
-  - [Lesson 1](Lessons/Lesson1.md)
-  - [Lesson 2](Lessons/Lesson2.md)
-  - [Lesson 3](Lessons/Lesson1.md)
-  - [Lesson 4](Lessons/Lesson1.md)
-  - [Lesson 5](Lessons/Lesson1.md)
-  - [Lesson 6](Lessons/Lesson1.md)
-  - [Lesson 7](Lessons/Lesson1.md)
-  - [Lesson 8](Lessons/Lesson1.md)
-  - [Lesson 9](Lessons/Lesson1.md)
-  - [Lesson 10](Lessons/Lesson1.md)
-  - [Lesson 11](Lessons/Lesson1.md)
-  - [Lesson 12](Lessons/Lesson1.md)
-  - Final Class (Presentations, Demos, etc)
-  - Final Exam/Presentations
-- **[Project](Assignments/Sample_Project.md)**
+- **Week 1 — Foundations**
+  - [Copilot ≠ Coworker](Lessons/copilot-neq-coworker.md)
+  - [Memory Is Everything](Lessons/memory-is-everything.md)
+- **Week 2 — The Workflow**
+  - [Ticket to Merge](Lessons/ticket-to-merge.md)
+  - [Thirteen Tiny Coworkers](Lessons/thirteen-tiny-coworkers.md)
+- **Week 3 — New Projects**
+  - [Words Before Code](Lessons/words-before-code.md)
+  - [Nothing Survives First Contact](Lessons/nothing-survives-first-contact.md)
+- **Week 4 — Legacy Systems**
+  - [Somebody Else's Spaghetti](Lessons/somebody-elses-spaghetti.md)
+  - [House Rules](Lessons/house-rules.md)
+- **Week 5 — Advanced**
+  - [Give It Eyes and Ears](Lessons/give-it-eyes-and-ears.md)
+  - [What Do You Even Do All Day?](Lessons/what-do-you-even-do-all-day.md)
+- **Week 6 — Team Adoption**
+  - [One Config to Rule Them All](Lessons/one-config-to-rule-them-all.md)
+  - [Debugging the Debugger](Lessons/debugging-the-debugger.md)
+- **Week 7 — Final Project**
+  - Lab Day
+  - Presentations
+- **Assignments**
+  - [firstbuild](Assignments/firstbuild.md)
+  - [fixthis](Assignments/fixthis.md)
+  - [wiredup](Assignments/wiredup.md)
+  - [MakeAnything](Assignments/MakeAnything.md)
+- **Tutorials**
+  - [The Prompt Lab](Assignments/tutorial-1-prompt-engineering.md)
+  - [Claude Code in Action](Assignments/tutorial-2-claude-code-in-action.md)
+  - [Mastering Claude AI](Assignments/tutorial-3-mastering-claude-ai.md)

@@ -1,9 +1,24 @@
-# ACS 4220: AI Engineering & Frameworks
+# 🤖 ACS 4220: AI Engineering
+
+<!-- omit in toc -->
+### Table of Contents
+
+1. [Course Description](#course-description)
+1. [Prerequisites](#prerequisites)
+1. [Learning Outcomes](#learning-outcomes)
+1. [Schedule](#schedule)
+   1. [Deliverables](#deliverables)
+1. [Evaluation](#evaluation)
+   1. [Assignments](#assignments)
+   1. [Final Project](#final-project)
+   1. [Final Presentation](#final-presentation)
+1. [Late Assignment Policy](#late-assignment-policy)
+1. [Additional Resources](#additional-resources)
+
 
 ## Course Description
 
-This advanced course focuses on the practical application of AI by utilizing pre-trained models and exploring emerging AI frameworks. Students will gain hands-on experience with established and emerging tools for integrating, fine-tuning, and deploying state-of-the-art AI models. Emphasis will be placed on transfer learning, model interpretability, and real-world deployment scenarios. Additionally, students will explore emerging frameworks that enhance the scalability, performance, and ethical integration of AI solutions in various industries. This course prepares students to implement cutting-edge AI solutions using existing model libraries and evolving tools.
-
+_This course treats AI engineering like a real job. You ship real work with tools that think, plan, and execute alongside you every day. You'll build, debug, and deploy using Claude Code and workflows professional engineers use right now. By the end, you've practiced the full development loop — writing instructions machines can follow, managing what your tools know, running parallel workers. We're skipping the lectures and going straight to building._
 
 ## Prerequisites
 
@@ -21,67 +36,80 @@ By the end of the course, you will be able to&hellip;
 
 ## Schedule
 
-**Course Dates:** Monday, March 24 through Wednesday, May 14, 2025 (7 weeks) <br>
-**Class Times:** Monday, Wednesday at 1:00pm–3:30pm (15 class sessions)
+**Course Dates:** Monday, March 23 through Wednesday, May 6, 2026 _(7 weeks)_<br>
+**Class Times:** Monday, Wednesday 1:00pm - 3:30pm PST _(14 sessions, see below)_
 
-| Class |          Date          |                 Topics                  |
-|:-----:|:----------------------|:---------------------------------------|
-|  1 |  Mon, March 24         | [Lesson 1]: Autocomplete in Overdrive |
-|  2 |  Wed, Narch 26         | [Lesson 2]: The Nature of Nonsense |
-|  3 |  Mon, Narch 31         | [Lesson 3]: Turing Tests & Other Benchmarks |
-|  4 |  Wed, April 2        | NO CLASS |
-|  5 |  Mon, April 7         | [Lesson 5]: Hard to Understand, Harder to Fix |
-|  6 |  Wed, April 9        | [Lesson 6]: No, They're Not Doing That |
-|  7 |  Mon, April 14        | [Lesson 7]: From Voice Cloning to Shrimp Jesus |
-|  8 |  Mon, April 16        | [Lesson 8]: Poisonous Mushrooms & Doggy Passports |
-|  9 |  Wed, April 21        | [Lesson 9]: Blue Links Matter |
-| 10 |  Wed, April 23         | [Lesson 10]: Human Art of Writing |
-| 11 |  Mon, April 28        | [Lesson 11]: Transforming Education |
-| 12 |  Wed, April 30        | [Lesson 12]: The AI Scientist  |
-| 13 | Mon, May 5 | [Lesson 13]: The Future of Work |
-| 14 | Wed, May 7 | [Lesson 14]: Authenticity |
-| 15 | Wed, May 12 | **LAB DAY, NO ZOOM** <br>Work on Project Presentations |
-| 16 | Wed, May 14 | Presentations |
+| Date | Day | Class Topics | Tutorial Milestone |
+| :---: | :---: | ------------------------------------------------------------------------- | --- |
+| `03/23` | `01`  | **[Copilot ≠ Coworker](Lessons/copilot-neq-coworker.md)** | :test_tube: [The Prompt Lab](Assignments/tutorial-1-prompt-engineering.md) — Start tutorial, chapters 1–4 |
+| `03/25` | `02`  | **[Memory Is Everything](Lessons/memory-is-everything.md)** | :test_tube: Complete chapters 5–9 |
+| `03/30` | `03`  | **[Ticket to Merge](Lessons/ticket-to-merge.md)** | :test_tube: **Due:** Journal + combined prompt |
+| `04/01` | `04`  | **[Thirteen Tiny Coworkers](Lessons/thirteen-tiny-coworkers.md)** | :rocket: [Claude Code in Action](Assignments/tutorial-2-claude-code-in-action.md) — Start course |
+| `04/06` | `05`  | **[Words Before Code](Lessons/words-before-code.md)** | :rocket: Complete all modules + before/after audit |
+| `04/08` | `06`  | **[Nothing Survives First Contact](Lessons/nothing-survives-first-contact.md)** | :rocket: **Due:** Apply new technique + `workflow-audit.md` |
+| `04/13` | `07`  | **[Somebody Else's Spaghetti](Lessons/somebody-elses-spaghetti.md)** | |
+| `04/15` | `08`  | **[House Rules](Lessons/house-rules.md)** | :mortar_board: [Mastering Claude AI](Assignments/tutorial-3-mastering-claude-ai.md) — Start RAG module |
+| `04/20` | `09`  | **[Give It Eyes and Ears](Lessons/give-it-eyes-and-ears.md)** | :mortar_board: Complete MCP module |
+| `04/22` | `10`  | **[What Do You Even Do All Day?](Lessons/what-do-you-even-do-all-day.md)** | :mortar_board: Complete Agent SDK module |
+| `04/27` | `11`  | **[One Config to Rule Them All](Lessons/one-config-to-rule-them-all.md)** | :mortar_board: **Due:** `architecture.md` + proof of concept |
+| `04/29` | `12`  | **[Debugging the Debugger](Lessons/debugging-the-debugger.md)** | |
+| `05/04` | `13`  | Lab Day for [Final Project](Assignments/MakeAnything.md) | |
+| `05/06` | `14`  | [**Final Presentations**](Assignments/MakeAnything.md) | |
 
+### Deliverables
 
-[Lesson 1]: https://thebullshitmachines.com/lesson-1-autocomplete-in-overdrive/index.html
-[Lesson 2]: https://thebullshitmachines.com/lesson-2-the-nature-of-bullshit/index.html
-[Lesson 3]: https://thebullshitmachines.com/lesson-3-turing-tests-and-bullshit-benchmarks/index.html
-[Lesson 4]: Lessons/Lesson4.md
-[Lesson 5]: https://thebullshitmachines.com/lesson-5-hard-to-understand-harder-to-fix/index.html
-[Lesson 6]: https://thebullshitmachines.com/lesson-6-no-theyre-not-doing-that/index.html
-[Lesson 7]: https://thebullshitmachines.com/lesson-7-from-voice-cloning-to-shrimp-jesus/index.html
-[Lesson 8]: https://thebullshitmachines.com/lesson-8-poisonous-mushrooms-and-doggie-passports/index.html
-[Lesson 9]: https://thebullshitmachines.com/lesson-9-blue-links-matter/index.html
-[Lesson 10]: https://thebullshitmachines.com/lesson-10-the-human-art-of-writing/index.html
-[Lesson 11]: https://thebullshitmachines.com/lesson-11-transforming-education/index.html
-[Lesson 12]: https://thebullshitmachines.com/lesson-12-the-ai-scientist/index.html
-[Lesson 13]: https://thebullshitmachines.com/lesson-13-bullshit-machines-for-bullshit-work/index.html
-[Lesson 14]: https://thebullshitmachines.com/lesson-14-authenticity/index.html
+_ALL deliverables **must** be submitted to Gradescope by **11:59PM PST** on the date due._
 
-
-## Class Assignments
-
-We will be using [Gradescope](gradescope.com), which allows us to provide fast and accurate feedback on your work. *All assigned work will be submitted through Gradescope, and assignment and exam grades will be returned through Gradescope.*
-
-As soon as grades are posted, you will be notified immediately so that you can log in and see your feedback. You may also submit regrade requests if you feel we have made a mistake.
-
-Your Gradescope login is your Dominican email, and your password can be changed at [https://gradescope.com/reset_password](https://gradescope.com/reset_password). The same link can be used if you need to set your password for the first time.
-
-### Tutorials
-
-Tutorials and challenges will be introduced throughout the course from the following repositiory containing the most up-to-date techniques for crafting AI agents: <https://github.com/NirDiamant/GenAI_Agents>
+📚 Assignment | 🔗 Criteria | 📆 Due Date
+:-- | --- | ---
+:test_tube: **[Tutorial 1: The Prompt Lab](Assignments/tutorial-1-prompt-engineering.md)** | [Requirements](Assignments/tutorial-1-prompt-engineering.md) | March 30, 2026 _(Monday)_
+**[firstbuild](Assignments/firstbuild.md)** | [Requirements](Assignments/firstbuild.md) | April 8, 2026 _(Wednesday)_
+:rocket: **[Tutorial 2: Claude Code in Action](Assignments/tutorial-2-claude-code-in-action.md)** | [Requirements](Assignments/tutorial-2-claude-code-in-action.md) | April 8, 2026 _(Wednesday)_
+**[fixthis](Assignments/fixthis.md)** | [Requirements](Assignments/fixthis.md) | April 22, 2026 _(Wednesday)_
+:mortar_board: **[Tutorial 3: Mastering Claude AI](Assignments/tutorial-3-mastering-claude-ai.md)** :star: | [Requirements](Assignments/tutorial-3-mastering-claude-ai.md) | April 27, 2026 _(Monday)_
+**[wiredup](Assignments/wiredup.md)** | [Requirements](Assignments/wiredup.md) | April 29, 2026 _(Wednesday)_
+**Final Presentation** | [Requirements](Assignments/MakeAnything.md) | May 6, 2026 _(Wednesday)_
+**Final Project** | [Requirements](Assignments/MakeAnything.md) | May 10, 2026 _(Sunday)_
 
 ## Evaluation
 
-To pass this course you must meet the following requirements:
+We're using Gradescope for all submissions and feedback. When grades post, you'll get notified right away so you can see your feedback. You can submit a regrade request if you think there's a mistake.
 
-- Complete all required assignments
-- Pass all projects according to the associated project rubric
-- Actively participate in class and abide by the attendance policy
-- Make up all classwork from all absences
+Your Gradescope login is your Dominican University email, and your password can be changed at <https://gradescope.com/reset_password>. The same link can be used if you need to set your password for the first time.
 
-## Information Resources
+**To pass this course, complete the following**:
 
-- **Textbook**: [BS Machines, or Modern Day Oracles?](https://thebullshitmachines.com/index.html)
-- **Instructor Guide**: <https://thebullshitmachines.com/instructor-guide/index.html>
+- Complete all [assignments](#deliverables), the [final project](#final-project), and the [final presentation](#final-presentation) as assigned in class and described in the sections below.
+- Make up all activities, classwork, and drills from all absences.
+- Actively participate in class and abide by the attendance policy.
+
+### Assignments
+
+Three hands-on assignments build on each other throughout the course. Each one validates a core skill set — you'll build something new, fix something old, and wire tools together. Three interactive tutorials reinforce foundational skills at key moments — prompt engineering, CLI mastery, and advanced architecture patterns. All assignments and tutorials must be turned in on [Gradescope](https://gradescope.com).
+
+:star: **Coursera Certification Opportunity:** Tutorial 3 ([Mastering Claude AI](Assignments/tutorial-3-mastering-claude-ai.md)) is part of a Coursera specialization that offers an industry-recognized certificate upon completion. If you're graduating in May and building your portfolio, this is a strong credential to carry into interviews. Paid enrollment is required for certification — free audit covers all the course content without the certificate.
+
+### Final Project
+
+Complete the final project according to the associated [project rubric](Assignments/MakeAnything.md). This is your portfolio piece — choose something you care about and demonstrate end-to-end mastery of the workflow.
+
+### Final Presentation
+
+The delivery of a live presentation is required to pass this course. **Presentations will be delivered on Zoom during the final day of class**.
+
+Your **7 minute presentation** should include a working demo, a walkthrough of your development process, and lessons learned. Up to three minutes of Q&A will follow.
+
+**Your final presentation will be evaluated based on the rubric in the [Final Project](Assignments/MakeAnything.md) spec. An average score of 2.5 or higher on the rubric is required to pass.**
+
+## Late Assignment Policy
+
+The **absolute last day** to submit any assignment will be **Friday, May 8 at 11:59 PM**.
+
+If you require accommodations or have extenuating circumstances such as prolonged illness, please contact your instructor to request an extension.
+
+## Additional Resources
+
+- [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code): Official reference for the primary tool used in this course.
+- [Model Context Protocol](https://modelcontextprotocol.io): Specification for connecting AI tools to external services and data.
+- [Context7 MCP Server](https://github.com/upstash/context7): Live library documentation for your development workflow.
+- [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook): Recipes and patterns for building with Claude.
