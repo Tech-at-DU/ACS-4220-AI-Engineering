@@ -1,127 +1,177 @@
-<!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
 # What Do You Even Do All Day?
 
-<!-- > -->
-
-## Minute-by-Minute
-
-| **Elapsed** | **Time** | **Activity** |
-|:-----------:|:--------:|:-------------|
-| 0:00 | 0:05 | Objectives |
-| 0:05 | 0:25 | Overview: The agent-driven SDLC Transformation |
-| 0:30 | 0:35 | Activity 1: Time Allocation Analysis |
-| 1:05 | 0:10 | BREAK |
-| 1:15 | 0:20 | Advanced Agent Rules & Model Selection |
-| 1:35 | 0:35 | Activity 2: End-to-End task complexity level Task |
-| 2:10 | 0:15 | Activity 3: Role Evolution Discussion |
-| 2:25 | 0:05 | Wrap Up |
-| TOTAL | 2:30 | - |
-
-<!-- > -->
-
-## Learning Objectives (5 min)
+## Learning Objectives
 
 By the end of this lesson, you will be able to:
 
-1. Understand how the engineering workflow flips — less time typing, way more time thinking, designing, and verifying — and why that's a promotion, not a replacement
-1. See where the agent does repetitive execution and where you make the decisions that matter — architectural choices, trade-offs, quality gates
-1. Execute a complete architectural build end-to-end — from creative exploration through implementation to verification — using everything you've learned
-1. Own the new role: architect, specification writer, reviewer, debugger — the skills that let you direct agent work and ship with confidence
-
-<!-- > -->
+1. Monitor what an AI agent does during a session: tool calls, token usage, model selection, and decision points.
+2. Calculate the cost of an agent session and identify where tokens are being spent.
+3. Choose the right model (Haiku, Sonnet, Opus) for different task types based on cost/quality tradeoffs.
+4. Set up a budget-aware workflow that prevents runaway costs.
 
 ## Best Practices
 
-Here's what actually happens:
+- **Watch before you optimize.** You can't reduce costs you don't understand. Run a few sessions with verbose logging before changing anything.
+- **Haiku is your default for routine work.** File reads, simple edits, formatting, boilerplate generation. Save Sonnet and Opus for tasks that actually need them.
+- **Set spending limits.** Configure a max budget per session or per day. One runaway Opus loop can burn through $20 before you notice.
+- **Track token usage per task type.** Know what your common workflows cost. "Running tests" might be cheap. "Full codebase review" might be expensive.
+- **Subagents on Haiku, orchestrator on Sonnet.** When running parallel agents, the subagents doing focused work can use the cheaper model. The main session doing decomposition and synthesis uses the smarter model.
+- **Cache what you can.** If the agent reads the same files every session, consider putting summaries in CLAUDE.md instead of making it re-read them.
 
-- **Time splits differently now**: ~50% writing specs and context, ~10% implementation (agent does this), ~40% review. Old way: ~20% spec, ~60% typing, ~20% review. You're thinking more, not less.
-- **Specs are the bottleneck**: A clear spec with blocking gates takes 2 hours and saves 20 hours of agent rework. Fuzzy specs kill productivity.
-- **Test-first is mandatory**: Write tests before code. Forces you to think clearly and gives the agent an objective definition of "done."
-- **Design multiple options first**: Before code, explore 2-4 architectural approaches. Agents suck at this. Humans are good at it. Pick one, then let the agent execute.
-- **Review differently**: Skip line-by-line code review (agent got that right). Focus on architecture, edge cases, and whether it matches the spec. That's where real bugs are.
+# Topic 1: Agent Observability
 
-<!-- > -->
+## Overview
 
-# Topic 1: The agent-driven SDLC Transformation
+When you hire a contractor to renovate your kitchen, you don't just hand them the keys and come back in a month. You check in. You look at the work in progress. You ask questions when something looks off. You review invoices.
 
-<!-- v -->
+AI agents deserve the same scrutiny. They're doing real work on your behalf: reading files, writing code, running commands, making decisions. If you don't observe what they're doing, you can't improve the process, debug failures, or control costs.
 
-## Overview/TT I (25 min)
+**What "observability" means for AI agents.** In traditional software engineering, observability is the ability to understand a system's internal state by examining its outputs. For a web server, that means logs, metrics, and traces. For an AI agent, it means:
 
-- **Traditional SDLC time allocation**: ~20% spec, ~60% implementation, ~20% review/test
-- **agent-driven SDLC**: ~50% spec/context, ~10% implementation (agent), ~40% review/verification
-- **The developer role shift**: from typist to architect, reviewer, and context engineer
-- **What "senior engineer" means now**: specification precision, context design, verification strategy
-- **Why this makes engineering harder, not easier**: the thinking is the work
+- **Tool call logs**: What tools did the agent use, in what order, with what arguments?
+- **Token usage**: How many input and output tokens were consumed? Which model processed them?
+- **Decision traces**: Why did the agent choose to read file A before file B? Why did it spawn a subagent?
+- **Error recovery**: When something failed, how did the agent respond? Did it retry? Did it try a different approach?
 
-<!-- v -->
+**Where observability came from.** The concept has roots in control theory (1960s) and was popularized in software engineering by Charity Majors and the Honeycomb team around 2017. The key insight: monitoring tells you whether something is broken, but observability tells you why. In the AI agent context, this means going beyond "the task succeeded" to "here's exactly how the agent accomplished it."
 
-## Activity 1: Time Allocation Analysis (35 min)
+**How to observe Claude Code sessions.** Claude Code provides several observability mechanisms:
 
-**Breakout Rooms (teams of 3)**
+**Verbose mode.** Run Claude Code with `--verbose` or set the environment variable `CLAUDE_VERBOSE=1`. This prints every tool call, every tool result, and every model response to your terminal. It's noisy but comprehensive:
 
-Using your Assignment 1 and 2 experience, build a time allocation breakdown:
+```bash
+$ claude --verbose "Add a health check endpoint to the API"
+```
 
-1. How much time did you spend on specification/context vs. implementation vs. review?
-2. Compare to what it would have been without agents
-3. Where were the bottlenecks? Where did you waste time?
-4. What would you do differently?
+You'll see output like:
+```
+[Tool: Glob] pattern="src/**/*.py" → 12 files
+[Tool: Read] file="src/api/routes.py" → 145 lines
+[Tool: Read] file="src/api/middleware.py" → 89 lines
+[Model: Sonnet] Deciding to add endpoint to routes.py...
+[Tool: Edit] file="src/api/routes.py" → added lines 47-58
+[Tool: Bash] command="python -m pytest tests/" → 23 passed, 0 failed
+```
 
-**Deliverable**: Time allocation pie charts (before/after agents) with written analysis.
+This trace tells you exactly what happened. You can see the agent's exploration strategy, the files it chose to read, the edit it made, and the verification step.
 
-<!-- > -->
+**Token tracking.** Every Claude Code session reports token usage at the end. Pay attention to these numbers:
 
-<!-- .slide: data-background="#087CB8" -->
-## [**10m**] BREAK
+- **Input tokens**: What the agent read (files, tool results, system prompts). This is where costs add up in large codebases.
+- **Output tokens**: What the agent generated (code, tool calls, responses). Usually smaller than input.
+- **Cache hits**: Tokens that were served from cache instead of being reprocessed. More cache hits = lower costs.
 
-<!-- > -->
+**Session summaries.** After a session ends, review the summary. It tells you: total tokens used, total cost, number of tool calls, and the final result. Over time, these summaries build a dataset of how your workflows perform.
 
-# Topic 2: task complexity level Execution
+**Why observability matters for learning.** You're building mental models of how agents work. Observability accelerates that process. When you see that the agent read 15 files before making a one-line edit, you learn that your codebase needs better context (maybe a CLAUDE.md that points to the right file). When you see the agent retry a failing test 4 times with the same approach, you learn that it's stuck and needs a different prompt.
 
-<!-- v -->
+**The "what did you do today?" standup.** Here's a practical ritual: at the end of each coding session with Claude Code, review the session log. Ask yourself:
 
-## Overview/TT II (20 min)
+1. Did the agent take the most efficient path?
+2. Were there unnecessary file reads? (Context engineering opportunity)
+3. Did it recover from errors gracefully?
+4. Where did it spend the most tokens? (Cost optimization opportunity)
 
-- **task complexity level tasks**: architectural changes requiring the full design exploration phase
-- **The design exploration phase in detail**: 2–4 genuine design options, trade-off analysis, team discussion
-- **Advanced agent rules for complex workflows**
-- **MCP-enriched execution**: external context tools for docs, Chrome for verification, custom tools for data
+This five-minute review compounds. After a week, you'll have a much clearer picture of how to improve your workflows.
 
-<!-- v -->
+# Topic 2: Cost Management and Optimization
 
-## Activity 2: End-to-End task complexity level Task (35 min)
+## Overview
 
-**Breakout Rooms (teams of 3)**
+AI agents cost money. Every token processed, every model invocation, every tool call has a price. For individual developers, costs are manageable (a few dollars per day on Pro). For teams, they can add up quickly. Understanding the cost model and optimizing your usage is a practical skill that matters in any professional setting.
 
-Execute a task complexity level task from scratch with the full MCP-enriched workflow:
+**The pricing landscape (April 2026).** Claude Code access comes through several plans:
 
-**Task**: Add WebSocket real-time notifications to an existing REST API.
+| Plan | Monthly Cost | Claude Code Access | Best For |
+|---|---|---|---|
+| **Pro** | $20 | Yes, with usage limits | Individual developers, daily coding |
+| **Max 5x** | $100 | ~88K tokens per 5-hour window | Heavy individual use, complex projects |
+| **Max 20x** | $200 | ~220K tokens per 5-hour window | Professional developers, large codebases |
+| **API** | Pay-per-token | Unlimited (pay as you go) | Teams, automation, CI/CD integration |
 
-1. design exploration phase: propose 2–4 architectural approaches (polling, SSE, WebSocket, hybrid)
-2. Evaluate trade-offs using external context tools for library documentation
-3. Select an approach and write the full specification with BLOCKING gates
-4. Execute the build with TDD
-5. Verify with Chrome MCP (visual confirmation of real-time updates)
+On the API, pricing per million tokens (as of April 2026):
 
-**Deliverable**: Working implementation with design exploration phase documentation and all gates passed.
+| Model | Input | Output |
+|---|---|---|
+| **Haiku 4.5** | $0.80 | $4.00 |
+| **Sonnet 4.6** | $3.00 | $15.00 |
+| **Opus 4.6** | $15.00 | $75.00 |
 
-<!-- v -->
+Opus costs 5x more than Sonnet, which costs ~4x more than Haiku. Those multipliers matter when you're running dozens of sessions per day.
 
-## Activity 3: Role Evolution Discussion (15 min)
+**Model selection strategy.** The single biggest cost lever is choosing the right model for each task. Here's a practical framework:
 
-**Full Class Discussion**
+**Haiku** for: formatting code, generating boilerplate, simple file reads, running commands, search-and-replace operations, simple test generation. Think of Haiku as your intern: fast, cheap, good for defined tasks.
 
-Based on your experience in this course so far: what skills matter more now? What skills matter less? How would you describe the AI engineer role to someone interviewing you?
+**Sonnet** for: feature implementation, bug fixing, code review, refactoring, writing tests for complex logic, PR descriptions. Sonnet is your mid-level engineer: reliable, balanced, your daily driver.
 
-<!-- > -->
+**Opus** for: architectural decisions, debugging subtle issues, complex multi-file refactors, understanding deeply nested logic, planning mode for large tasks. Opus is your principal engineer: expensive, but sometimes you need the best.
 
-## Wrap Up (5 min)
+**The 80/20 rule for model selection.** In practice, about 80% of your agent tasks can be handled by Haiku or Sonnet. The remaining 20% genuinely benefit from Opus. If you're using Opus for everything, you're overspending. If you're using Haiku for everything, you're underperforming.
 
-- Assignment 3 begins: MCP-enriched workflow
-- The final project should be taking shape — start thinking about your topic
+**Practical cost optimization techniques:**
 
-<!-- > -->
+1. **Front-load context, reduce reads.** If the agent reads the same 10 files in every session, summarize the key information in CLAUDE.md. One CLAUDE.md read is cheaper than 10 file reads.
+
+2. **Use subagents on cheaper models.** When orchestrating parallel agents, the subagents doing focused work can use Haiku. The orchestrator that decomposes and synthesizes can use Sonnet.
+
+3. **Scope your tasks narrowly.** "Fix the bug in the login endpoint" costs less than "review the entire authentication system." Narrow tasks require less context.
+
+4. **Cache aggressively.** Claude Code caches recently read files. If you run multiple sessions on the same codebase without changing files between sessions, cache hits reduce costs.
+
+5. **Set budget alerts.** Configure maximum spend per session. A runaway loop (agent retrying the same failing approach) can burn tokens fast. A budget limit is your circuit breaker.
+
+**Real cost examples.** To make this concrete:
+
+- A typical "implement a small feature" session (Sonnet): ~50K tokens, ~$0.50-1.00
+- A "full codebase review" session (Sonnet): ~200K tokens, ~$2-4.00
+- A parallel build with 5 subagents (Haiku subagents, Sonnet orchestrator): ~300K tokens, ~$2-3.00
+- An Opus architectural planning session: ~100K tokens, ~$5-8.00
+
+These are rough estimates. Actual costs depend on codebase size, task complexity, and how many retries the agent needs.
+
+**Budget planning for students.** On the Pro plan ($20/month), you get enough tokens for daily coding sessions with reasonable usage. For this course, Pro covers most workflows. If you're hitting limits on complex tasks, consider the API pay-as-you-go option for specific sessions. The Student Builders program ($50 in free API credits) is a good supplement.
+
+## Break & Wrap Up
+
+**Key takeaway:** Observability and cost management are professional skills. Know what your agent does, how much it costs, and how to optimize both. Start with verbose logging, develop intuition for model selection, and set budget limits.
+
+**Before next class:** Run one Claude Code session with verbose logging enabled. Review the token usage report. Calculate the cost. Identify one optimization you could make.
+
+## After Class Challenges
+
+### Challenge 1: Session Audit
+
+Run 3 different Claude Code tasks with verbose logging:
+
+1. A small task (fix a typo, add a comment).
+2. A medium task (implement a feature, write tests).
+3. A large task (review a module, refactor a file).
+
+For each, document: total tokens, model used, number of tool calls, estimated cost, and time elapsed. Compare efficiency across tasks.
+
+### Challenge 2: Model Selection Experiment
+
+Run the same task three times, once with each model:
+
+1. Use Haiku. Note quality, speed, and token usage.
+2. Use Sonnet. Same notes.
+3. Use Opus. Same notes.
+
+Compare: where does the quality difference justify the cost? Where does Haiku perform just as well as Opus? Write up your findings with specific examples.
+
+### Challenge 3: Cost Optimization Sprint
+
+Take your most expensive workflow (from Challenge 1) and optimize it:
+
+1. Identify the biggest token consumers (usually file reads and large outputs).
+2. Apply at least 2 optimization techniques: front-load context, narrow scope, use cheaper models for subtasks, cache summaries.
+3. Run the optimized version. Compare cost before and after.
+4. Document the percentage reduction and which techniques had the biggest impact.
 
 ## Additional Resources
 
-1. [The agent-driven Era of Software Development](https://www.anthropic.com/engineering)
+1. [Claude Code Pricing](https://claude.com/pricing): Official pricing for all plans.
+2. [Claude API Pricing](https://www.anthropic.com/pricing): Token-level pricing for API usage.
+3. [Claude Code Best Practices: Cost](https://code.claude.com/docs/en/best-practices): Official cost optimization recommendations.
+4. [How Claude Code Works: Token Usage](https://code.claude.com/docs/en/how-claude-code-works): Understanding how tokens are consumed.

@@ -1,123 +1,173 @@
-<!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
 # Words Before Code
 
-<!-- > -->
-
-## Minute-by-Minute
-
-| **Elapsed** | **Time** | **Activity** |
-|:-----------:|:--------:|:-------------|
-| 0:00 | 0:05 | Objectives |
-| 0:05 | 0:25 | Overview: Specification as the Primary Artifact |
-| 0:30 | 0:35 | Activity 1: Spec Teardown |
-| 1:05 | 0:10 | BREAK |
-| 1:15 | 0:20 | BLOCKING Gates & Acceptance Criteria |
-| 1:35 | 0:35 | Activity 2: Write Specs, Trade, Build |
-| 2:10 | 0:15 | Activity 3: Gate Enforcement Drill |
-| 2:25 | 0:05 | Wrap Up |
-| TOTAL | 2:30 | - |
-
-<!-- > -->
-
-## Learning Objectives (5 min)
+## Learning Objectives
 
 By the end of this lesson, you will be able to:
 
-1. See how bad specs create bad code — your descriptions must be clearer than your code, because the agent reads them first
-1. Design hard stops that catch failures before they ship — verification gates that agents can't skip, criteria that are measurable
-1. Write clear acceptance criteria in concrete language — exact invocations, expected outputs, nothing left to guesswork
-1. Know when a spec is ready to hand to an agent — specific enough that they know what you want, abstract enough they can figure out how
-
-<!-- > -->
+1. Write a specification document that an AI agent can execute without ambiguity.
+2. Define quality gates with concrete invocation methods and verifiable success criteria.
+3. Write acceptance criteria in Given/When/Then format that serve as both documentation and test blueprints.
+4. Explain why specification quality is the single biggest predictor of AI-generated code quality.
 
 ## Best Practices
 
-Here's what works:
+- **Write the spec before you open the terminal.** The spec is the primary artifact. Code is the byproduct. If you can't describe what you want in plain English, the agent definitely can't build it.
+- **Make every requirement testable.** "The API should be fast" is not testable. "The API should respond in under 200ms for 95% of requests" is testable. If you can't measure it, you can't verify it.
+- **Use Given/When/Then.** It forces precision. "Given a user with no items in cart, when they click checkout, then show an empty cart message." No ambiguity.
+- **Version your specs.** Start with v1.0 (MVP), then v1.1 (refinements), then v1.2 (stretch). This gives the agent clear phases to work through.
+- **Include what you don't want.** Negative requirements prevent the agent from making assumptions. "Do NOT add authentication to this endpoint" saves a 20-minute rabbit hole.
+- **Quality gates are checkpoints, not afterthoughts.** Define them upfront: "After each phase, run tests. If any fail, fix before proceeding."
 
-- **Spec > code**: Agents read specs first. Make them precise. Every ambiguity you leave becomes something the agent guesses at, then you fix.
-- **Be specific**: Don't write "validate input." Write: "POST /api/users with `{email: 'invalid'}` returns 400, message 'Invalid email format.'" That's what gets built.
-- **scenario-based acceptance criteria**: "Given user is logged in, When they click Settings, Then they see their profile." No ambiguity. Agents test it. You measure against it.
-- **BLOCKING gates enforce quality**: Define what must be true before moving forward — tests pass, no console warnings, no linting failures. Gates make it non-negotiable.
-- **Specs are the bottleneck**: For complex work, the spec matters more than how fast the code gets written. Bad spec? Weeks of rework. Good spec? Clean, fast ship. Invest upfront.
+# Topic 1: Specification-Driven Development
 
-<!-- > -->
+## Overview
 
-# Topic 1: Specification as the Primary Artifact
+There's an old saying in construction: "Measure twice, cut once." The software equivalent is: "Specify thoroughly, implement once." But for decades, developers have done the opposite. They sketch a vague idea, start coding, hit a wall, backtrack, redesign, and repeat. The code gets written three times before it works.
 
-<!-- v -->
+AI agents make this pattern worse, not better. Why? Because agents are obedient. Tell them to "build a user dashboard" and they will. They'll make a hundred decisions you didn't specify: what data to show, how to lay it out, what happens on mobile, whether to cache, which API endpoints to hit. Every unspecified decision is a coin flip. Some will match what you wanted. Many won't.
 
-## Overview/TT I (25 min)
+**Specification-driven development** flips this. You invest time upfront writing a detailed description of what the system should do. The spec becomes the source of truth. The agent reads the spec and implements it. If the spec is good, the code is good. If the spec is vague, the code is a guess.
 
-- **The inversion: in agent-driven development, writing the spec IS the hard part**
-- **Spec quality: Vague specs → vague output. Precise specs → precise output.**
-- **Agent-ready specs: concrete invocation, expected behavior, edge cases, success criteria**
-- **BLOCKING gates: hard stops where the agent must produce verifiable evidence before proceeding**
-- **Cost of ambiguity: rework cycles, context waste, wrong architectural choices**
+**Where this idea came from.** Formal specification has roots going back to the 1970s. Edsger Dijkstra and Tony Hoare advocated for mathematical proofs of program correctness. That was too rigorous for most teams. In the 1990s, the agile movement swung the other way: "working software over comprehensive documentation." The pendulum swung so far that many teams stopped writing specs entirely.
 
-<!-- v -->
+AI tools are swinging it back. Not to formal proofs (that's overkill), but to a middle ground: structured natural language specs that are detailed enough for an agent to execute. Think of it as writing a really good work order for a contractor. You wouldn't hand a contractor a napkin sketch and say "build something nice." You'd specify dimensions, materials, finishes, and constraints.
 
-## Activity 1: Spec Teardown (35 min)
+**The `spec.md` pattern.** In this course, every project includes a `spec.md` file. It's a plain English document that describes what the software should do. Here's the structure:
 
-**Breakout Rooms (teams of 3)**
+```markdown
+# Project: URL Shortener
 
-Given 3 real task specifications of varying quality (good, mediocre, terrible):
+## Overview
+A CLI tool that shortens URLs and stores them in a local SQLite database.
 
-1. Identify every ambiguity, missing detail, and unstated assumption in each
-2. Predict what an agent would do wrong with each spec
-3. Rewrite the worst spec to be agent-ready
+## Quality Gates
+1. **Gate 1**: `python cli.py shorten https://example.com` returns a short code.
+   Success: stdout contains a 6-character alphanumeric code.
+2. **Gate 2**: `python cli.py expand abc123` returns the original URL.
+   Success: stdout contains the original URL.
+3. **Gate 3**: `python -m pytest tests/` passes with 0 failures.
+   Success: exit code 0, all tests green.
 
-**Deliverable**: Annotated specs with ambiguity callouts and a rewritten version of the worst one.
+## Acceptance Criteria
+- Given a valid URL, when I run `shorten`, then I get a unique short code.
+- Given a short code that exists, when I run `expand`, then I get the original URL.
+- Given a short code that doesn't exist, when I run `expand`, then I get an error message.
+- Given a URL that's already shortened, when I run `shorten` again, then I get the same short code.
+```
 
-<!-- > -->
+This spec is 20 lines. An agent can read it and build the entire tool. Every quality gate has a concrete invocation ("run this command") and a verifiable success criterion ("output contains X"). No ambiguity.
 
-<!-- .slide: data-background="#087CB8" -->
-## [**10m**] BREAK
+**Why specs matter more with AI.** A human developer can ask clarifying questions mid-implementation: "Hey, what should happen when the URL is malformed?" An agent doesn't ask. It guesses. And its guesses are plausible enough that you might not notice they're wrong until the feature ships and a user hits the edge case.
 
-<!-- > -->
+The spec is your chance to answer every question in advance. If you find yourself thinking "the agent should probably figure that out," stop. Write it down. Every unspecified behavior is a bug waiting to happen.
 
-# Topic 2: BLOCKING Gates & scenario-based acceptance criteria
+**The cost of ambiguity.** A vague ticket takes about 5 minutes to write but creates 30-60 minutes of rework when the agent builds the wrong thing. A detailed spec takes 15-20 minutes to write but produces code that's right the first time (or at least right enough to need only minor corrections). The math is clear: invest in specs.
 
-<!-- v -->
+**Real-world examples.** Linear (the project management tool) requires structured specs for any feature that will be implemented by AI agents. Their template includes: problem statement, proposed solution, acceptance criteria, out-of-scope items, and success metrics. They reported a 60% reduction in "back-and-forth" cycles after adopting the practice.
 
-## Overview/TT II (20 min)
+At Anthropic, internal Claude Code users follow a similar pattern. The engineering blog describes "spec-first development" as the primary workflow: write the spec, commit it, then point Claude Code at the spec and say "implement this."
 
-- **BLOCKING gate anatomy: what must be true, how to verify, what happens on failure**
-- **Scenario-based acceptance criteria: format for acceptance criteria**
-- **Concrete invocation: "Run `curl localhost:3000/api/users` and expect..."**
-- **Verifiable success criteria: tests pass, specific output matches, no regressions**
+# Topic 2: Quality Gates and Acceptance Criteria
 
-<!-- v -->
+## Overview
 
-## Activity 2: Write Specs, Trade, Build (35 min)
+A quality gate is a checkpoint. It's a specific moment in the development process where you stop and verify that everything built so far actually works. Without quality gates, you can build for hours, only to discover at the end that the foundation was wrong and everything built on top of it is broken.
 
-**Breakout Rooms (teams of 3)**
+**Where quality gates came from.** The concept originates from manufacturing, specifically from quality management systems like Six Sigma and ISO 9001 that emerged in the 1980s. In manufacturing, a quality gate is a literal station on the assembly line where an inspector checks the product before it moves to the next stage. If the car door doesn't fit, you find out at the door station, not after the car is painted.
 
-1. Each team writes a specification for a small feature (e.g., "add pagination to a list endpoint")
-2. Teams swap specs with another team
-3. The receiving team feeds the spec directly to Claude Code — no clarifications allowed
-4. Evaluate: did the agent build what the authoring team intended?
+Software borrowed the idea. In waterfall development, quality gates were formal review meetings. In agile, they became sprint reviews and definition-of-done checklists. In CI/CD, they became automated test suites and deployment checks. Same concept, different packaging: verify before proceeding.
 
-**Deliverable**: Original spec, agent output, and a gap analysis showing where the spec failed.
+**Why quality gates matter more with AI agents.** Agents are fast. Dangerously fast. A human developer builds slowly enough that they notice problems as they go. An agent can build an entire feature in 90 seconds, and if the approach was wrong, all 90 seconds of work need to be thrown out. Quality gates are the brakes on that speed. They force the agent to stop, verify, and only proceed if the checkpoint passes.
 
-<!-- v -->
+**Anatomy of a good quality gate:**
 
-## Activity 3: Gate Enforcement Drill (15 min)
+Every quality gate needs three things:
 
-**Solo**
+1. **Invocation**: How do you trigger the check? This must be a concrete command. "Run `pytest tests/test_api.py`" is an invocation. "Check if the API works" is not.
 
-Write 3 BLOCKING gates for your Assignment 1 project using scenario-based acceptance criteria. Each gate must have: a concrete invocation method, expected output, and a failure condition.
+2. **Success criteria**: What does "passing" look like? "Exit code 0" is a success criterion. "Looks good" is not.
 
-**Deliverable**: 3 BLOCKING gates committed to your Assignment 1 repo.
+3. **Failure response**: What happens if the check fails? Usually: "Fix the issue and re-run the gate before proceeding." The agent needs to know it should loop, not skip.
 
-<!-- > -->
+**The traffic light analogy.** Quality gates are traffic lights on the road from spec to shipped code. Green: everything checks out, proceed to the next phase. Red: something failed, stop and fix before continuing. Without traffic lights, the agent speeds through every intersection. It might arrive faster, but it might also cause a pileup.
 
-## Wrap Up (5 min)
+**Given/When/Then format.** This is the standard way to write acceptance criteria in behavior-driven development (BDD). It originated with Dan North in 2003 as part of the BDD movement, which was itself a response to TDD's focus on technical correctness over business behavior.
 
-- If the agent builds the wrong thing, the spec was wrong — not the agent
-- Continue working on Assignment 1
+The format:
 
-<!-- > -->
+- **Given**: The starting state. What conditions exist before the action?
+- **When**: The action. What does the user (or system) do?
+- **Then**: The expected result. What should happen?
+
+```
+Given a registered user with a valid session token,
+When they request GET /api/profile,
+Then they receive a 200 response with their name, email, and avatar URL.
+```
+
+This format works exceptionally well with AI agents because it's structured enough to translate directly into test code. An agent reading the criteria above can generate a test that creates a user, authenticates them, calls the endpoint, and asserts the response fields. No interpretation needed.
+
+**Versioned requirements.** For larger projects, break the spec into versions:
+
+- **v1.0 (MVP)**: The minimum viable product. What must work for the first demo?
+- **v1.1 (Refinements)**: Edge cases, error handling, input validation.
+- **v1.2 (Stretch)**: Performance optimization, additional features, polish.
+
+This gives the agent (and you) clear phases. Complete v1.0 and verify all its quality gates pass before starting v1.1. Each version builds on the last, and quality gates ensure the foundation is solid before you add another floor.
+
+**Common mistakes with acceptance criteria:**
+
+1. **Too vague**: "The system should handle errors gracefully." What does "gracefully" mean? Return a 500? Log and retry? Show a friendly message? Specify it.
+2. **Testing implementation, not behavior**: "The function should use a try/catch block." That's an implementation detail. "The function should return an error message instead of crashing" is a behavior.
+3. **Missing the negative cases**: "Given a valid URL, the system shortens it." Great. What about an invalid URL? An empty string? A URL that's 10,000 characters long?
+4. **No ordering**: If criteria depend on each other, make the order explicit. "Complete Gate 1 before starting Gate 2."
+
+**Real-world quality gates in AI workflows.** The most effective pattern in practice is a three-gate system:
+
+1. **Gate 1: Tests pass.** Run the full test suite. Zero failures.
+2. **Gate 2: Linter passes.** Run the code through your linter/formatter. Zero warnings.
+3. **Gate 3: Manual verification.** You, the human, check that the output matches the spec.
+
+The first two gates are automated. The agent can run them itself and loop until they pass. The third gate is where your judgment comes in. This three-gate pattern catches about 90% of issues before they reach code review.
+
+## Break & Wrap Up
+
+**Key takeaway:** The spec is the most important artifact in AI-assisted development. Invest 15-20 minutes writing a detailed specification with quality gates and acceptance criteria. It saves hours of rework.
+
+**Before next class:** Write a `spec.md` for your `firstbuild` project with at least 3 quality gates and 5 acceptance criteria in Given/When/Then format. You'll use it in Day 6 to test against the real world.
+
+## After Class Challenges
+
+### Challenge 1: Spec Writing Workshop
+
+Write a complete `spec.md` for your `firstbuild` project:
+
+1. Start with a one-paragraph overview of what the project does.
+2. Define at least 3 quality gates, each with a concrete invocation and success criteria.
+3. Write at least 5 acceptance criteria in Given/When/Then format (include at least 2 negative/edge cases).
+4. Version your requirements: v1.0 (MVP), v1.1 (refinements), v1.2 (stretch).
+5. Commit the spec before any implementation code.
+
+### Challenge 2: Spec-to-Code Experiment
+
+Test how spec quality affects code quality:
+
+1. Write a deliberately vague spec (3 sentences, no quality gates). Give it to Claude Code. Save the output.
+2. Write a detailed spec (full Given/When/Then, quality gates, edge cases). Give the same task to Claude Code. Save the output.
+3. Compare: how much rework does each version need? How many edge cases did each handle? How many bugs survived to manual testing?
+4. Write up your findings.
+
+### Challenge 3: Quality Gate Automation
+
+Build an automated quality gate system for your project:
+
+1. Create a script (or Claude Code command) that runs all three gates in sequence: tests, linter, and a custom check of your choice.
+2. Configure it so Claude Code runs the gates automatically after each implementation phase.
+3. Document how the gates caught (or would have caught) a real issue during development.
 
 ## Additional Resources
 
-1. [Writing Effective Acceptance Criteria](https://www.agilealliance.org/glossary/acceptance-criteria/)
+1. [Behavior-Driven Development](https://dannorth.net/introducing-bdd/): Dan North's original article on Given/When/Then.
+2. [Writing Good User Stories](https://www.mountaingoatsoftware.com/agile/user-stories): Mike Cohn's guide to user story format.
+3. [Claude Code Best Practices: Plan Mode](https://code.claude.com/docs/en/best-practices): How specification connects to Claude Code's planning workflow.
+4. [Specification by Example](https://gojko.net/books/specification-by-example/): Gojko Adzic's book on bridging specs and tests.

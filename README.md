@@ -113,3 +113,22 @@ If you require accommodations or have extenuating circumstances such as prolonge
 - [Model Context Protocol](https://modelcontextprotocol.io): Specification for connecting AI tools to external services and data.
 - [Context7 MCP Server](https://github.com/upstash/context7): Live library documentation for your development workflow.
 - [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook): Recipes and patterns for building with Claude.
+
+### Claude Code Access for Students
+
+You need access to Claude Code to complete coursework. Here are your options, from free to paid:
+
+| Option | Cost | What You Get |
+|---|---|---|
+| **Claude Pro** | $20/month | Claude Code with usage limits — sufficient for most coursework |
+| **Claude Max 5x** | $100/month | ~88K tokens per 5-hour window — for heavy usage weeks |
+| **Claude Max 20x** | $200/month | ~220K tokens per 5-hour window — power users |
+| **API (Pay-as-you-go)** | ~$5-10/month typical | Direct API access, pay per token — best for cost control |
+
+**Free and discounted options:**
+
+- **[Anthropic Student Builders Program](https://www.anthropic.com/students)**: Apply for ~$50 in free API credits. Ideal supplement to a Pro plan for heavy assignment weeks.
+- **[GitHub Student Developer Pack](https://education.github.com/pack)**: Check for bundled Anthropic credits — offerings update regularly.
+- **University `.edu` Partnerships**: Anthropic offers institutional access programs. Check with your department for any existing agreements.
+
+**Recommendation for this course:** Start with **Claude Pro ($20/month)**. It covers daily coding sessions and most assignments. Apply for the **Student Builders Program** early in the semester for extra API credits during project-heavy weeks.

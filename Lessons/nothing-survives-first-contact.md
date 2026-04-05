@@ -1,123 +1,132 @@
-<!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
 # Nothing Survives First Contact
 
-<!-- > -->
-
-## Minute-by-Minute
-
-| **Elapsed** | **Time** | **Activity** |
-|:-----------:|:--------:|:-------------|
-| 0:00 | 0:05 | Objectives |
-| 0:05 | 0:25 | Overview: Multi-Phase Builds |
-| 0:30 | 0:35 | Activity 1: Phase 1 Build + Curveball |
-| 1:05 | 0:10 | BREAK |
-| 1:15 | 0:20 | Handling Requirement Changes Mid-Build |
-| 1:35 | 0:35 | Activity 2: The Requirements Change Drill |
-| 2:10 | 0:15 | Activity 3: Retrospective — What Broke? |
-| 2:25 | 0:05 | Wrap Up |
-| TOTAL | 2:30 | - |
-
-<!-- > -->
-
-## Learning Objectives (5 min)
+## Learning Objectives
 
 By the end of this lesson, you will be able to:
 
-1. Structure work in phases — stable checkpoints you can lock down, flexibility in what comes next
-1. Absorb requirement changes mid-build — updating specs and continuing without losing momentum
-1. Spot architectural weaknesses during design exploration — knowing which choices make future changes easier
-1. Tell the difference between essential and flexible — what you can patch and what could break your foundation
-
-<!-- > -->
+1. Choose the right testing strategy (unit, integration, end-to-end) for different types of AI-generated code.
+2. Detect hallucinations in AI-generated code: APIs that don't exist, methods with wrong signatures, invented libraries.
+3. Build a verification workflow that catches agent mistakes before they reach code review.
+4. Explain why "the tests pass" doesn't mean "the code is correct."
 
 ## Best Practices
 
-Here's what works:
+- **Never trust, always verify.** AI-generated code can look perfect and be subtly wrong. It might call a library function that doesn't exist, use deprecated syntax, or handle errors in a way that silently swallows exceptions.
+- **Test the boundaries, not the middle.** Agents handle the happy path well. They miss edge cases: empty inputs, null values, extremely large data, concurrent access, timezone differences.
+- **Run the code.** Reading AI-generated code is not enough. Execute it. Watch what happens with real inputs. Many bugs only surface at runtime.
+- **Check external references.** If the agent uses a library you haven't seen, verify it exists and does what the agent claims. Hallucinated imports are one of the most common AI coding failures.
+- **Build a verification checklist.** After the agent finishes, run through: Do tests pass? Does the linter pass? Do imports resolve? Do API endpoints actually exist? Does the behavior match the spec?
+- **Keep a "gotcha" log.** Document every time the agent produces incorrect code. Patterns will emerge. Add the most common failures to your CLAUDE.md.
 
-- **Changes aren't failures**: Real projects shift mid-build. Update the spec, re-run tests, let the agent code. Tests catch breaks. Good architecture absorbs surprises.
-- **Phase boundaries matter**: Each phase is solid ground. You don't lock everything down (that's waterfall). Lock the core design for this phase, iterate on details next. Flexible without chaos.
-- **Spec first, code second**: When requirements change, update your spec and gates before touching code. Spec guides the work. Tests prove it works.
-- **Loose coupling wins**: Architectures that decompose cleanly (pluggable pieces, not tightly bound) tolerate change. Small changes stay small. Tightly coupled architecture makes changes harder everywhere.
-- **Spec-first beats iterate-and-fix**: Prompt-and-iterate (describe, code, fix, repeat) works for tiny tasks. Spec-first (spec, tests, code) scales. Pick by what you're actually building.
+# Topic 1: Testing Strategies with AI Tools
 
-<!-- > -->
+## Overview
 
-# Topic 1: Multi-Phase Builds
+The title of this lesson is borrowed from a military maxim often attributed to Helmuth von Moltke: "No plan survives first contact with the enemy." In software, the enemy is reality. Your code works perfectly in your head, in the spec, and in the happy-path test. Then a real user submits a form with emoji in the name field and everything breaks.
 
-<!-- v -->
+Testing is how you make contact with reality before your users do.
 
-## Overview/TT I (25 min)
+**The testing pyramid (and why it still applies).** The testing pyramid was introduced by Mike Cohn in his 2009 book "Succeeding with Agile." The idea is straightforward: build your test suite like a pyramid.
 
-- **Multi-phase shipping**: why real projects don't ship in one pass
-- **Phase boundaries**: when to checkpoint, what to lock down, what stays flexible
-- **Design exploration**: choosing architectures that tolerate change
-- **Context management**: what to carry forward, what to discard
+At the base, **unit tests**. Lots of them. They test individual functions in isolation. They're fast, cheap to write, and cheap to run. A single function that calculates tax? Unit test it with 20 different inputs.
 
-<!-- v -->
+In the middle, **integration tests**. Fewer of these. They test how components work together. Does the API endpoint correctly call the database layer and return formatted results? Integration tests are slower and more complex, but they catch problems that unit tests miss (like a function that works perfectly in isolation but receives the wrong data type from its caller).
 
-## Activity 1: Phase 1 Build + Curveball (35 min)
+At the top, **end-to-end tests**. The fewest of these. They test the entire system from the user's perspective. Does clicking "Submit" on the form actually create a record in the database and send a confirmation email? End-to-end tests are expensive to write, slow to run, and fragile (they break when any layer changes), but they're the closest thing to reality.
 
-**Breakout Rooms (teams of 3)**
+**How AI changes the pyramid.** AI agents are good at generating unit tests. Give Claude Code a function and say "write tests for this," and you'll get reasonable coverage of the happy path plus a few edge cases. Integration tests are harder for agents because they require understanding how components connect. End-to-end tests are hardest because they require understanding the full user flow and often need real infrastructure (databases, APIs, browsers).
 
-Build Phase 1 of a task management API (CRUD for tasks, with tests). Halfway through, the instructor drops a curveball requirement via Slack: "Tasks now need to support subtasks with a parent-child relationship."
+The practical impact: **agents shift the economics of the pyramid.** Unit tests become almost free to write (let the agent generate them). That means you can afford to invest more human time on integration and end-to-end tests, where your judgment matters more.
 
-1. Assess impact on current architecture
-2. Decide: adapt in place or restructure?
-3. Update specs and continue building
+**Test-first vs. test-after with agents.** This connects directly to Day 4's TDD lesson. Here's the key distinction:
 
-**Deliverable**: Working Phase 1 with the curveball integrated. Git log showing how the team adapted.
+- **Test-first**: You specify what to test, the agent writes the test, then implements the code. You control the specification.
+- **Test-after**: The agent writes the code, then you (or the agent) write tests to cover it. The tests verify what was built, not what was needed.
 
-<!-- > -->
+Test-first is almost always better with AI agents. Here's why: when an agent writes tests after the code, it tends to write tests that pass. Of course they pass. The agent wrote both the code and the tests. They agree with each other. But "the tests agree with the code" is not the same as "the code does what the user needs."
 
-<!-- .slide: data-background="#087CB8" -->
-## [**10m**] BREAK
+**A concrete example.** You ask the agent: "Build a function that validates email addresses." The agent writes a function and tests. The tests pass. You ship it. A week later, someone reports that `user@company` (no TLD) passes validation. The agent's function used a regex that doesn't check for a TLD. The tests? They tested `user@example.com` (valid) and `not-an-email` (invalid). They never tested the borderline case.
 
-<!-- > -->
+If you'd written the test first (`Given "user@company" when validated then return false`), the agent would have implemented a function that handles that case. The spec drove the implementation.
 
-# Topic 2: Handling Requirement Changes
+**Coverage doesn't mean correctness.** 100% code coverage means every line of code was executed during tests. It does not mean every behavior was tested. A function with 100% coverage can still have bugs if the tests only exercise one path through the logic. Don't let the coverage number fool you (or the agent). Focus on behavior coverage: have you tested every meaningful scenario from the user's perspective?
 
-<!-- v -->
+# Topic 2: When AI-Generated Code Meets Reality
 
-## Overview/TT II (20 min)
+## Overview
 
-- **Requirement changes: not failures — they're the job**
-- **Agent-friendly change management: update the spec, re-run affected gates**
-- **Architectural resilience: which choices are brittle vs. resilient**
-- **Test safety nets: if tests still pass, the change landed clean**
+AI-generated code has a specific failure mode that human-written code doesn't: hallucination. In the context of code generation, a hallucination is when the agent produces code that looks correct, follows proper syntax, and might even pass a superficial review, but references things that don't exist.
 
-<!-- v -->
+**Types of code hallucinations:**
 
-## Activity 2: The Requirements Change Drill (35 min)
+1. **Phantom APIs.** The agent calls `response.json().data.items` when the actual API returns `response.json()["results"]`. It's seen enough API patterns to generate plausible-looking code, but it doesn't verify against the actual API documentation.
 
-**Breakout Rooms (teams of 3)**
+2. **Invented methods.** The agent calls `string.trimLeft()` in Python (that's a JavaScript method). Or it calls `pandas.DataFrame.to_markdown()` with a parameter that doesn't exist. The method name sounds right. The parameter looks reasonable. Neither is real.
 
-Starting from a provided working codebase, apply 3 sequential requirement changes (each delivered 10 minutes apart):
+3. **Deprecated patterns.** The agent uses `componentWillMount` in React (deprecated since React 16.3, removed in React 18) or `urllib2` in Python 3 (renamed to `urllib.request`). Training data includes old patterns alongside new ones. The agent doesn't always pick the current one.
 
-1. Change 1: Add a new field to the data model
-2. Change 2: Add role-based access control
-3. Change 3: Switch the database from SQLite to PostgreSQL
+4. **Fictional libraries.** This is less common but happens. The agent imports a package that sounds useful (`pip install smartparser`) but doesn't exist on PyPI. It's synthesized a plausible package name from patterns in its training data.
 
-For each change: update the spec first, then let the agent implement. Track how many tests break and how quickly the agent recovers.
+**Why hallucinations happen.** Language models generate code by predicting the most likely next token based on patterns in their training data. If the training data contains thousands of examples of `response.json().data`, the model will produce that pattern even if the specific API you're using structures its response differently. The model is pattern-matching, not verifying.
 
-**Deliverable**: Final working codebase with all 3 changes applied. Test results after each change.
+**The verification workflow.** Every AI-generated code block should go through a verification checklist before you commit it:
 
-<!-- v -->
+1. **Do imports resolve?** Run the file. If it crashes on import, the agent referenced something that doesn't exist.
+2. **Do external calls work?** If the code calls an API, test with a real request. If it uses a library method, check the docs.
+3. **Do the tests test the right thing?** Read each assertion. Does it verify behavior you care about, or just behavior the agent invented?
+4. **Does it handle failure?** What happens when the network is down? When the input is empty? When the file doesn't exist?
+5. **Does the output match the spec?** Go back to your `spec.md`. Does the code satisfy every acceptance criterion?
 
-## Activity 3: Retrospective — What Broke? (15 min)
+**Building a hallucination radar.** Over time, you develop intuition for spotting hallucinations. Some red flags:
 
-**Full Class Discussion**
+- **Overly specific parameter names.** `response.meta.pagination.next_cursor` is so specific it's suspicious. Check the docs.
+- **Perfect error messages.** If the agent writes `raise ValueError("Invalid email: must contain @ and a valid TLD")`, verify that the validation logic actually checks for a TLD.
+- **Confident comments.** "This handles all edge cases" in a comment is a warning sign. Does it really?
+- **Unfamiliar library versions.** If the agent uses a feature you don't recognize, it might be from a version that doesn't exist yet (or never existed).
 
-Each team shares: which change was hardest? What architectural decision made it harder or easier? What would you do differently in the design exploration phase?
+**The trust calibration curve.** When you start using AI agents, you'll probably trust the output too much (it looks like code a senior engineer would write). After your first hallucination-induced bug, you'll trust it too little (checking every line obsessively). Over time, you'll calibrate: trust the structure and approach, verify the specifics and edge cases. That calibration is one of the most valuable skills you'll develop in this course.
 
-<!-- > -->
+**What teams do in practice.** Vercel's engineering team runs all AI-generated code through a "reality check" pipeline: automated import verification, endpoint testing against staging, and a mandatory human review step that specifically looks for hallucinations. Stripe's internal tools flag any API call that doesn't match their internal API registry. These are production-grade solutions, but the principles apply even to individual projects.
 
-## Wrap Up (5 min)
+## Break & Wrap Up
 
-- **Assignment 1 ([firstbuild](../Assignments/firstbuild.md)) due today**
-- The best architecture is the one that tolerates the changes you didn't predict
+**Key takeaway:** Testing and verification are your reality check. AI-generated code can be confidently wrong. Build the habit of verifying before trusting, and focus your testing energy on edge cases and integration points where agents are weakest.
 
-<!-- > -->
+**Before next class:** Review the code you've generated so far in `firstbuild`. Run through the verification checklist on at least three functions. Note any hallucinations or near-misses.
+
+## After Class Challenges
+
+### Challenge 1: Hallucination Hunt
+
+Review AI-generated code (from your project or a public example):
+
+1. Find at least 3 instances where the agent's code references external APIs, libraries, or methods.
+2. Verify each one against the official documentation. Does the method signature match? Do the parameters exist?
+3. Document what you find: correct references, hallucinations, and deprecated patterns.
+4. Add any hallucination patterns to your `CLAUDE.md` as warnings for future sessions.
+
+### Challenge 2: Test Gap Analysis
+
+Take your `firstbuild` project's test suite and find the gaps:
+
+1. List every acceptance criterion from your `spec.md`.
+2. Map each criterion to the test(s) that verify it. Identify any criteria with no corresponding test.
+3. Write tests for the gaps. Focus on edge cases and failure modes.
+4. Run the full suite. Did any new tests reveal bugs?
+
+### Challenge 3: Verification Pipeline
+
+Build a verification script that automates the first four steps of the verification checklist:
+
+1. Import check (does the code run without import errors?).
+2. Linter check (does it pass your configured linter?).
+3. Test check (do all tests pass?).
+4. Coverage check (what's the coverage percentage?).
+5. Create a custom Claude Code command that runs this pipeline after every implementation task.
 
 ## Additional Resources
 
-1. [Evolutionary Architecture - ThoughtWorks](https://www.thoughtworks.com/insights/blog/microservices/evolutionary-architecture)
+1. [Succeeding with Agile](https://www.mountaingoatsoftware.com/books/succeeding-with-agile): Mike Cohn's book introducing the test pyramid.
+2. [Claude Code Best Practices: Testing](https://code.claude.com/docs/en/best-practices): Official recommendations for testing AI-generated code.
+3. [AI Code Hallucinations: What They Are and How to Catch Them](https://www.datacamp.com/tutorial/claude-code-best-practices): Practical guide to verifying agent output.
+4. [The Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html): Martin Fowler's comprehensive guide to testing strategy.
