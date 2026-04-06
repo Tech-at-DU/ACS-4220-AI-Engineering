@@ -1,31 +1,29 @@
-# Class - Assignment Title 
+# Course - Assignment Title
 
-## Description 
+## Purpose (Why Should I Do This?)
 
-A short description of your assignment
+Write 2-4 direct sentences explaining why the assignment matters, what professional habit it builds, and how it connects to the course workflow.
 
-### Why this assignment?
+## Setup
 
-A short description that hits home as to why this assignment is important to do. 
+Describe the starting repo, files, or external tools the student needs before they begin.
 
-## Project requirements
+### Project Structure
 
-Describe the requirements of this assignment.
+List the expected files or directories if structure matters.
 
-### Deliverable
+## Instructions
 
-Describe what is due, file, type, link to repo etc. 
+Describe the work in a numbered progression. Use task lists when the assignment is checkpoint-based.
 
-### Due date
+## Rubric
 
-Date this project is due
+Keep the rubric visible in the assignment file so students know how the work will be judged.
 
-## What is this assignment 
+## Submission
 
-Detailed description... 
+State exactly what students submit and where they submit it.
 
-## Assessing the assignment
+## Resources
 
-[Assignment Name Rubric](./assignment-rubric.md)
-
-
+Link the lesson plans, official docs, and any supporting materials that make the assignment easier to complete accurately.

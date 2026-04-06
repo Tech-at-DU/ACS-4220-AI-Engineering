@@ -38,6 +38,7 @@ Thumbs.db
 
 node_modules/
 package-lock.json
+automation/out/
 
-.claude/
-voice/
+.claude/*
+!.claude/CLAUDE.md

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "rubricType": "performance-level-grid",
+  "assignmentTitle": "Tutorial 3: Mastering Claude AI",
+  "sourceFile": "Assignments/tutorial-3-mastering-claude-ai.md",
+  "sourceBasename": "tutorial-3-mastering-claude-ai.md",
+  "levelCount": 4,
+  "criterionCount": 4,
+  "levels": [
+    "Needs Improvement",
+    "Basic",
+    "Proficient",
+    "Advanced"
+  ],
+  "criteria": [
+    {
+      "title": "Module Completion",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Fewer than 2 modules completed"
+        },
+        {
+          "level": "Basic",
+          "description": "All 3 required modules completed"
+        },
+        {
+          "level": "Proficient",
+          "description": "Completed with detailed notes showing engagement"
+        },
+        {
+          "level": "Advanced",
+          "description": "Completed full specialization; earned certificate"
+        }
+      ]
+    },
+    {
+      "title": "Architecture Proposal",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Missing or vague; no diagram"
+        },
+        {
+          "level": "Basic",
+          "description": "Proposal present; uses 1 pattern; diagram is unclear"
+        },
+        {
+          "level": "Proficient",
+          "description": "Clear proposal with 2+ patterns; readable diagram; honest risk assessment"
+        },
+        {
+          "level": "Advanced",
+          "description": "Production-quality proposal; could guide actual implementation"
+        }
+      ]
+    },
+    {
+      "title": "Proof of Concept",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "No prototype or non-functional"
+        },
+        {
+          "level": "Basic",
+          "description": "Prototype attempted but incomplete"
+        },
+        {
+          "level": "Proficient",
+          "description": "Working prototype that validates the chosen pattern"
+        },
+        {
+          "level": "Advanced",
+          "description": "Prototype demonstrates multiple patterns working together"
+        }
+      ]
+    },
+    {
+      "title": "Connection to Final Project",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Tutorial work disconnected from project"
+        },
+        {
+          "level": "Basic",
+          "description": "Some connection but surface-level"
+        },
+        {
+          "level": "Proficient",
+          "description": "Clear thread from tutorial → proposal → prototype → final project plan"
+        },
+        {
+          "level": "Advanced",
+          "description": "Tutorial directly accelerated final project; evidence of iteration"
+        }
+      ]
+    }
+  ]
+}

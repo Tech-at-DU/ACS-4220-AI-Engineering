@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "rubricType": "performance-level-grid",
+  "assignmentTitle": "Firstbuild",
+  "sourceFile": "Assignments/firstbuild.md",
+  "sourceBasename": "firstbuild.md",
+  "levelCount": 4,
+  "criterionCount": 4,
+  "levels": [
+    "Needs Improvement",
+    "Basic",
+    "Proficient",
+    "Advanced"
+  ],
+  "criteria": [
+    {
+      "title": "Project Setup",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Missing key files or incomplete git history"
+        },
+        {
+          "level": "Basic",
+          "description": "`CLAUDE.md`, `spec.md`, and basic repo structure present"
+        },
+        {
+          "level": "Proficient",
+          "description": "Clear, well-organized project with 5+ acceptance criteria and 3+ quality gates"
+        },
+        {
+          "level": "Advanced",
+          "description": "Setup serves as a template for future projects"
+        }
+      ]
+    },
+    {
+      "title": "Test-First Workflow",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Tests written after code, or tests missing"
+        },
+        {
+          "level": "Basic",
+          "description": "Tests present but incomplete; some features lack test coverage"
+        },
+        {
+          "level": "Proficient",
+          "description": "Full red/green/refactor cycle visible in commit history for 3+ features"
+        },
+        {
+          "level": "Advanced",
+          "description": "Sophisticated test patterns; advanced refactoring strategies evident"
+        }
+      ]
+    },
+    {
+      "title": "Feature Completion",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Incomplete features; failing tests"
+        },
+        {
+          "level": "Basic",
+          "description": "Core features working; most tests passing"
+        },
+        {
+          "level": "Proficient",
+          "description": "All features complete, all tests passing, code is clean"
+        },
+        {
+          "level": "Advanced",
+          "description": "Thoughtful complexity handling; multiple refactoring cycles"
+        }
+      ]
+    },
+    {
+      "title": "Commit Quality",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Poor organization or missing commits"
+        },
+        {
+          "level": "Basic",
+          "description": "Adequate commits; some squashing needed"
+        },
+        {
+          "level": "Proficient",
+          "description": "Clear commit messages showing progression; tests before implementation"
+        },
+        {
+          "level": "Advanced",
+          "description": "Excellent narrative arc in commit history; evidence of refinement"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "rubricType": "performance-level-grid",
+  "assignmentTitle": "Tutorial 2: Claude Code in Action",
+  "sourceFile": "Assignments/tutorial-2-claude-code-in-action.md",
+  "sourceBasename": "tutorial-2-claude-code-in-action.md",
+  "levelCount": 4,
+  "criterionCount": 4,
+  "levels": [
+    "Needs Improvement",
+    "Basic",
+    "Proficient",
+    "Advanced"
+  ],
+  "criteria": [
+    {
+      "title": "Course Completion",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Incomplete; missing modules"
+        },
+        {
+          "level": "Basic",
+          "description": "All modules completed"
+        },
+        {
+          "level": "Proficient",
+          "description": "Completed with evidence of engagement (notes, screenshots)"
+        },
+        {
+          "level": "Advanced",
+          "description": "Completed on both platforms; compared experiences"
+        }
+      ]
+    },
+    {
+      "title": "Workflow Audit",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Missing or generic observations"
+        },
+        {
+          "level": "Basic",
+          "description": "Audit present but surface-level"
+        },
+        {
+          "level": "Proficient",
+          "description": "Specific, honest comparison with concrete examples from own work"
+        },
+        {
+          "level": "Advanced",
+          "description": "Deep analysis; identifies patterns in own workflow habits"
+        }
+      ]
+    },
+    {
+      "title": "New Technique",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "No new technique applied"
+        },
+        {
+          "level": "Basic",
+          "description": "Attempted but incomplete implementation"
+        },
+        {
+          "level": "Proficient",
+          "description": "Successfully applied one new technique with clear documentation"
+        },
+        {
+          "level": "Advanced",
+          "description": "Applied multiple new techniques; measurable workflow improvement"
+        }
+      ]
+    },
+    {
+      "title": "Reflection Quality",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "No reflection on changes"
+        },
+        {
+          "level": "Basic",
+          "description": "Brief mentions of what changed"
+        },
+        {
+          "level": "Proficient",
+          "description": "Thoughtful before/after comparison with specific examples"
+        },
+        {
+          "level": "Advanced",
+          "description": "Demonstrates genuine skill growth; would help a peer improve"
+        }
+      ]
+    }
+  ]
+}

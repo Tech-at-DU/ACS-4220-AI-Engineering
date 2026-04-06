@@ -1,17 +1,21 @@
-# MakeAnything Project
+# makeanything Project
 
-## Purpose (Why should I do this?)
+## Purpose (Why Should I Do This?)
 
 This is your chance to design and build a **portfolio project**—something that solves a real problem and demonstrates everything you've learned. You'll own the entire workflow: from identifying the problem, to shipping with tests, to presenting your thinking. This is the work you'll show potential employers.
 
 ## Table of Contents
 
-1. [Scenario](#scenario)
-2. [Project Guidelines](#project-guidelines)
-3. [Rubric](#rubric)
-4. [Code Review and Feedback](#code-review-and-feedback)
+1. [Purpose (Why Should I Do This?)](#purpose-why-should-i-do-this)
+1. [Setup](#setup)
+1. [Instructions](#instructions)
+1. [Rubric](#rubric)
+1. [Submission](#submission)
+1. [Resources](#resources)
 
-## Scenario
+## Setup
+
+### Scenario
 
 You've identified a tool that would help your team work better. This is your chance to design and build it from start to finish.
 
@@ -31,12 +35,12 @@ You've identified a tool that would help your team work better. This is your cha
 
 Commit a proposal document describing the problem you'll solve. Put it in a file called `proposal.md` at the project root. Your instructor will look for it there.
 
-## Project Guidelines
+## Instructions
 
 1. You need 70%+ to pass.
-2. Check the [syllabus](../README.md) for due dates and commit velocity rules.
-3. Copy this doc and commit it to your repo. Use the checkboxes to track what you've done.
-4. Items marked with :star: are bonus points. Do any, all, or none.
+1. Check the [syllabus](../README.md) for due dates and commit velocity rules.
+1. Copy this doc and commit it to your repo. Use the checkboxes to track what you've done.
+1. Items marked with :star: are bonus points. Do any, all, or none.
 
 ### Requirements
 
@@ -61,15 +65,15 @@ Pick at least 5 of 7:
 Each student: 7 minutes + 3 minutes Q&A.
 
 1. **Demo** (3 min) — show it working.
-2. **Walkthrough** (4 min) — spec, config, test-first approach. Show how your setup shaped what you built.
-3. **Lessons** (3 min) — what worked, what didn't, what you'd change.
-4. **Q&A** (5 min) — class and instructor questions.
+1. **Walkthrough** (4 min) — spec, config, test-first approach. Show how your setup shaped what you built.
+1. **Lessons** (3 min) — what worked, what didn't, what you'd change.
+1. **Q&A** (5 min) — class and instructor questions.
 
 ### Final Deliverables
 
-1. GitHub repo with complete project (submit via Gradescope).
-2. Live presentation on Day 14.
-3. README covering what you built, skills demonstrated, and takeaways.
+1. GitHub repo with complete project (submit via [Gradescope](https://www.gradescope.com/courses/1293005)).
+1. Live presentation on Day 14.
+1. README covering what you built, skills demonstrated, and takeaways.
 
 ## Rubric
 
@@ -84,9 +88,11 @@ Each student: 7 minutes + 3 minutes Q&A.
 
 ## Submission
 
-Submit your GitHub repo link via [Gradescope](https://gradescope.com). Include your live presentation on Day 14.
+Submit your GitHub repo link via [Gradescope](https://www.gradescope.com/courses/1293005). Include your live presentation on Day 14.
 
-## Code Review and Feedback
+## Resources
+
+### Code Review and Feedback
 
 The instructor and a peer will review your project at the final retrospective. Feedback focuses on:
 

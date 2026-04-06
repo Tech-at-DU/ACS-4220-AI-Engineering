@@ -1,19 +1,23 @@
-# :seedling: firstbuild
+# :seedling: Firstbuild
 
 _Build your very first application from scratch using Claude Code and a test-driven AI workflow!_
 
-## Purpose (Why should I do this?)
+## Purpose (Why Should I Do This?)
 
 Building from scratch with test-first discipline teaches you how to work with AI tools as true partners. You'll ship a real application, prove your implementation works, and establish patterns you'll carry into every project you build.
 
 ### Table of Contents
 
-1. [Project Structure](#project-structure)
-2. [Getting Started](#getting-started)
-3. [Deliverables](#deliverables)
-4. [Resources](#resources)
+1. [Purpose (Why Should I Do This?)](#purpose-why-should-i-do-this)
+1. [Setup](#setup)
+1. [Instructions](#instructions)
+1. [Rubric](#rubric)
+1. [Submission](#submission)
+1. [Resources](#resources)
 
-## Project Structure
+## Setup
+
+### Project Structure
 
 ```bash
 firstbuild/
@@ -26,10 +30,8 @@ firstbuild/
     └── (your tests)
 ```
 
-## Setup
-
 1. Visit [github.com/new](https://github.com/new) and create a new repository named `firstbuild`.
-2. Run each command line-by-line in your terminal to set up the project:
+1. Run each command line-by-line in your terminal to set up the project:
 
     ```bash
     $ mkdir firstbuild && cd firstbuild
@@ -37,20 +39,20 @@ firstbuild/
     $ git remote add origin git@github.com:YOUR_GITHUB_USERNAME/firstbuild.git
     ```
 
-3. Pick what you want to build: **CLI tool or REST API**, your choice. The domain doesn't matter — the workflow does. Some ideas: URL shortener, markdown converter, task tracker.
+1. Pick what you want to build: **CLI tool or REST API**, your choice. The domain doesn't matter — the workflow does. Some ideas: URL shortener, markdown converter, task tracker.
 
 ## Instructions
 
 Complete each task in the order they appear. Use [GitHub Task List](https://help.github.com/en/github/managing-your-work-on-github/about-task-lists) syntax to track your progress.
 
-### v1.0 — Project Setup & Specification
+### V1.0 — Project Setup & Specification
 
 - [ ] Create `CLAUDE.md` with project-specific instructions — tech stack, conventions, testing expectations.
 - [ ] Write `spec.md` with at least **3 quality gates**. Each gate needs a concrete way to invoke it and success criteria you can verify.
 - [ ] Write at least **5 acceptance criteria** in Given/When/Then format.
 - [ ] **Add, commit, and push to GitHub**.
 
-### v1.1 — Test-First Development
+### V1.1 — Test-First Development
 
 - [ ] Write failing tests for your first feature _before_ writing any implementation code.
 - [ ] Implement the feature until all tests pass.
@@ -59,7 +61,7 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 - [ ] Your commit history must show tests committed _before_ implementation for each feature.
 - [ ] **Add, commit, and push to GitHub**.
 
-### v1.2 — Complexity & Polish
+### V1.2 — Complexity & Polish
 
 - [ ] Complete at least one **task complexity level** task (multi-step, single file area) using the workflow.
 - [ ] Complete at least one **task complexity level** task (multi-file, requires design decisions) using the workflow.
@@ -84,7 +86,7 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 
 ## Submission
 
-Submit your GitHub repo link via [Gradescope](https://gradescope.com).
+Submit your GitHub repo link via [Gradescope](https://www.gradescope.com/courses/1293005).
 
 ## Resources
 

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "rubricType": "performance-level-grid",
+  "assignmentTitle": "Fixthis",
+  "sourceFile": "Assignments/fixthis.md",
+  "sourceBasename": "fixthis.md",
+  "levelCount": 4,
+  "criterionCount": 5,
+  "levels": [
+    "Needs Improvement",
+    "Basic",
+    "Proficient",
+    "Advanced"
+  ],
+  "criteria": [
+    {
+      "title": "Codebase Understanding",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Minimal exploration; architecture unclear"
+        },
+        {
+          "level": "Basic",
+          "description": "Basic mapping of codebase; some patterns identified"
+        },
+        {
+          "level": "Proficient",
+          "description": "Thorough analysis of architecture, patterns, and conventions"
+        },
+        {
+          "level": "Advanced",
+          "description": "Deep understanding reflected in clear, well-scoped rules"
+        }
+      ]
+    },
+    {
+      "title": "Configuration Quality",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Missing `CLAUDE.md` or `AGENTS.md`"
+        },
+        {
+          "level": "Basic",
+          "description": "Present but generic instructions"
+        },
+        {
+          "level": "Proficient",
+          "description": "Comprehensive, project-specific guidance with clear conventions"
+        },
+        {
+          "level": "Advanced",
+          "description": "Config serves as a template; other students could clone and build immediately"
+        }
+      ]
+    },
+    {
+      "title": "Rules & Enforcement",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "No rules or rules don't match project patterns"
+        },
+        {
+          "level": "Basic",
+          "description": "Basic rules written; limited testing"
+        },
+        {
+          "level": "Proficient",
+          "description": "3+ well-scoped rules enforcing existing conventions; tested"
+        },
+        {
+          "level": "Advanced",
+          "description": "Advanced rules combining testing patterns and architectural constraints"
+        }
+      ]
+    },
+    {
+      "title": "Feature Implementation",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Feature incomplete or breaks existing tests"
+        },
+        {
+          "level": "Basic",
+          "description": "Feature works; some test failures"
+        },
+        {
+          "level": "Proficient",
+          "description": "All tests pass; feature follows project patterns; no regressions"
+        },
+        {
+          "level": "Advanced",
+          "description": "Sophisticated implementation; demonstrates mastery of project patterns"
+        }
+      ]
+    },
+    {
+      "title": "Documentation",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Minimal or unclear writeup"
+        },
+        {
+          "level": "Basic",
+          "description": "Basic exploration notes in `writeup.md`"
+        },
+        {
+          "level": "Proficient",
+          "description": "Clear documentation of exploration, tuning, and results"
+        },
+        {
+          "level": "Advanced",
+          "description": "Excellent before/after evidence of context refinement"
+        }
+      ]
+    }
+  ]
+}

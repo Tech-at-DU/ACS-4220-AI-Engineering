@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "rubricType": "performance-level-grid",
+  "assignmentTitle": "makeanything Project",
+  "sourceFile": "Assignments/makeanything.md",
+  "sourceBasename": "makeanything.md",
+  "levelCount": 4,
+  "criterionCount": 6,
+  "levels": [
+    "Needs Improvement",
+    "Basic",
+    "Proficient",
+    "Advanced"
+  ],
+  "criteria": [
+    {
+      "title": "Scope & Ambition",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Trivial project or incomplete implementation"
+        },
+        {
+          "level": "Basic",
+          "description": "Meaningful application demonstrating 3-4 course skills"
+        },
+        {
+          "level": "Proficient",
+          "description": "Meaningful application demonstrating 5+ course skills"
+        },
+        {
+          "level": "Advanced",
+          "description": "Ambitious project with creative application of advanced techniques"
+        }
+      ]
+    },
+    {
+      "title": "Spec Quality",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Missing or vague descriptions"
+        },
+        {
+          "level": "Basic",
+          "description": "Basic descriptions present"
+        },
+        {
+          "level": "Proficient",
+          "description": "Quality gates with structured, verifiable acceptance criteria"
+        },
+        {
+          "level": "Advanced",
+          "description": "Specs thorough enough that another student could reproduce the build"
+        }
+      ]
+    },
+    {
+      "title": "Workflow Mastery",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Ad-hoc development without consistent process"
+        },
+        {
+          "level": "Basic",
+          "description": "Some test-first work, inconsistent approach"
+        },
+        {
+          "level": "Proficient",
+          "description": "Full test-first workflow with appropriate complexity awareness"
+        },
+        {
+          "level": "Advanced",
+          "description": "Sophisticated use of design exploration, specialized workers, and parallel execution"
+        }
+      ]
+    },
+    {
+      "title": "Tool Configuration",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Minimal or generic setup"
+        },
+        {
+          "level": "Basic",
+          "description": "Basic configuration present"
+        },
+        {
+          "level": "Proficient",
+          "description": "Rich, project-specific configuration with evidence of refinement"
+        },
+        {
+          "level": "Advanced",
+          "description": "Config serves as a reusable template for similar projects"
+        }
+      ]
+    },
+    {
+      "title": "Presentation",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Unprepared or unable to explain workflow decisions"
+        },
+        {
+          "level": "Basic",
+          "description": "Demo functional; basic walkthrough"
+        },
+        {
+          "level": "Proficient",
+          "description": "Clear demo, workflow walkthrough, and lessons learned"
+        },
+        {
+          "level": "Advanced",
+          "description": "Engaging presentation with insights that benefit the whole class"
+        }
+      ]
+    },
+    {
+      "title": "Work Ethic",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "< 10 commits, work done last minute"
+        },
+        {
+          "level": "Basic",
+          "description": "Sporadic commits"
+        },
+        {
+          "level": "Proficient",
+          "description": "Consistent commits across the project period"
+        },
+        {
+          "level": "Advanced",
+          "description": "Iterative refinement visible in commit history"
+        }
+      ]
+    }
+  ]
+}

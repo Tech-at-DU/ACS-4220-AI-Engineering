@@ -1,19 +1,23 @@
-# :electric_plug: wiredup
+# :electric_plug: Wiredup
 
 _Connect your dev tools to the outside world — live docs, browsers, databases, and anything else you can think of!_
 
-## Purpose (Why should I do this?)
+## Purpose (Why Should I Do This?)
 
 Context is everything. Your tools can't help if they're working with stale or incorrect information. This project teaches you to integrate live data sources—up-to-date documentation, real browser interactions, actual database queries—so your AI partners make better decisions. You'll measure the difference yourself: hallucinations vs. reality.
 
 ### Table of Contents
 
-1. [Project Structure](#project-structure)
-2. [Getting Started](#getting-started)
-3. [Deliverables](#deliverables)
-4. [Resources](#resources)
+1. [Purpose (Why Should I Do This?)](#purpose-why-should-i-do-this)
+1. [Setup](#setup)
+1. [Instructions](#instructions)
+1. [Rubric](#rubric)
+1. [Submission](#submission)
+1. [Resources](#resources)
 
-## Project Structure
+## Setup
+
+### Project Structure
 
 ```bash
 wiredup/
@@ -29,10 +33,8 @@ wiredup/
     └── (your tests)
 ```
 
-## Setup
-
 1. Visit [github.com/new](https://github.com/new) and create a new repository named `wiredup`.
-2. Set up your project and configure at least **2 protocol servers**:
+1. Set up your project and configure at least **2 protocol servers**:
 
     ```bash
     $ mkdir wiredup && cd wiredup
@@ -40,14 +42,14 @@ wiredup/
     $ git remote add origin git@github.com:YOUR_GITHUB_USERNAME/wiredup.git
     ```
 
-3. **Required**: Set up Context7 for live library docs.
-4. **Pick one more**: Chrome for visual verification, a database connector, or something custom you design.
+1. **Required**: Set up Context7 for live library docs.
+1. **Pick one more**: Chrome for visual verification, a database connector, or something custom you design.
 
 ## Instructions
 
 Complete each task in the order they appear. Use [GitHub Task List](https://help.github.com/en/github/managing-your-work-on-github/about-task-lists) syntax to track your progress.
 
-### v1.0 — Configuration & Live Docs
+### V1.0 — Configuration & Live Docs
 
 - [ ] Configure at least **2 protocol servers** (`.mcp.json` or CLI).
 - [ ] Build a feature that needs a third-party library API.
@@ -55,13 +57,13 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 - [ ] Save this evidence in `evidence/live-docs-usage.md`.
 - [ ] **Add, commit, and push to GitHub**.
 
-### v1.1 — Second Integration
+### V1.1 — Second Integration
 
 - [ ] Use your second protocol server in real development — screenshots, database queries, custom tool calls.
 - [ ] Document what it did and how it changed your workflow.
 - [ ] **Add, commit, and push to GitHub**.
 
-### v1.2 — Hallucination Comparison & Polish
+### V1.2 — Hallucination Comparison & Polish
 
 - [ ] Compare agent output _with_ vs. _without_ live docs for the same API call.
 - [ ] Document the comparison in `evidence/hallucination-comparison.md`, side-by-side.
@@ -87,7 +89,7 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 
 ## Submission
 
-Submit your GitHub repo link via [Gradescope](https://gradescope.com).
+Submit your GitHub repo link via [Gradescope](https://www.gradescope.com/courses/1293005).
 
 ## Resources
 

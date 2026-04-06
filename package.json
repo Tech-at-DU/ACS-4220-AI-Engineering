@@ -1,0 +1,13 @@
+{
+  "name": "acs-4220-ai-engineering-docs",
+  "private": true,
+  "scripts": {
+    "audit:course": "node scripts/audit-course.mjs",
+    "check:rubrics:parity": "node scripts/check-rubric-export-parity.mjs",
+    "export:rubrics": "node scripts/export-rubrics.mjs",
+    "export:rubrics:python": "python3 scripts/export_rubrics.py",
+    "gradescope:plan": "node scripts/plan-gradescope-sync.mjs",
+    "lint:md": "npx --yes markdownlint-cli2 \"**/*.md\"",
+    "test:gradescope": "node --test tests/gradescope-*.test.mjs"
+  }
+}

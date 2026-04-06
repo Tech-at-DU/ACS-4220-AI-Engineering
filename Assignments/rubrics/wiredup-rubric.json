@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "rubricType": "performance-level-grid",
+  "assignmentTitle": "Wiredup",
+  "sourceFile": "Assignments/wiredup.md",
+  "sourceBasename": "wiredup.md",
+  "levelCount": 4,
+  "criterionCount": 5,
+  "levels": [
+    "Needs Improvement",
+    "Basic",
+    "Proficient",
+    "Advanced"
+  ],
+  "criteria": [
+    {
+      "title": "Protocol Configuration",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Incomplete or missing server setup"
+        },
+        {
+          "level": "Basic",
+          "description": "2 servers configured; basic functionality"
+        },
+        {
+          "level": "Proficient",
+          "description": "2+ servers properly configured and integrated; clear `.mcp.json`"
+        },
+        {
+          "level": "Advanced",
+          "description": "3+ servers; custom tools built; advanced configuration"
+        }
+      ]
+    },
+    {
+      "title": "Live Documentation",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "No evidence of live docs usage"
+        },
+        {
+          "level": "Basic",
+          "description": "Docs used occasionally; limited impact captured"
+        },
+        {
+          "level": "Proficient",
+          "description": "Evidence of live doc queries reducing hallucinations; clear before/after in writeup"
+        },
+        {
+          "level": "Advanced",
+          "description": "Quantified improvement; demonstrates mastery of live context"
+        }
+      ]
+    },
+    {
+      "title": "Integration Quality",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Minimal real-world use"
+        },
+        {
+          "level": "Basic",
+          "description": "Servers used in 1-2 tasks; some friction evident"
+        },
+        {
+          "level": "Proficient",
+          "description": "Servers integrated seamlessly into workflow; clear impact on development"
+        },
+        {
+          "level": "Advanced",
+          "description": "Sophisticated integration; evidence of workflow optimization"
+        }
+      ]
+    },
+    {
+      "title": "Evidence & Documentation",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Missing or unclear evidence"
+        },
+        {
+          "level": "Basic",
+          "description": "Basic evidence in files; minimal comparison"
+        },
+        {
+          "level": "Proficient",
+          "description": "Clear, well-organized evidence; side-by-side hallucination comparison"
+        },
+        {
+          "level": "Advanced",
+          "description": "Compelling narrative showing tangible impact on code quality"
+        }
+      ]
+    },
+    {
+      "title": "Feature Implementation",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Incomplete or broken tests"
+        },
+        {
+          "level": "Basic",
+          "description": "Feature works; some test issues"
+        },
+        {
+          "level": "Proficient",
+          "description": "All tests pass; feature well-designed; uses protocol servers meaningfully"
+        },
+        {
+          "level": "Advanced",
+          "description": "Sophisticated design; advanced use of multiple integrations"
+        }
+      ]
+    }
+  ]
+}

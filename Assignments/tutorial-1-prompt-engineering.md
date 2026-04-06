@@ -2,18 +2,21 @@
 
 _Work through Anthropic's interactive prompt engineering tutorial — then prove you can apply what you learned._
 
-## Purpose (Why should I do this?)
+## Purpose (Why Should I Do This?)
 
 Every interaction with an AI tool starts with a prompt. The difference between "kind of works" and "nails it every time" comes down to how well you structure your instructions. This tutorial gives you a sandbox to experiment with techniques like system prompts, output formatting, role assignment, and chain-of-thought reasoning — all skills you'll use in every assignment after this.
 
 ### Table of Contents
 
-1. [Overview](#overview)
-2. [Getting Started](#getting-started)
-3. [Deliverables](#deliverables)
-4. [Resources](#resources)
+1. [Purpose (Why Should I Do This?)](#purpose-why-should-i-do-this)
+1. [Getting Started](#getting-started)
+1. [Instructions](#instructions)
+1. [Cross-Tool Takeaway](#cross-tool-takeaway)
+1. [Rubric](#rubric)
+1. [Submission](#submission)
+1. [Resources](#resources)
 
-## Overview
+## Getting Started
 
 You'll complete **Anthropic's Prompt Engineering Interactive Tutorial** — a hands-on experience where you write prompts, see Claude's responses in real time, and iterate until you understand what works and why.
 
@@ -23,14 +26,14 @@ This isn't a passive reading exercise. Each chapter has an **Example Playground*
 
 **Alternative (zero setup):** [Google Sheets Version](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) — recommended if you want to start experimenting immediately without installing anything.
 
-## Getting Started
+### Enrollment Steps
 
 **Choose your path:**
 
 **Path A — Google Sheets (Recommended for speed)**
 1. Open the [Google Sheets tutorial](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview).
-2. Follow the instructions in each tab to run prompts directly in the sheet.
-3. No API key required for the interactive examples.
+1. Follow the instructions in each tab to run prompts directly in the sheet.
+1. No API key required for the interactive examples.
 
 **Path B — Jupyter Notebooks (Recommended for depth)**
 1. Clone the repository:
@@ -40,19 +43,19 @@ This isn't a passive reading exercise. Each chapter has an **Example Playground*
     $ cd prompt-eng-interactive-tutorial
     ```
 
-2. Install dependencies:
+1. Install dependencies:
 
     ```bash
     $ pip install -r requirements.txt
     ```
 
-3. Set your API key:
+1. Set your API key:
 
     ```bash
     $ export ANTHROPIC_API_KEY=your_key_here
     ```
 
-4. Launch the notebooks:
+1. Launch the notebooks:
 
     ```bash
     $ jupyter notebook
@@ -70,7 +73,7 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 
 ### Part 2 — Apply What You Learned
 
-- [ ] Create a new file called `prompt-lab-journal.md` in your `firstbuild` repo.
+- [ ] Create a new file called `prompt-lab-journal.md` in a small standalone repo called `prompt-lab`.
 - [ ] For **3 chapters** of your choice, write a short entry (3-5 sentences) explaining:
   - What the technique does.
   - A real scenario where you'd use it in your own work.
@@ -84,6 +87,10 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 - [ ] Create a `CLAUDE.md` prompt template that incorporates techniques from at least 4 chapters — one you'd actually use in a real project.
 - [ ] Find a prompt pattern the tutorial doesn't cover. Document it in your journal with an example.
 
+## Cross-Tool Takeaway
+
+The tutorial is Claude-centered, but the engineering takeaway transfers cleanly. A good agent prompt or task brief defines the goal, the structure of the output, the evidence you expect back, and the edge cases that matter. Claude uses one surface for that. Codex uses another. The core move is the same: write instructions that reduce guessing and give you something concrete to verify.
+
 ## Rubric
 
 | | **Needs Improvement** | **Basic** | **Proficient** | **Advanced** |
@@ -95,7 +102,7 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 
 ## Submission
 
-Add `prompt-lab-journal.md` to your `firstbuild` repo and submit the GitHub link via [Gradescope](https://gradescope.com).
+Add `prompt-lab-journal.md` to your `prompt-lab` repo and submit the GitHub link via [Gradescope](https://www.gradescope.com/courses/1293005).
 
 ## Resources
 

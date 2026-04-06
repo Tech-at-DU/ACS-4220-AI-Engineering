@@ -1,4 +1,5 @@
 - **[Syllabus](README.md)**
+- **[Instructor Guide](instructors.md)**
 - **Week 1 — Foundations**
   - [Copilot ≠ Coworker](Lessons/copilot-neq-coworker.md)
   - [Memory Is Everything](Lessons/memory-is-everything.md)
@@ -24,7 +25,7 @@
   - [firstbuild](Assignments/firstbuild.md)
   - [fixthis](Assignments/fixthis.md)
   - [wiredup](Assignments/wiredup.md)
-  - [MakeAnything](Assignments/MakeAnything.md)
+  - [makeanything](Assignments/makeanything.md)
 - **Tutorials**
   - [The Prompt Lab](Assignments/tutorial-1-prompt-engineering.md)
   - [Claude Code in Action](Assignments/tutorial-2-claude-code-in-action.md)

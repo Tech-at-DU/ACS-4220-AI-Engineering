@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "rubricType": "performance-level-grid",
+  "assignmentTitle": "Tutorial 1: The Prompt Lab",
+  "sourceFile": "Assignments/tutorial-1-prompt-engineering.md",
+  "sourceBasename": "tutorial-1-prompt-engineering.md",
+  "levelCount": 4,
+  "criterionCount": 4,
+  "levels": [
+    "Needs Improvement",
+    "Basic",
+    "Proficient",
+    "Advanced"
+  ],
+  "criteria": [
+    {
+      "title": "Tutorial Completion",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Fewer than 5 chapters completed"
+        },
+        {
+          "level": "Basic",
+          "description": "All 9 chapters completed; minimal experimentation"
+        },
+        {
+          "level": "Proficient",
+          "description": "All chapters completed with evidence of experimentation beyond examples"
+        },
+        {
+          "level": "Advanced",
+          "description": "Deep exploration; discovered edge cases or limitations"
+        }
+      ]
+    },
+    {
+      "title": "Journal Quality",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Missing or surface-level entries"
+        },
+        {
+          "level": "Basic",
+          "description": "3 entries present but lack specificity"
+        },
+        {
+          "level": "Proficient",
+          "description": "Entries show clear understanding; real scenarios are concrete and relevant"
+        },
+        {
+          "level": "Advanced",
+          "description": "Entries demonstrate insight; identifies non-obvious applications"
+        }
+      ]
+    },
+    {
+      "title": "Combined Prompt",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Missing or uses fewer than 3 techniques"
+        },
+        {
+          "level": "Basic",
+          "description": "Combines 3 techniques but execution is rough"
+        },
+        {
+          "level": "Proficient",
+          "description": "Clean combination of 3+ techniques with clear explanation"
+        },
+        {
+          "level": "Advanced",
+          "description": "Sophisticated prompt that demonstrates mastery; would work in production"
+        }
+      ]
+    },
+    {
+      "title": "Commit Quality",
+      "ratings": [
+        {
+          "level": "Needs Improvement",
+          "description": "Missing commits or disorganized"
+        },
+        {
+          "level": "Basic",
+          "description": "Single commit with everything"
+        },
+        {
+          "level": "Proficient",
+          "description": "Logical commits showing progression through the tutorial"
+        },
+        {
+          "level": "Advanced",
+          "description": "Commit messages tell the story of your learning"
+        }
+      ]
+    }
+  ]
+}

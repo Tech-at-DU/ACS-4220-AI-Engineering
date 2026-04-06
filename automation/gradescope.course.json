@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "course": {
+    "mode": "existing",
+    "gradescopeCourseId": "1293005",
+    "gradescopeCourseUrl": "https://www.gradescope.com/courses/1293005",
+    "readmeTitleFile": "README.md",
+    "timezone": "America/Los_Angeles",
+    "creationDefaults": {
+      "courseNumber": "ACS 4220",
+      "courseName": null,
+      "term": "Spring",
+      "year": 2026,
+      "school": "Dominican University of California",
+      "useReadmeTitleWhenNew": true
+    },
+    "assignmentTypeDecision": {
+      "choiceLocked": false,
+      "selectedType": null,
+      "candidateTypes": [
+        "Homework / Problem Set",
+        "Online Assignment"
+      ],
+      "blockedReason": "Do not implement Gradescope sync until the assignment type is locked."
+    },
+    "defaults": {
+      "points": 100
+    }
+  },
+  "assignments": [
+    {
+      "slug": "tutorial-1-prompt-engineering",
+      "title": "Tutorial 1: The Prompt Lab",
+      "assignmentTypeOverride": null,
+      "releaseAt": "2026-03-23T08:00:00-07:00",
+      "dueAt": "2026-03-30T23:59:00-07:00",
+      "points": 100,
+      "sourceFile": "Assignments/tutorial-1-prompt-engineering.md",
+      "rubricMarkdownFile": "Assignments/rubrics/tutorial-1-prompt-engineering-rubric.md",
+      "rubricJsonFile": "Assignments/rubrics/tutorial-1-prompt-engineering-rubric.json",
+      "gradescopeAssignmentId": null
+    },
+    {
+      "slug": "firstbuild",
+      "title": "firstbuild",
+      "assignmentTypeOverride": null,
+      "releaseAt": "2026-03-23T08:00:00-07:00",
+      "dueAt": "2026-04-08T23:59:00-07:00",
+      "points": 100,
+      "sourceFile": "Assignments/firstbuild.md",
+      "rubricMarkdownFile": "Assignments/rubrics/firstbuild-rubric.md",
+      "rubricJsonFile": "Assignments/rubrics/firstbuild-rubric.json",
+      "gradescopeAssignmentId": null
+    },
+    {
+      "slug": "tutorial-2-claude-code-in-action",
+      "title": "Tutorial 2: Claude Code in Action",
+      "assignmentTypeOverride": null,
+      "releaseAt": "2026-04-01T08:00:00-07:00",
+      "dueAt": "2026-04-08T23:59:00-07:00",
+      "points": 100,
+      "sourceFile": "Assignments/tutorial-2-claude-code-in-action.md",
+      "rubricMarkdownFile": "Assignments/rubrics/tutorial-2-claude-code-in-action-rubric.md",
+      "rubricJsonFile": "Assignments/rubrics/tutorial-2-claude-code-in-action-rubric.json",
+      "gradescopeAssignmentId": null
+    },
+    {
+      "slug": "fixthis",
+      "title": "fixthis",
+      "assignmentTypeOverride": null,
+      "releaseAt": "2026-04-13T08:00:00-07:00",
+      "dueAt": "2026-04-22T23:59:00-07:00",
+      "points": 100,
+      "sourceFile": "Assignments/fixthis.md",
+      "rubricMarkdownFile": "Assignments/rubrics/fixthis-rubric.md",
+      "rubricJsonFile": "Assignments/rubrics/fixthis-rubric.json",
+      "gradescopeAssignmentId": null
+    },
+    {
+      "slug": "tutorial-3-mastering-claude-ai",
+      "title": "Tutorial 3: Mastering Claude AI",
+      "assignmentTypeOverride": null,
+      "releaseAt": "2026-04-15T08:00:00-07:00",
+      "dueAt": "2026-04-27T23:59:00-07:00",
+      "points": 100,
+      "sourceFile": "Assignments/tutorial-3-mastering-claude-ai.md",
+      "rubricMarkdownFile": "Assignments/rubrics/tutorial-3-mastering-claude-ai-rubric.md",
+      "rubricJsonFile": "Assignments/rubrics/tutorial-3-mastering-claude-ai-rubric.json",
+      "gradescopeAssignmentId": null
+    },
+    {
+      "slug": "wiredup",
+      "title": "wiredup",
+      "assignmentTypeOverride": null,
+      "releaseAt": "2026-04-20T08:00:00-07:00",
+      "dueAt": "2026-04-29T23:59:00-07:00",
+      "points": 100,
+      "sourceFile": "Assignments/wiredup.md",
+      "rubricMarkdownFile": "Assignments/rubrics/wiredup-rubric.md",
+      "rubricJsonFile": "Assignments/rubrics/wiredup-rubric.json",
+      "gradescopeAssignmentId": null
+    },
+    {
+      "slug": "final-presentation",
+      "title": "Final Presentation",
+      "assignmentTypeOverride": null,
+      "releaseAt": "2026-05-04T08:00:00-07:00",
+      "dueAt": "2026-05-06T23:59:00-07:00",
+      "points": 100,
+      "sourceFile": "Assignments/makeanything.md",
+      "rubricMarkdownFile": "Assignments/rubrics/makeanything-rubric.md",
+      "rubricJsonFile": "Assignments/rubrics/makeanything-rubric.json",
+      "gradescopeAssignmentId": null
+    },
+    {
+      "slug": "final-project",
+      "title": "Final Project",
+      "assignmentTypeOverride": null,
+      "releaseAt": "2026-04-27T08:00:00-07:00",
+      "dueAt": "2026-05-08T23:59:00-07:00",
+      "points": 100,
+      "sourceFile": "Assignments/makeanything.md",
+      "rubricMarkdownFile": "Assignments/rubrics/makeanything-rubric.md",
+      "rubricJsonFile": "Assignments/rubrics/makeanything-rubric.json",
+      "gradescopeAssignmentId": null
+    }
+  ]
+}

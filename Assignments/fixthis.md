@@ -1,19 +1,23 @@
-# :spaghetti: fixthis
+# :spaghetti: Fixthis
 
 _Clone an unfamiliar codebase, figure out how it works, and ship a feature — without breaking anything!_
 
-## Purpose (Why should I do this?)
+## Purpose (Why Should I Do This?)
 
 Real work often means inheriting unfamiliar code. This project teaches you to read, understand, and contribute to a codebase you didn't build — a core skill you'll use throughout your career. You'll learn to navigate complexity and make confident changes without breaking existing functionality.
 
 ### Table of Contents
 
-1. [Project Structure](#project-structure)
-2. [Getting Started](#getting-started)
-3. [Deliverables](#deliverables)
-4. [Resources](#resources)
+1. [Purpose (Why Should I Do This?)](#purpose-why-should-i-do-this)
+1. [Setup](#setup)
+1. [Instructions](#instructions)
+1. [Rubric](#rubric)
+1. [Submission](#submission)
+1. [Resources](#resources)
 
-## Project Structure
+## Setup
+
+### Project Structure
 
 ```bash
 fixthis/
@@ -24,42 +28,40 @@ fixthis/
 └── (forked codebase)
 ```
 
-## Setup
-
 1. Choose one of the following open-source projects _(or propose an alternative with instructor approval)_:
 
     - **SuiteCRM** — add a custom dashboard widget
     - **Redwood.js Tutorial App** — add a new model with full CRUD
     - **Express.js Starter** — add authentication middleware with JWT
 
-2. Fork the repo and clone it locally:
+1. Fork the repo and clone it locally:
 
     ```bash
     $ git clone git@github.com:YOUR_GITHUB_USERNAME/CHOSEN_REPO.git
     $ cd CHOSEN_REPO
     ```
 
-3. **Don't start coding yet.** Your first job is understanding the codebase. Use your AI tools to explore before you build.
+1. **Don't start coding yet.** Your first job is understanding the codebase. Use your AI tools to explore before you build.
 
 ## Instructions
 
 Complete each task in the order they appear. Use [GitHub Task List](https://help.github.com/en/github/managing-your-work-on-github/about-task-lists) syntax to track your progress.
 
-### v1.0 — Exploration & Understanding
+### V1.0 — Exploration & Understanding
 
 - [ ] Map the codebase architecture using AI tools. Save exploration logs or summaries.
 - [ ] Create `CLAUDE.md` based on what you learned — tech stack, patterns, conventions, gotchas.
 - [ ] Create at least **1** `AGENTS.md` in a key subdirectory with scoped instructions for that area.
 - [ ] **Add, commit, and push to GitHub**.
 
-### v1.1 — Rules & Context Tuning
+### V1.1 — Rules & Context Tuning
 
 - [ ] Write at least **3 rules** with glob or path scoping that enforce the project's existing conventions.
 - [ ] Test your rules by running a small task and observing agent behavior.
 - [ ] Refine your `CLAUDE.md` or rules based on output quality. Document what you changed and why in `writeup.md`.
 - [ ] **Add, commit, and push to GitHub**.
 
-### v1.2 — Feature Addition
+### V1.2 — Feature Addition
 
 - [ ] Write your feature specification with acceptance criteria.
 - [ ] Build the feature using test-first development. New tests must pass.
@@ -84,7 +86,7 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 
 ## Submission
 
-Submit your GitHub repo link via [Gradescope](https://gradescope.com).
+Submit your GitHub repo link via [Gradescope](https://www.gradescope.com/courses/1293005).
 
 ## Resources
 

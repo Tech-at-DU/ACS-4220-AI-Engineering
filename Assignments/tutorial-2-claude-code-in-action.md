@@ -2,18 +2,21 @@
 
 _Level up your CLI workflow with Anthropic's official Claude Code course — then benchmark yourself against your Week 1 skills._
 
-## Purpose (Why should I do this?)
+## Purpose (Why Should I Do This?)
 
 You've been using Claude Code for three weeks now. You've built habits — some good, some worth questioning. This tutorial gives you the official playbook: how Anthropic designed the tool to be used, including features you probably haven't discovered yet. By the end, you'll know what you've been doing right, what you've been doing the hard way, and what you didn't know existed.
 
 ### Table of Contents
 
-1. [Overview](#overview)
-2. [Getting Started](#getting-started)
-3. [Deliverables](#deliverables)
-4. [Resources](#resources)
+1. [Purpose (Why Should I Do This?)](#purpose-why-should-i-do-this)
+1. [Getting Started](#getting-started)
+1. [Instructions](#instructions)
+1. [Cross-Tool Takeaway](#cross-tool-takeaway)
+1. [Rubric](#rubric)
+1. [Submission](#submission)
+1. [Resources](#resources)
 
-## Overview
+## Getting Started
 
 You'll complete **Claude Code in Action**, Anthropic's official course on using Claude Code as an autonomous development partner. The course covers the full toolkit: CLI fundamentals, context management, Plan Mode, custom commands, MCP integration, GitHub workflows, and the hooks system.
 
@@ -23,11 +26,11 @@ You'll complete **Claude Code in Action**, Anthropic's official course on using 
 - [Anthropic Skilljar](https://anthropic.skilljar.com/claude-code-in-action) _(~1 hour, free, self-paced)_
 - [Coursera](https://www.coursera.org/learn/claude-code-in-action) _(same content + AI Coach + quizzes)_
 
-## Getting Started
+### Enrollment Steps
 
 1. **Create an account** on [Skilljar](https://anthropic.skilljar.com) or [Coursera](https://www.coursera.org) (free).
-2. **Enroll** in Claude Code in Action.
-3. Have your `firstbuild` repo open alongside the course — you'll reference your own work throughout.
+1. **Enroll** in Claude Code in Action.
+1. Have your `firstbuild` repo open alongside the course — you'll use work you already completed instead of depending on a future assignment.
 
 ## Instructions
 
@@ -41,7 +44,7 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 
 ### Part 2 — Before/After Audit
 
-- [ ] Create a file called `workflow-audit.md` in your `fixthis` repo.
+- [ ] Create a file called `workflow-audit.md` in your `firstbuild` repo.
 - [ ] **Context Management Audit**: Compare your current `CLAUDE.md` files against the course's recommendations. What's missing? What would you change?
 - [ ] **Command Inventory**: List every Claude Code feature you've used so far (Plan Mode, `/init`, `@` mentions, custom commands, etc.). Then list every feature from the course you _haven't_ used yet.
 - [ ] **Workflow Replay**: Pick one task you completed in `firstbuild`. Describe how you'd approach it differently now, using techniques from the course.
@@ -49,7 +52,7 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 ### Part 3 — Apply One New Technique
 
 - [ ] Choose **one feature** from the course that you haven't used before (hooks, custom commands, MCP integration, or a GitHub workflow).
-- [ ] Apply it to your current `fixthis` assignment work.
+- [ ] Apply it to your `firstbuild` repo or to a small standalone practice branch created from `firstbuild`.
 - [ ] Document what you did, what happened, and whether it improved your workflow in `workflow-audit.md`.
 - [ ] **Add, commit, and push to GitHub**.
 
@@ -58,6 +61,10 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 - [ ] Complete the course on **both platforms** (Skilljar + Coursera). Compare the learning experiences in your audit.
 - [ ] Create a `.claude/commands/` custom command inspired by the course and use it in your workflow.
 - [ ] Set up a hook that automates something tedious in your development process. Document it.
+
+## Cross-Tool Takeaway
+
+Claude Code in Action is still useful even if you later spend time in Codex. The durable lesson is not one command name. It is the workflow shape: start from repo context, keep instructions durable, make the agent prove its work with checks, and treat review as the handoff where a human reasserts judgment. Those habits transfer directly.
 
 ## Rubric
 
@@ -70,7 +77,7 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 
 ## Submission
 
-Add `workflow-audit.md` to your `fixthis` repo and submit the GitHub link via [Gradescope](https://gradescope.com).
+Add `workflow-audit.md` to your `firstbuild` repo and submit the GitHub link via [Gradescope](https://www.gradescope.com/courses/1293005).
 
 ## Resources
 

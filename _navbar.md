@@ -1,1 +1,2 @@
-*  **[Syllabus](README.md)**
+- **[Syllabus](README.md)**
+- **[Instructor Guide](instructors.md)**
