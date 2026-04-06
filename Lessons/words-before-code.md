@@ -222,6 +222,8 @@ Build an automated quality gate system for your project:
 
 ## Additional Resources
 
+1. [Writing Requirements: An Engineering Perspective by Dani Roxberry](https://droxey.com/docs/#/compsci/sdlc/requirements?id=writing-requirements-an-engineering-perspective)
+
 ### Source Notes
 
 Start with the official docs and current model pages first. The remaining links add historical context, canonical books, or supporting examples.
