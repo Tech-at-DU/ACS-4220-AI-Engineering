@@ -1,10 +1,6 @@
 # Lab: Agent Web Reading Comprehension
 
-> **How well does your AI [agent](#term-agent) actually read the web?**
-
-| Course | Duration | Format | Difficulty |
-|---|---:|---|---|
-| AI Engineering | 75–90 min | Hands-on Lab | Intermediate |
+**Why this matters:** Silent failures are the worst kind. The page appears to load. The agent sounds confident. The output looks polished. Meanwhile, a large chunk of the page may have been truncated, never rendered, or never fetched in the first place. If you are building agents that rely on docs, research, or live web data, you need to know exactly where the pipeline fails and how to prove it.
 
 ## Table of Contents
 
@@ -44,10 +40,6 @@ They fetch pages. They flatten markup. They drop scripts. They hit [token](#term
 That is the problem this lab is built to expose.
 
 You will run an open-source benchmark that hides [canary markers](#term-canary-marker) across 10 documentation pages. A **canary marker** is a deliberately planted, unique string hidden in a page to test whether an agent actually reached that section. It is basically a tracer for the retrieval pipeline. If the agent finds the marker, that content probably made it through. If it misses it, something got dropped, truncated, or skipped.
-
-This is not a lab about vibes. It is a lab about evidence.
-
-> **Why this matters:** Silent failures are the worst kind. The page appears to load. The agent sounds confident. The output looks polished. Meanwhile, a large chunk of the page may have been truncated, never rendered, or never fetched in the first place. If you are building agents that rely on docs, research, or live web data, you need to know exactly where the pipeline fails and how to prove it.
 
 ## Vocabulary / Jargon
 
