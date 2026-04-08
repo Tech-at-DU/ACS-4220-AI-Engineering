@@ -331,11 +331,8 @@ If you finish early or want to push further:
 
 ## Submission
 
-Turn in the following:
+Turn in the following on Slack #acs-4220:
 
-- Baseline and improved score screenshots from `agentreadingtest.com/score/`
-- Your failure analysis table from Part 2
-- Your before/after comparison table from Part 3
 - Your answers to every question posed in the lab
 
 ## Resources
