@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # ACS 4220 Project Instructions
 
 ## Working Rules
@@ -65,3 +66,65 @@ README should preserve:
 - `Lessons/` holds the 12 lesson files
 - `Assignments/` holds assignments, tutorials, and the final project spec
 - Markdown lint config lives in [.markdownlint.jsonc](.markdownlint.jsonc)
+=======
+# ACS 4220: AI Engineering — Project Instructions
+
+## Brand Voice
+
+All `.md` files follow droxey's brand voice (enforced globally via `~/.Codex/AGENTS.md`).
+
+## Content Structure
+
+### Lesson Plans
+
+1. Learning Objectives ("By the end of this lesson, you will be able to...")
+2. Best Practices (5-6 bullets)
+3. Topic 1: Overview (600-1200 words, origins + analogies + real-world examples)
+4. Topic 2: Overview (600-1200 words, same depth)
+5. Break & Wrap Up (combined, key takeaway + before-next-class task)
+6. After Class Challenges (3 challenges, mix of context-building and standalone)
+7. Additional Resources (4-5 links)
+
+**Never include**: Minute-by-Minute tables, time markers, Reveal.js markup, mid-lesson activities.
+
+### Assignments
+
+1. Purpose (Why should I do this?)
+2. Setup (How to start)
+3. Instructions / Deliverables (What to do)
+4. Rubric: Needs Improvement / Basic / Proficient / Advanced (4 levels, never 3)
+5. Submission (Where to turn in)
+6. Resources (Where to learn more)
+
+## Token & Tool Optimization
+
+### Model Routing
+- **Default**: Sonnet 4.6 for implementation, edits, reviews
+- **Planning**: Opus for architecture decisions, complex multi-file reasoning
+- **Routine**: Haiku for formatting, boilerplate, simple reads
+
+### Context Discipline
+- **Subagents**: Use for any exploration reading 3+ files, research, or validation
+- **Compaction**: After completing each discrete task, compact. Preserve: modified file list, test commands, architectural decisions
+- **Scope narrowly**: One lesson or assignment per task. Don't load all 12 lessons at once
+- **Front-load context**: Key patterns are in this file — don't re-read lesson files to discover structure
+
+### File Editing
+- Use `Edit` over `Write` for existing files (sends diff, not full content)
+- Read only the lines you need (`offset` + `limit` params) — not entire files
+- Batch independent edits in parallel tool calls
+
+## Project Layout
+
+```
+Lessons/           # 12 lesson plans (weeks 1-6, 2 per week)
+Assignments/       # 3 assignments + 3 tutorials + final project
+Images/            # Slide headers and diagrams
+.Codex/           # This config directory
+```
+
+## Gotchas
+- Lesson filenames use slugs (e.g., `copilot-neq-coworker.md`), not numbers
+- README.md serves as the syllabus — has schedule table, deliverables, and resources
+- `_sidebar.md` is the Docsify navigation — update when adding/renaming files
+>>>>>>> Stashed changes
