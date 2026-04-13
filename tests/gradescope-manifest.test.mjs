@@ -14,8 +14,11 @@ test("the checked-in Gradescope manifest builds a clean dry-run plan", async () 
 
   assert.equal(plan.summary.blockedCount, 0);
   assert.equal(plan.summary.syncReady, false);
-  assert.equal(plan.summary.plannedCount, plan.items.length);
   assert.equal(plan.items.length, 8);
+  assert.equal(
+    plan.summary.createCount + plan.summary.updateCount + plan.summary.plannedCount,
+    plan.items.length
+  );
   assert.ok(
     plan.items.every(
       (item) =>
