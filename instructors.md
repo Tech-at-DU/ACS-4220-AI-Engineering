@@ -151,4 +151,3 @@ The test suite covers:
 
 1. There is no Gradescope sync script in this repo yet.
 1. The assignment type is still undecided, so the planner intentionally reports `planned` actions instead of `create` or `update`.
-1. If the course is LMS-linked and due dates are synced from the LMS, the LMS remains the source of truth for those dates.
