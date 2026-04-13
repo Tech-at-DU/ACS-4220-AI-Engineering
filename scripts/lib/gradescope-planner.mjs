@@ -128,16 +128,24 @@ function resolveCoursePlan({ manifest, readmeTitle, createNewCourse }) {
   };
 }
 
-function summarizeAssignmentAction({ errors, syncReady, gradescopeAssignmentId }) {
+export function rubricMarkdownHasPlanHeader(text) {
+  if (typeof text !== "string" || text.length === 0) return false;
+  return /^#{1,6}\s[^\n]*\bplan/im.test(text);
+}
+
+function summarizeAssignmentAction({ errors, rubricMarkdownText, gradescopeAssignmentId }) {
   if (errors.length > 0) {
     return "blocked";
   }
 
-  if (!syncReady) {
+  if (rubricMarkdownHasPlanHeader(rubricMarkdownText)) {
     return "planned";
   }
 
-  return gradescopeAssignmentId ? "update" : "create";
+  const hasId =
+    typeof gradescopeAssignmentId === "string" &&
+    gradescopeAssignmentId.trim().length > 0;
+  return hasId ? "update" : "create";
 }
 
 export async function buildGradescopePlan({
@@ -191,12 +199,13 @@ export async function buildGradescopePlan({
       errors.push(`Missing source file: ${assignment.sourceFile}`);
     }
 
+    let rubricMarkdownText = "";
     try {
-      const rubricMarkdown = await fs.readFile(rubricMarkdownPath, "utf8");
-      if (!rubricMarkdown.includes("## Paste-Ready Markdown")) {
+      rubricMarkdownText = await fs.readFile(rubricMarkdownPath, "utf8");
+      if (!rubricMarkdownText.includes("## Paste-Ready Markdown")) {
         errors.push(`Rubric Markdown export is missing the paste-ready section.`);
       }
-      if (!rubricMarkdown.includes("```md")) {
+      if (!rubricMarkdownText.includes("```md")) {
         errors.push(`Rubric Markdown export is missing the fenced Markdown block.`);
       }
     } catch {
@@ -247,7 +256,7 @@ export async function buildGradescopePlan({
       null;
     const action = summarizeAssignmentAction({
       errors,
-      syncReady: course.syncReady && course.errors.length === 0,
+      rubricMarkdownText,
       gradescopeAssignmentId: assignment.gradescopeAssignmentId
     });
 

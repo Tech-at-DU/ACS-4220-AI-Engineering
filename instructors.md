@@ -21,7 +21,7 @@ This repo includes a Node-based Gradescope planning workflow. It does three thin
 1. Generates both paste-ready Markdown and structured JSON rubric files.
 1. Builds a dry-run Gradescope plan from a checked-in manifest.
 
-The workflow does **not** sync anything to Gradescope yet. That remains intentionally blocked until the assignment type decision is locked.
+The workflow does **not** sync anything to Gradescope yet.
 
 ## Files
 
@@ -114,7 +114,7 @@ In that mode:
 
 1. `gradescopeCourseId` must be present in the manifest.
 1. The plan uses the existing course instead of creating a new one.
-1. Assignment actions remain `planned` until the assignment type decision is locked.
+1. Assignment actions are `create`, `update`, or `planned` depending on per-item state (see [Current Limits](#current-limits)).
 
 ## New Course Mode
 
@@ -150,4 +150,8 @@ The test suite covers:
 ## Current Limits
 
 1. There is no Gradescope sync script in this repo yet.
-1. The assignment type is still undecided, so the planner intentionally reports `planned` actions instead of `create` or `update`.
+1. Per-item assignment actions follow this precedence:
+   1. `blocked` — the item has validation errors (e.g. due-date drift).
+   1. `planned` — the rubric Markdown file contains the word `plan` in any heading (case-insensitive).
+   1. `update` — the item has a `gradescopeAssignmentId` in the manifest.
+   1. `create` — the item has no `gradescopeAssignmentId`.

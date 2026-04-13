@@ -4,6 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import { promises as fs } from "node:fs";
 import { buildGradescopePlan } from "../scripts/lib/gradescope-planner.mjs";
+import { rubricMarkdownHasPlanHeader } from "../scripts/lib/gradescope-planner.mjs";
 
 async function withTempRepo(run) {
   const rootDir = await fs.mkdtemp(path.join(os.tmpdir(), "gradescope-plan-"));
@@ -147,8 +148,8 @@ test("buildGradescopePlan uses the README title when planning a new course", asy
     assert.equal(plan.summary.courseAction, "create");
     assert.equal(plan.summary.resolvedCourseTitle, "Demo Course Title");
     assert.equal(plan.summary.syncReady, false);
-    assert.equal(plan.summary.plannedCount, 1);
-    assert.equal(plan.items[0].action, "planned");
+    assert.equal(plan.summary.createCount, 1);
+    assert.equal(plan.items[0].action, "create");
   });
 });
 
@@ -211,5 +212,141 @@ test("buildGradescopePlan blocks items when README due dates drift from the mani
       plan.items[0].errors.join("\n"),
       /README due date mismatch/
     );
+  });
+});
+
+test("rubricMarkdownHasPlanHeader detects plan in headers case-insensitively", () => {
+  assert.equal(rubricMarkdownHasPlanHeader("## Plan\n\nsome text"), true);
+  assert.equal(rubricMarkdownHasPlanHeader("# Planning Overview\n\ntext"), true);
+  assert.equal(rubricMarkdownHasPlanHeader("### PLAN\n\ntext"), true);
+  assert.equal(rubricMarkdownHasPlanHeader("## Implementation Plan\n\ntext"), true);
+  assert.equal(rubricMarkdownHasPlanHeader("## plan-based scoring\n\ntext"), true);
+  assert.equal(rubricMarkdownHasPlanHeader("## Scope\n\ntext"), false);
+  assert.equal(rubricMarkdownHasPlanHeader("## Airplane\n\ntext"), false);
+  assert.equal(rubricMarkdownHasPlanHeader(""), false);
+  assert.equal(rubricMarkdownHasPlanHeader(null), false);
+});
+
+test("buildGradescopePlan returns 'planned' when rubric markdown has a plan header", async () => {
+  await withTempRepo(async (rootDir) => {
+    await fs.writeFile(
+      path.join(rootDir, "Assignments", "rubrics", "sample-assignment-rubric.md"),
+      `# Sample Assignment Rubric
+
+## Plan
+
+## Paste-Ready Markdown
+
+\`\`\`md
+## Scope
+
+- **Needs Improvement**: Missing work
+- **Basic**: Partial work
+- **Proficient**: Strong work
+- **Advanced**: Excellent work
+\`\`\`
+`,
+      "utf8"
+    );
+
+    const manifest = {
+      schemaVersion: 1,
+      course: {
+        mode: "existing",
+        gradescopeCourseId: "1293005",
+        gradescopeCourseUrl: "https://www.gradescope.com/courses/1293005",
+        readmeTitleFile: "README.md",
+        timezone: "America/Los_Angeles",
+        creationDefaults: {
+          courseNumber: "ACS 4220",
+          courseName: null,
+          term: "Spring",
+          year: 2026,
+          school: "Dominican University of California",
+          useReadmeTitleWhenNew: true
+        },
+        assignmentTypeDecision: {
+          choiceLocked: true,
+          selectedType: "Homework / Problem Set",
+          candidateTypes: ["Homework / Problem Set", "Online Assignment"],
+          blockedReason: null
+        },
+        defaults: { points: 100 }
+      },
+      assignments: [
+        {
+          slug: "sample-assignment",
+          title: "Sample Assignment",
+          assignmentTypeOverride: null,
+          releaseAt: "2026-03-23T08:00:00-07:00",
+          dueAt: "2026-03-30T23:59:00-07:00",
+          points: 100,
+          sourceFile: "Assignments/sample-assignment.md",
+          rubricMarkdownFile: "Assignments/rubrics/sample-assignment-rubric.md",
+          rubricJsonFile: "Assignments/rubrics/sample-assignment-rubric.json",
+          gradescopeAssignmentId: null
+        }
+      ]
+    };
+
+    const manifestPath = path.join(rootDir, "automation", "gradescope.course.json");
+    await fs.writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
+
+    const plan = await buildGradescopePlan({ rootDir, manifestPath, createNewCourse: false });
+
+    assert.equal(plan.summary.plannedCount, 1);
+    assert.equal(plan.items[0].action, "planned");
+  });
+});
+
+test("buildGradescopePlan returns 'update' when gradescopeAssignmentId is present", async () => {
+  await withTempRepo(async (rootDir) => {
+    const manifest = {
+      schemaVersion: 1,
+      course: {
+        mode: "existing",
+        gradescopeCourseId: "1293005",
+        gradescopeCourseUrl: "https://www.gradescope.com/courses/1293005",
+        readmeTitleFile: "README.md",
+        timezone: "America/Los_Angeles",
+        creationDefaults: {
+          courseNumber: "ACS 4220",
+          courseName: null,
+          term: "Spring",
+          year: 2026,
+          school: "Dominican University of California",
+          useReadmeTitleWhenNew: true
+        },
+        assignmentTypeDecision: {
+          choiceLocked: true,
+          selectedType: "Homework / Problem Set",
+          candidateTypes: ["Homework / Problem Set", "Online Assignment"],
+          blockedReason: null
+        },
+        defaults: { points: 100 }
+      },
+      assignments: [
+        {
+          slug: "sample-assignment",
+          title: "Sample Assignment",
+          assignmentTypeOverride: null,
+          releaseAt: "2026-03-23T08:00:00-07:00",
+          dueAt: "2026-03-30T23:59:00-07:00",
+          points: 100,
+          sourceFile: "Assignments/sample-assignment.md",
+          rubricMarkdownFile: "Assignments/rubrics/sample-assignment-rubric.md",
+          rubricJsonFile: "Assignments/rubrics/sample-assignment-rubric.json",
+          gradescopeAssignmentId: "99001"
+        }
+      ]
+    };
+
+    const manifestPath = path.join(rootDir, "automation", "gradescope.course.json");
+    await fs.writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
+
+    const plan = await buildGradescopePlan({ rootDir, manifestPath, createNewCourse: false });
+
+    assert.equal(plan.summary.updateCount, 1);
+    assert.equal(plan.items[0].action, "update");
   });
 });
