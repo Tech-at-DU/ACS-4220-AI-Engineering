@@ -30,3 +30,4 @@
   - [The Prompt Lab](Assignments/tutorial-1-prompt-engineering.md)
   - [Claude Code in Action](Assignments/tutorial-2-claude-code-in-action.md)
   - [Mastering Claude AI](Assignments/tutorial-3-mastering-claude-ai.md)
+- **[Tips](tips/README.md)**
