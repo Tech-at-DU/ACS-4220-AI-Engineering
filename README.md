@@ -117,6 +117,10 @@ Instructors managing Gradescope setup can use the Node-based planning workflow d
 
 ## Additional Resources
 
+### Tips
+
+- [Tips](tips/README.md): Field notes, fixes, and quick wins for working with AI tooling in this course — including how to stop Claude Code from burning tokens on git status every session.
+
 ### Source Notes
 
 Start with the official docs and current model pages first. The remaining links add historical context, canonical books, or supporting examples.
