@@ -19,6 +19,7 @@ EXCLUDE_MARKDOWN = {
 EXCLUDED_PATH_PARTS = {
     ".git",
     "node_modules",
+    ".claude",
 }
 EXCLUDED_PATHS = {
     Path("automation/out"),

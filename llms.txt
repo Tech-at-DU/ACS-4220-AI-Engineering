@@ -55,12 +55,9 @@ Use this file as a navigation map. Prefer markdown files directly instead of ren
 
 - [Lab: Agent Web Reading Comprehension](Labs/agent-reading-test.md): Labs/agent-reading-test.md
 
-## .claude
-
-- [ACS 4220 Project Instructions](.claude/CLAUDE.md): .claude/CLAUDE.md
-
 ## .codex
 
+- [llms-sitemap skill](.codex/skills/llms-sitemap/SKILL.md): .codex/skills/llms-sitemap/SKILL.md
 - [llms-sitemap skill](.codex/skills/llms-sitemap/SKILL.md): .codex/skills/llms-sitemap/SKILL.md
 
 ## Optional
