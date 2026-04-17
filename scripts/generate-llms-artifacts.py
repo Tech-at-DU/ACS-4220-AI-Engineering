@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 from pathlib import Path
+import subprocess
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_SITEMAP = REPO_ROOT / "SITEMAP.md"
@@ -15,14 +16,48 @@ EXCLUDE_MARKDOWN = {
     "SITEMAP.md",
 }
 
+EXCLUDED_PATH_PARTS = {
+    ".git",
+    "node_modules",
+    ".claude",
+}
+EXCLUDED_PATHS = {
+    Path("automation/out"),
+}
+
+
+def _is_excluded_markdown_path(path: Path) -> bool:
+    if path.name in EXCLUDE_MARKDOWN:
+        return True
+    if any(part in EXCLUDED_PATH_PARTS for part in path.parts):
+        return True
+    return any(path == excluded or excluded in path.parents for excluded in EXCLUDED_PATHS)
+
 
 def markdown_files() -> list[Path]:
+    try:
+        result = subprocess.run(
+            ["git", "ls-files", "--", "*.md"],
+            cwd=REPO_ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except (OSError, subprocess.CalledProcessError):
+        files = []
+        for abs_path in REPO_ROOT.rglob("*.md"):
+            rel_path = abs_path.relative_to(REPO_ROOT)
+            if _is_excluded_markdown_path(rel_path):
+                continue
+            files.append(rel_path)
+        return sorted(files)
+
     files = []
-    for abs_path in REPO_ROOT.rglob("*.md"):
-        if ".git" in abs_path.parts:
+    for line in result.stdout.splitlines():
+        if not line:
             continue
-        rel_path = abs_path.relative_to(REPO_ROOT)
-        if rel_path.name in EXCLUDE_MARKDOWN:
+        rel_path = Path(line)
+        if _is_excluded_markdown_path(rel_path):
             continue
         files.append(rel_path)
     return sorted(files)
