@@ -2,12 +2,9 @@
 
 > Generated from markdown files in this repository.
 
-## .claude
-
-- [ACS 4220 Project Instructions](.claude/CLAUDE.md)
-
 ## .codex
 
+- [llms-sitemap skill](.codex/skills/llms-sitemap/SKILL.md)
 - [llms-sitemap skill](.codex/skills/llms-sitemap/SKILL.md)
 
 ## Assignments

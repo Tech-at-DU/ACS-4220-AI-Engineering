@@ -3,8 +3,8 @@
 Generate and maintain three docs artifacts for this course repo:
 
 1. `SITEMAP.md` — full markdown map of the repo.
-2. `llms.txt` — compact agent navigation index.
-3. `llms-full.txt` — concatenated markdown corpus.
+1. `llms.txt` — compact agent navigation index.
+1. `llms-full.txt` — concatenated markdown corpus.
 
 ## Why this shape (April 2026)
 
@@ -16,8 +16,8 @@ This skill follows the `llms.txt` proposal format and observed agent-doc best pr
 
 References:
 
-- https://llmstxt.org/
-- https://www.agentdocsspec.com/spec/
+- [llmstxt.org](https://llmstxt.org/)
+- [Agent Docs Spec](https://www.agentdocsspec.com/spec/)
 
 ## Inputs
 
@@ -43,11 +43,11 @@ python3 scripts/generate-llms-artifacts.py
    npm run lint:md
    ```
 
-2. Sanity-check size and structure:
+1. Sanity-check size and structure:
 
    ```bash
    wc -c llms.txt llms-full.txt SITEMAP.md
    rg "^# |^## |^> |^- \[" llms.txt
    ```
 
-3. If new markdown files are added or renamed, rerun the generator.
+1. If new markdown files are added or renamed, rerun the generator.

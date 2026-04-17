@@ -3,19 +3,6 @@
 > Concatenated markdown corpus for this repository.
 
 ---
-FILE: .claude/CLAUDE.md
----
-
-# ACS 4220 Project Instructions
-
-Repo-specific rules live in [AGENTS.md](AGENTS.md).
-
-For Markdown work in this repo:
-
-- Follow the project rules in `AGENTS.md`
-- Run `npm run lint:md` after Markdown edits
-
----
 FILE: .codex/skills/llms-sitemap/SKILL.md
 ---
 
@@ -24,8 +11,8 @@ FILE: .codex/skills/llms-sitemap/SKILL.md
 Generate and maintain three docs artifacts for this course repo:
 
 1. `SITEMAP.md` — full markdown map of the repo.
-2. `llms.txt` — compact agent navigation index.
-3. `llms-full.txt` — concatenated markdown corpus.
+1. `llms.txt` — compact agent navigation index.
+1. `llms-full.txt` — concatenated markdown corpus.
 
 ## Why this shape (April 2026)
 
@@ -37,12 +24,12 @@ This skill follows the `llms.txt` proposal format and observed agent-doc best pr
 
 References:
 
-- https://llmstxt.org/
-- https://www.agentdocsspec.com/spec/
+- [llmstxt.org](https://llmstxt.org/)
+- [Agent Docs Spec](https://www.agentdocsspec.com/spec/)
 
 ## Inputs
 
-- Repository markdown files discovered recursively (`**/*.md`).
+- Repository markdown files (`**/*.md`, excluding `.git` internals and generated `SITEMAP.md` source recursion).
 
 ## Command
 
@@ -64,14 +51,72 @@ python3 scripts/generate-llms-artifacts.py
    npm run lint:md
    ```
 
-2. Sanity-check size and structure:
+1. Sanity-check size and structure:
 
    ```bash
    wc -c llms.txt llms-full.txt SITEMAP.md
    rg "^# |^## |^> |^- \[" llms.txt
    ```
 
-3. If new markdown files are added or renamed, rerun the generator.
+1. If new markdown files are added or renamed, rerun the generator.
+
+---
+FILE: .codex/skills/llms-sitemap/SKILL.md
+---
+
+# llms-sitemap skill
+
+Generate and maintain three docs artifacts for this course repo:
+
+1. `SITEMAP.md` — full markdown map of the repo.
+1. `llms.txt` — compact agent navigation index.
+1. `llms-full.txt` — concatenated markdown corpus.
+
+## Why this shape (April 2026)
+
+This skill follows the `llms.txt` proposal format and observed agent-doc best practices:
+
+- Keep `llms.txt` small and structured (H1, summary blockquote, H2 sections, markdown links).
+- Keep complete corpus in a companion file (`llms-full.txt`) instead of overloading `llms.txt`.
+- Prefer markdown links and markdown sources to reduce agent conversion loss.
+
+References:
+
+- [llmstxt.org](https://llmstxt.org/)
+- [Agent Docs Spec](https://www.agentdocsspec.com/spec/)
+
+## Inputs
+
+- Repository markdown files (`**/*.md`, excluding `.git` internals and generated `SITEMAP.md` source recursion).
+
+## Command
+
+```bash
+python3 scripts/generate-llms-artifacts.py
+```
+
+## Output contract
+
+- `SITEMAP.md` grouped by top-level directory.
+- `llms.txt` with concise discovery-first sections.
+- `llms-full.txt` containing each markdown file with clear file delimiters.
+
+## Validation checklist
+
+1. Run markdown lint:
+
+   ```bash
+   npm run lint:md
+   ```
+
+1. Sanity-check size and structure:
+
+   ```bash
+   wc -c llms.txt llms-full.txt SITEMAP.md
+   rg "^# |^## |^> |^- \[" llms.txt
+   ```
+
+1. If new markdown files are added or renamed, rerun the generator.
 
 ---
 FILE: AGENTS.md
