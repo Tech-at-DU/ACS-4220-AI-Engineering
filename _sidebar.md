@@ -1,5 +1,10 @@
 - **[Syllabus](README.md)**
 - **[Instructor Guide](instructors.md)**
+- **Course Docs Ops**
+  - [SITEMAP](SITEMAP.md)
+  - [llms.txt](llms.txt)
+  - [llms-full.txt](llms-full.txt)
+  - [llms-sitemap skill](.codex/skills/llms-sitemap/SKILL.md)
 - **Week 1 — Foundations**
   - [Copilot ≠ Coworker](Lessons/copilot-neq-coworker.md)
   - [Memory Is Everything](Lessons/memory-is-everything.md)
