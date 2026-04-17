@@ -14,6 +14,7 @@
    1. [Final Presentation](#final-presentation)
 1. [Late Assignment Policy](#late-assignment-policy)
 1. [Instructor Automation](#instructor-automation)
+1. [Course Documentation Ops](#course-documentation-ops)
 1. [Additional Resources](#additional-resources)
 
 
@@ -114,6 +115,15 @@ If you require accommodations or have extenuating circumstances such as prolonge
 ## Instructor Automation
 
 Instructors managing Gradescope setup can use the Node-based planning workflow documented in [instructors.md](instructors.md). The guide covers rubric export, structured rubric JSON, the Gradescope manifest, the `gradescope:plan` dry-run, the `--new` course-planning flag, and the test suite.
+
+## Course Documentation Ops
+
+Use these generated artifacts for fast navigation and agent ingestion:
+
+- [SITEMAP.md](SITEMAP.md): Full markdown sitemap grouped by top-level directory.
+- [llms.txt](llms.txt): Compact `llms.txt` index for agent discovery.
+- [llms-full.txt](llms-full.txt): Full markdown corpus export for offline context loading.
+- [llms-sitemap skill](.codex/skills/llms-sitemap/SKILL.md): Skill instructions for regenerating all three files.
 
 ## Additional Resources
 
