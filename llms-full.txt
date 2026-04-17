@@ -42,7 +42,7 @@ References:
 
 ## Inputs
 
-- Git-tracked markdown files (`git ls-files '*.md'`).
+- Repository markdown files discovered recursively (`**/*.md`).
 
 ## Command
 
