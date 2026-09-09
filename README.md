@@ -143,6 +143,7 @@ Start with the official docs and current model pages first. The remaining links 
 - [Context7 MCP Server](https://github.com/upstash/context7): Live library documentation for your development workflow.
 - [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook): Recipes and patterns for building with Claude.
 - [How OpenAI Uses Codex](https://cdn.openai.com/pdf/6a2631dc-783e-479b-b1a4-af0cfbd38630/how-openai-uses-codex.pdf): Official engineering examples showing how Codex is used in production workflows.
+- [The box an agent runs in — Rohan Adwankar](https://rohanadwankar.github.io/posts/platforms.html): Technical notes comparing how coding-agent platforms isolate and run agents (e.g. Firecracker microVMs), useful context for where agent work actually executes.
 
 ### Claude Code Access for Students
 
