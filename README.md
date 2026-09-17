@@ -144,6 +144,7 @@ Start with the official docs and current model pages first. The remaining links 
 - [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook): Recipes and patterns for building with Claude.
 - [How OpenAI Uses Codex](https://cdn.openai.com/pdf/6a2631dc-783e-479b-b1a4-af0cfbd38630/how-openai-uses-codex.pdf): Official engineering examples showing how Codex is used in production workflows.
 - [The box an agent runs in — Rohan Adwankar](https://rohanadwankar.github.io/posts/platforms.html): Technical notes comparing how coding-agent platforms isolate and run agents (e.g. Firecracker microVMs), useful context for where agent work actually executes.
+- [Toward Recursive Self-Improvement: How GLM Built Its Own Inference Infrastructure](https://z.ai/blog/glm-built-its-inference-infrastructure): Zhipu GLM engineering write-up on using the model to improve its own inference stack (agent loop, validation, hardware adaptation).
 
 ### Claude Code Access for Students
 
