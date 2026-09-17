@@ -71,7 +71,7 @@ Each student: 7 minutes + 3 minutes Q&A.
 
 ### Final Deliverables
 
-1. GitHub repo with complete project (submit via [Gradescope](https://www.gradescope.com/courses/1293005)).
+1. GitHub repo with complete project (submit via the course dropbox).
 1. Live presentation on Day 14.
 1. README covering what you built, skills demonstrated, and takeaways.
 
@@ -87,8 +87,6 @@ Each student: 7 minutes + 3 minutes Q&A.
 | **Work Ethic** | < 10 commits, work done last minute | Sporadic commits | Consistent commits across the project period | Iterative refinement visible in commit history |
 
 ## Submission
-
-Submit your GitHub repo link via [Gradescope](https://www.gradescope.com/courses/1293005). Include your live presentation on Day 14.
 
 ## Resources
 

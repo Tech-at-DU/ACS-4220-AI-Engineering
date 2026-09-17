@@ -102,7 +102,7 @@ The tutorial is Claude-centered, but the engineering takeaway transfers cleanly.
 
 ## Submission
 
-Add `prompt-lab-journal.md` to your `prompt-lab` repo and submit the GitHub link via [Gradescope](https://www.gradescope.com/courses/1293005).
+Add `prompt-lab-journal.md` to your `prompt-lab` repo and submit the GitHub link via the course dropbox.
 
 ## Resources
 
