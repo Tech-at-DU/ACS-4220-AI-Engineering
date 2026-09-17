@@ -77,7 +77,7 @@ Claude Code in Action is still useful even if you later spend time in Codex. The
 
 ## Submission
 
-Add `workflow-audit.md` to your `firstbuild` repo and submit the GitHub link via [Gradescope](https://www.gradescope.com/courses/1293005).
+Add `workflow-audit.md` to your `firstbuild` repo and submit the GitHub link via the course dropbox.
 
 ## Resources
 

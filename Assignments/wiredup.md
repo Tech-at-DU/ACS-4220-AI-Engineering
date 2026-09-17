@@ -89,8 +89,6 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 
 ## Submission
 
-Submit your GitHub repo link via [Gradescope](https://www.gradescope.com/courses/1293005).
-
 ## Resources
 
 ### Lesson Plans
