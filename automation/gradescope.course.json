@@ -8,7 +8,7 @@
     "timezone": "America/Los_Angeles",
     "creationDefaults": {
       "courseNumber": "ACS 4220",
-      "courseName": "AI Engineering",
+      "courseName": null,
       "term": "Spring",
       "year": 2026,
       "school": "Dominican University of California",
@@ -25,25 +25,9 @@
     },
     "defaults": {
       "points": 100
-    },
-    "learnerDocs": {
-      "citeGradescope": false,
-      "reason": "ACS standing 2026-09-17: no Gradescope in lesson plans or course README unless assignment still exists in-repo and is confirmed live. Instructor automation manifest may keep course IDs."
     }
   },
   "assignments": [
-    {
-      "slug": "firstbuild",
-      "title": "firstbuild",
-      "assignmentTypeOverride": null,
-      "releaseAt": "2026-03-23T08:00:00-07:00",
-      "dueAt": "2026-04-08T23:59:00-07:00",
-      "points": 100,
-      "sourceFile": "Assignments/firstbuild.md",
-      "rubricMarkdownFile": "Assignments/rubrics/firstbuild-rubric.md",
-      "rubricJsonFile": "Assignments/rubrics/firstbuild-rubric.json",
-      "gradescopeAssignmentId": null
-    },
     {
       "slug": "tutorial-1-prompt-engineering",
       "title": "Tutorial 1: The Prompt Lab",
@@ -54,6 +38,18 @@
       "sourceFile": "Assignments/tutorial-1-prompt-engineering.md",
       "rubricMarkdownFile": "Assignments/rubrics/tutorial-1-prompt-engineering-rubric.md",
       "rubricJsonFile": "Assignments/rubrics/tutorial-1-prompt-engineering-rubric.json",
+      "gradescopeAssignmentId": null
+    },
+    {
+      "slug": "firstbuild",
+      "title": "firstbuild",
+      "assignmentTypeOverride": null,
+      "releaseAt": "2026-03-23T08:00:00-07:00",
+      "dueAt": "2026-04-08T23:59:00-07:00",
+      "points": 100,
+      "sourceFile": "Assignments/firstbuild.md",
+      "rubricMarkdownFile": "Assignments/rubrics/firstbuild-rubric.md",
+      "rubricJsonFile": "Assignments/rubrics/firstbuild-rubric.json",
       "gradescopeAssignmentId": null
     },
     {
@@ -105,11 +101,11 @@
       "gradescopeAssignmentId": null
     },
     {
-      "slug": "final-project",
-      "title": "Final Project",
+      "slug": "final-presentation",
+      "title": "Final Presentation",
       "assignmentTypeOverride": null,
-      "releaseAt": "2026-04-27T08:00:00-07:00",
-      "dueAt": "2026-05-08T23:59:00-07:00",
+      "releaseAt": "2026-05-04T08:00:00-07:00",
+      "dueAt": "2026-05-06T23:59:00-07:00",
       "points": 100,
       "sourceFile": "Assignments/makeanything.md",
       "rubricMarkdownFile": "Assignments/rubrics/makeanything-rubric.md",
@@ -117,11 +113,11 @@
       "gradescopeAssignmentId": null
     },
     {
-      "slug": "final-presentation",
-      "title": "Final Presentation",
+      "slug": "final-project",
+      "title": "Final Project",
       "assignmentTypeOverride": null,
-      "releaseAt": "2026-05-04T08:00:00-07:00",
-      "dueAt": "2026-05-06T23:59:00-07:00",
+      "releaseAt": "2026-04-27T08:00:00-07:00",
+      "dueAt": "2026-05-08T23:59:00-07:00",
       "points": 100,
       "sourceFile": "Assignments/makeanything.md",
       "rubricMarkdownFile": "Assignments/rubrics/makeanything-rubric.md",
