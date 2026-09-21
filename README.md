@@ -17,7 +17,6 @@
 1. [Course Documentation Ops](#course-documentation-ops)
 1. [Additional Resources](#additional-resources)
 
-
 ## Course Description
 
 _This course treats AI engineering like a real job. You will ship real work with coding agents that plan, use tools, inspect a codebase, and operate against live verification steps. We use Claude Code and Codex as parallel workflow hosts for the same engineering habits: scoped tasks, durable repo instructions, live context, tool use, verification, and review. By the end of the course, you will know how to design the context those systems receive, evaluate the work they produce, and decide when a faster agent loop is worth the risk and cost._
@@ -35,7 +34,6 @@ By the end of the course, you will be able to&hellip;
 1. Compare assistant-style autocomplete workflows with agent-driven workflows and choose the right one for the task.
 1. Design and implement agent-assisted features in new and existing codebases using durable repo context, tests, and review.
 1. Evaluate failure modes, costs, and integration tradeoffs when using Claude Code, Codex, MCP servers, and related tooling.
-
 
 ## Schedule
 
@@ -63,8 +61,6 @@ _Product details in this course are current as of April 2026. Before you buy a p
 
 ### Deliverables
 
-_ALL deliverables **must** be submitted to [Gradescope](https://www.gradescope.com/courses/1293005) by **11:59PM PST** on the date due._
-
 📚 Assignment | 🔗 Criteria | 📆 Due Date
 :-- | --- | ---
 :test_tube: **[Tutorial 1: The Prompt Lab](Assignments/tutorial-1-prompt-engineering.md)** | [Requirements](Assignments/tutorial-1-prompt-engineering.md) | March 30, 2026 _(Monday)_
@@ -78,10 +74,6 @@ _ALL deliverables **must** be submitted to [Gradescope](https://www.gradescope.c
 
 ## Evaluation
 
-We're using [Gradescope](https://www.gradescope.com/courses/1293005) for all submissions and feedback. When grades post, you'll get notified right away so you can see your feedback. You can submit a regrade request if you think there's a mistake.
-
-Your [Gradescope](https://www.gradescope.com/courses/1293005) login is your Dominican University email.
-
 **To pass this course, complete the following**:
 
 - Complete all [assignments](#deliverables), the [final project](#final-project), and the [final presentation](#final-presentation) as assigned in class and described in the sections below.
@@ -89,8 +81,6 @@ Your [Gradescope](https://www.gradescope.com/courses/1293005) login is your Domi
 - Actively participate in class and abide by the attendance policy.
 
 ### Assignments
-
-Three hands-on assignments build on each other throughout the course. Each one validates a core skill set — you'll build something new, fix something old, and wire tools together. Three interactive tutorials reinforce foundational skills at key moments — prompt engineering, CLI mastery, and advanced architecture patterns. All assignments and tutorials must be turned in on [Gradescope](https://www.gradescope.com/courses/1293005).
 
 :star: **Coursera Certification Opportunity:** Tutorial 3 ([Mastering Claude AI](Assignments/tutorial-3-mastering-claude-ai.md)) is part of a Coursera specialization that offers a completion certificate with paid enrollment. If you're graduating in May and building your portfolio, it can serve as one more signal of serious follow-through alongside the actual project work you show. Free audit covers all the course content without the certificate.
 
@@ -114,7 +104,7 @@ If you require accommodations or have extenuating circumstances such as prolonge
 
 ## Instructor Automation
 
-Instructors managing Gradescope setup can use the Node-based planning workflow documented in [instructors.md](instructors.md). The guide covers rubric export, structured rubric JSON, the Gradescope manifest, the `gradescope:plan` dry-run, the `--new` course-planning flag, and the test suite.
+Instructors managing course operations can use the Node-based planning workflow documented in [instructors.md](instructors.md).
 
 ## Course Documentation Ops
 

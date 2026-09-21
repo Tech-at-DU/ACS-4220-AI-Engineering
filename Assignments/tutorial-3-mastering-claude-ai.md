@@ -86,7 +86,7 @@ This specialization focuses on Claude-specific material, but the architecture pa
 
 ## Submission
 
-Add `architecture.md` and `poc-notes.md` to your **final project** repo and submit the GitHub link via [Gradescope](https://www.gradescope.com/courses/1293005).
+Add `architecture.md` and `poc-notes.md` to your **final project** repo and submit the GitHub link via the course dropbox.
 
 ## Resources
 
