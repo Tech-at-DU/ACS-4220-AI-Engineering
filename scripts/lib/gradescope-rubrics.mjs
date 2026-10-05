@@ -172,10 +172,6 @@ export async function exportRubrics({
   const exports = [];
 
   for (const name of assignmentNames) {
-    if (name.startsWith("Sample_")) {
-      continue;
-    }
-
     const sourcePath = path.join(assignmentsDir, name);
     const sourceText = await fs.readFile(sourcePath, "utf8");
     if (!sourceText.includes("## Rubric")) {

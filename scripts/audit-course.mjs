@@ -17,7 +17,6 @@ const topLevelAssignmentFiles = fs
   .filter(
     (file) =>
       file.endsWith(".md") &&
-      !file.startsWith("Sample_") &&
       !file.includes("rubrics"),
   )
   .sort();
