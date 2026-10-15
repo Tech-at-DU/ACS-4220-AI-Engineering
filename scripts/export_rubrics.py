@@ -43,9 +43,6 @@ def display_path(path: Path) -> str:
 
 
 for path in ASSIGNMENTS:
-    if path.name.startswith("Sample_"):
-        continue
-
     text = path.read_text(encoding="utf-8", errors="replace")
     if "## Rubric" not in text:
         continue

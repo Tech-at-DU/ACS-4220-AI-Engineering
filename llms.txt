@@ -30,8 +30,6 @@ Use this file as a navigation map. Prefer markdown files directly instead of ren
 
 ## Assignments
 
-- [Course - Assignment Title](Assignments/Sample_Project.md): Assignments/Sample_Project.md
-- [Course - Assignment - Rubric](Assignments/Sample_Rubric.md): Assignments/Sample_Rubric.md
 - [:seedling: Firstbuild](Assignments/firstbuild.md): Assignments/firstbuild.md
 - [:spaghetti: Fixthis](Assignments/fixthis.md): Assignments/fixthis.md
 - [makeanything Project](Assignments/makeanything.md): Assignments/makeanything.md

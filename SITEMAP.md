@@ -9,8 +9,6 @@
 
 ## Assignments
 
-- [Course - Assignment Title](Assignments/Sample_Project.md)
-- [Course - Assignment - Rubric](Assignments/Sample_Rubric.md)
 - [:seedling: Firstbuild](Assignments/firstbuild.md)
 - [:spaghetti: Fixthis](Assignments/fixthis.md)
 - [makeanything Project](Assignments/makeanything.md)
