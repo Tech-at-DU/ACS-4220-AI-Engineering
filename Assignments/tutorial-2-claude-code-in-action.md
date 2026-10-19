@@ -83,10 +83,10 @@ Add `workflow-audit.md` to your `firstbuild` repo and submit the GitHub link via
 
 ### Lesson Plans
 
-- [**Day 05**: Words Before Code](../Lessons/words-before-code.md): Why specifications drive the entire workflow.
-- [**Day 06**: Nothing Survives First Contact](../Lessons/nothing-survives-first-contact.md): Testing against the real world.
-- [**Day 07**: Somebody Else's Spaghetti](../Lessons/somebody-elses-spaghetti.md): Working with code you didn't write.
-- [**Day 08**: House Rules](../Lessons/house-rules.md): Team conventions and linting with AI.
+- [**Day 05**: Words Before Code](/Lessons/words-before-code.md): Why specifications drive the entire workflow.
+- [**Day 06**: Nothing Survives First Contact](/Lessons/nothing-survives-first-contact.md): Testing against the real world.
+- [**Day 07**: Somebody Else's Spaghetti](/Lessons/somebody-elses-spaghetti.md): Working with code you didn't write.
+- [**Day 08**: House Rules](/Lessons/house-rules.md): Team conventions and linting with AI.
 
 ### External
 

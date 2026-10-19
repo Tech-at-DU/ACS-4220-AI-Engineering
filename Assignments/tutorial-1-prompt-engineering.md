@@ -108,8 +108,8 @@ Add `prompt-lab-journal.md` to your `prompt-lab` repo and submit the GitHub link
 
 ### Lesson Plans
 
-- [**Day 01**: Copilot ≠ Coworker](../Lessons/copilot-neq-coworker.md): How AI dev tools differ from autocomplete.
-- [**Day 02**: Memory Is Everything](../Lessons/memory-is-everything.md): How context shapes every response.
+- [**Day 01**: Copilot ≠ Coworker](/Lessons/copilot-neq-coworker.md): How AI dev tools differ from autocomplete.
+- [**Day 02**: Memory Is Everything](/Lessons/memory-is-everything.md): How context shapes every response.
 
 ### External
 

@@ -25,11 +25,11 @@ The workflow does **not** sync anything to Gradescope yet.
 
 ## Files
 
-1. [automation/gradescope.course.json](automation/gradescope.course.json) is the source of truth for course metadata, due dates, file links, and Gradescope IDs.
-1. [Assignments/rubrics](Assignments/rubrics) stores generated rubric exports.
-1. [scripts/export-rubrics.mjs](scripts/export-rubrics.mjs) generates rubric exports.
-1. [scripts/plan-gradescope-sync.mjs](scripts/plan-gradescope-sync.mjs) builds the dry-run plan.
-1. [tests/gradescope-rubrics.test.mjs](tests/gradescope-rubrics.test.mjs), [tests/gradescope-planner.test.mjs](tests/gradescope-planner.test.mjs), and [tests/gradescope-manifest.test.mjs](tests/gradescope-manifest.test.mjs) cover the rubric and planning logic.
+1. [automation/gradescope.course.json](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/blob/master/automation/gradescope.course.json) is the source of truth for course metadata, due dates, file links, and Gradescope IDs.
+1. [Assignments/rubrics](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/tree/master/Assignments/rubrics) stores generated rubric exports.
+1. [scripts/export-rubrics.mjs](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/blob/master/scripts/export-rubrics.mjs) generates rubric exports.
+1. [scripts/plan-gradescope-sync.mjs](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/blob/master/scripts/plan-gradescope-sync.mjs) builds the dry-run plan.
+1. [tests/gradescope-rubrics.test.mjs](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/blob/master/tests/gradescope-rubrics.test.mjs), [tests/gradescope-planner.test.mjs](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/blob/master/tests/gradescope-planner.test.mjs), and [tests/gradescope-manifest.test.mjs](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/blob/master/tests/gradescope-manifest.test.mjs) cover the rubric and planning logic.
 
 ## Rubric Exports
 
@@ -80,7 +80,7 @@ This JSON is the machine-readable layer for future UI automation. It exists beca
 
 ## Gradescope Manifest
 
-The manifest in [automation/gradescope.course.json](automation/gradescope.course.json) tracks:
+The manifest in [automation/gradescope.course.json](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/blob/master/automation/gradescope.course.json) tracks:
 
 1. Existing course metadata such as `gradescopeCourseId` and timezone.
 1. New-course defaults such as `courseNumber`, `term`, `year`, and `school`.
@@ -104,7 +104,7 @@ This command:
 1. Confirms each source assignment exists.
 1. Confirms each rubric Markdown and JSON export exists.
 1. Verifies due dates against the syllabus.
-1. Writes a dry-run plan to [automation/out/gradescope-plan.json](automation/out/gradescope-plan.json).
+1. Writes a dry-run plan to `automation/out/gradescope-plan.json`.
 
 ## Existing Course Mode
 

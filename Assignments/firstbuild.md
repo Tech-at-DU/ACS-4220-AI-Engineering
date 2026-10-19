@@ -90,7 +90,7 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 
 ### Lesson Plans
 
-- [**Day 01**: Copilot ≠ Coworker](../Lessons/copilot-neq-coworker.md): How autonomous dev tools differ from suggestion engines.
-- [**Day 02**: Memory Is Everything](../Lessons/memory-is-everything.md): Project instructions, scoped configs, and custom commands.
-- [**Day 04**: Thirteen Tiny Coworkers](../Lessons/thirteen-tiny-coworkers.md): Test-first development enforced by the workflow.
-- [**Day 05**: Words Before Code](../Lessons/words-before-code.md): Why your description is the primary artifact.
+- [**Day 01**: Copilot ≠ Coworker](/Lessons/copilot-neq-coworker.md): How autonomous dev tools differ from suggestion engines.
+- [**Day 02**: Memory Is Everything](/Lessons/memory-is-everything.md): Project instructions, scoped configs, and custom commands.
+- [**Day 04**: Thirteen Tiny Coworkers](/Lessons/thirteen-tiny-coworkers.md): Test-first development enforced by the workflow.
+- [**Day 05**: Words Before Code](/Lessons/words-before-code.md): Why your description is the primary artifact.

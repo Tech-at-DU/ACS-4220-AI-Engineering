@@ -224,6 +224,6 @@ Start with the official docs and current model pages first. The remaining links 
 
 1. [Claude Code Troubleshooting](https://code.claude.com/docs/en/troubleshooting): Official troubleshooting guide.
 1. [Claude Code How It Works](https://code.claude.com/docs/en/how-claude-code-works): Understanding the internals helps debug failures.
-1. [Debugging by Thinking](https://jvns.ca/blog/2019/06/23/a-few-debugging-tips/): Julia Evans' debugging tips (applicable to AI tools too).
+1. [What Does Debugging a Program Look Like?](https://jvns.ca/blog/2019/06/23/a-few-debugging-resources/): Julia Evans' debugging tips (applicable to AI tools too).
 1. [The Art of Debugging](https://www.amazon.com/Art-Debugging-GDB-DDD-Eclipse/dp/1593271743): Systematic debugging methodology.
 1. [OpenAI Codex](https://developers.openai.com/codex/): Official Codex documentation for coding-agent workflows and troubleshooting.

@@ -1,6 +1,6 @@
 # Tutorial 2: Claude Code in Action Rubric
 
-Source: [../tutorial-2-claude-code-in-action.md](../tutorial-2-claude-code-in-action.md)
+Source: [../tutorial-2-claude-code-in-action.md](/Assignments/tutorial-2-claude-code-in-action.md)
 
 ## Paste-Ready Markdown
 

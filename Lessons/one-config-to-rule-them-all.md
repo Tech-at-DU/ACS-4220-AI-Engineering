@@ -207,7 +207,7 @@ Create a reusable `.claude/` template that any team could adopt:
 
 Start with the official docs and current model pages first. The remaining links add historical context, canonical books, or supporting examples.
 
-1. [Claude Code for Teams](https://code.claude.com/docs/en/teams): Official documentation on team deployment.
+1. [Set Up Claude Code for Your Organization](https://code.claude.com/docs/en/admin-setup): Official documentation on team deployment.
 1. [Claude Code Best Practices: Teams](https://code.claude.com/docs/en/best-practices): Team-specific configuration recommendations.
 1. [The Technology Adoption Lifecycle](https://en.wikipedia.org/wiki/Technology_adoption_life_cycle): Framework for understanding how tools spread through organizations.
 1. [Measuring Developer Productivity](https://queue.acm.org/detail.cfm?id=3454124): ACM article on productivity metrics that actually work.

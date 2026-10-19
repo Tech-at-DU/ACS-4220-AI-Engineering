@@ -1,6 +1,6 @@
 # Wiredup Rubric
 
-Source: [../wiredup.md](../wiredup.md)
+Source: [../wiredup.md](/Assignments/wiredup.md)
 
 ## Paste-Ready Markdown
 

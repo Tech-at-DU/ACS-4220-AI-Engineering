@@ -1,6 +1,6 @@
 # Tutorial 1: The Prompt Lab Rubric
 
-Source: [../tutorial-1-prompt-engineering.md](../tutorial-1-prompt-engineering.md)
+Source: [../tutorial-1-prompt-engineering.md](/Assignments/tutorial-1-prompt-engineering.md)
 
 ## Paste-Ready Markdown
 
