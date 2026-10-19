@@ -61,64 +61,6 @@ python3 scripts/generate-llms-artifacts.py
 1. If new markdown files are added or renamed, rerun the generator.
 
 ---
-FILE: .codex/skills/llms-sitemap/SKILL.md
----
-
-# llms-sitemap skill
-
-Generate and maintain three docs artifacts for this course repo:
-
-1. `SITEMAP.md` — full markdown map of the repo.
-1. `llms.txt` — compact agent navigation index.
-1. `llms-full.txt` — concatenated markdown corpus.
-
-## Why this shape (April 2026)
-
-This skill follows the `llms.txt` proposal format and observed agent-doc best practices:
-
-- Keep `llms.txt` small and structured (H1, summary blockquote, H2 sections, markdown links).
-- Keep complete corpus in a companion file (`llms-full.txt`) instead of overloading `llms.txt`.
-- Prefer markdown links and markdown sources to reduce agent conversion loss.
-
-References:
-
-- [llmstxt.org](https://llmstxt.org/)
-- [Agent Docs Spec](https://www.agentdocsspec.com/spec/)
-
-## Inputs
-
-- Repository markdown files (`**/*.md`, excluding `.git` internals and generated `SITEMAP.md` source recursion).
-
-## Command
-
-```bash
-python3 scripts/generate-llms-artifacts.py
-```
-
-## Output contract
-
-- `SITEMAP.md` grouped by top-level directory.
-- `llms.txt` with concise discovery-first sections.
-- `llms-full.txt` containing each markdown file with clear file delimiters.
-
-## Validation checklist
-
-1. Run markdown lint:
-
-   ```bash
-   npm run lint:md
-   ```
-
-1. Sanity-check size and structure:
-
-   ```bash
-   wc -c llms.txt llms-full.txt SITEMAP.md
-   rg "^# |^## |^> |^- \[" llms.txt
-   ```
-
-1. If new markdown files are added or renamed, rerun the generator.
-
----
 FILE: AGENTS.md
 ---
 
@@ -305,16 +247,14 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 
 ## Submission
 
-Submit your GitHub repo link via [Gradescope](https://www.gradescope.com/courses/1293005).
-
 ## Resources
 
 ### Lesson Plans
 
-- [**Day 01**: Copilot ≠ Coworker](../Lessons/copilot-neq-coworker.md): How autonomous dev tools differ from suggestion engines.
-- [**Day 02**: Memory Is Everything](../Lessons/memory-is-everything.md): Project instructions, scoped configs, and custom commands.
-- [**Day 04**: Thirteen Tiny Coworkers](../Lessons/thirteen-tiny-coworkers.md): Test-first development enforced by the workflow.
-- [**Day 05**: Words Before Code](../Lessons/words-before-code.md): Why your description is the primary artifact.
+- [**Day 01**: Copilot ≠ Coworker](/Lessons/copilot-neq-coworker.md): How autonomous dev tools differ from suggestion engines.
+- [**Day 02**: Memory Is Everything](/Lessons/memory-is-everything.md): Project instructions, scoped configs, and custom commands.
+- [**Day 04**: Thirteen Tiny Coworkers](/Lessons/thirteen-tiny-coworkers.md): Test-first development enforced by the workflow.
+- [**Day 05**: Words Before Code](/Lessons/words-before-code.md): Why your description is the primary artifact.
 
 ---
 FILE: Assignments/fixthis.md
@@ -408,14 +348,12 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 
 ## Submission
 
-Submit your GitHub repo link via [Gradescope](https://www.gradescope.com/courses/1293005).
-
 ## Resources
 
 ### Lesson Plans
 
-- [**Day 07**: Somebody Else's Spaghetti](../Lessons/somebody-elses-spaghetti.md): Navigating a large, unfamiliar codebase.
-- [**Day 08**: House Rules](../Lessons/house-rules.md): Teaching your tools how YOUR project works.
+- [**Day 07**: Somebody Else's Spaghetti](/Lessons/somebody-elses-spaghetti.md): Navigating a large, unfamiliar codebase.
+- [**Day 08**: House Rules](/Lessons/house-rules.md): Teaching your tools how YOUR project works.
 
 ---
 FILE: Assignments/makeanything.md
@@ -461,7 +399,7 @@ Commit a proposal document describing the problem you'll solve. Put it in a file
 ## Instructions
 
 1. You need 70%+ to pass.
-1. Check the [syllabus](../README.md) for due dates and commit velocity rules.
+1. Check the [syllabus](/README.md) for due dates and commit velocity rules.
 1. Copy this doc and commit it to your repo. Use the checkboxes to track what you've done.
 1. Items marked with :star: are bonus points. Do any, all, or none.
 
@@ -494,7 +432,7 @@ Each student: 7 minutes + 3 minutes Q&A.
 
 ### Final Deliverables
 
-1. GitHub repo with complete project (submit via [Gradescope](https://www.gradescope.com/courses/1293005)).
+1. GitHub repo with complete project (submit via the course dropbox).
 1. Live presentation on Day 14.
 1. README covering what you built, skills demonstrated, and takeaways.
 
@@ -510,8 +448,6 @@ Each student: 7 minutes + 3 minutes Q&A.
 | **Work Ethic** | < 10 commits, work done last minute | Sporadic commits | Consistent commits across the project period | Iterative refinement visible in commit history |
 
 ## Submission
-
-Submit your GitHub repo link via [Gradescope](https://www.gradescope.com/courses/1293005). Include your live presentation on Day 14.
 
 ## Resources
 
@@ -529,7 +465,7 @@ FILE: Assignments/rubrics/firstbuild-rubric.md
 
 # Firstbuild Rubric
 
-Source: [../firstbuild.md](../firstbuild.md)
+Source: [../firstbuild.md](/Assignments/firstbuild.md)
 
 ## Paste-Ready Markdown
 
@@ -570,7 +506,7 @@ FILE: Assignments/rubrics/fixthis-rubric.md
 
 # Fixthis Rubric
 
-Source: [../fixthis.md](../fixthis.md)
+Source: [../fixthis.md](/Assignments/fixthis.md)
 
 ## Paste-Ready Markdown
 
@@ -618,7 +554,7 @@ FILE: Assignments/rubrics/makeanything-rubric.md
 
 # makeanything Project Rubric
 
-Source: [../makeanything.md](../makeanything.md)
+Source: [../makeanything.md](/Assignments/makeanything.md)
 
 ## Paste-Ready Markdown
 
@@ -673,7 +609,7 @@ FILE: Assignments/rubrics/tutorial-1-prompt-engineering-rubric.md
 
 # Tutorial 1: The Prompt Lab Rubric
 
-Source: [../tutorial-1-prompt-engineering.md](../tutorial-1-prompt-engineering.md)
+Source: [../tutorial-1-prompt-engineering.md](/Assignments/tutorial-1-prompt-engineering.md)
 
 ## Paste-Ready Markdown
 
@@ -714,7 +650,7 @@ FILE: Assignments/rubrics/tutorial-2-claude-code-in-action-rubric.md
 
 # Tutorial 2: Claude Code in Action Rubric
 
-Source: [../tutorial-2-claude-code-in-action.md](../tutorial-2-claude-code-in-action.md)
+Source: [../tutorial-2-claude-code-in-action.md](/Assignments/tutorial-2-claude-code-in-action.md)
 
 ## Paste-Ready Markdown
 
@@ -755,7 +691,7 @@ FILE: Assignments/rubrics/tutorial-3-mastering-claude-ai-rubric.md
 
 # Tutorial 3: Mastering Claude AI Rubric
 
-Source: [../tutorial-3-mastering-claude-ai.md](../tutorial-3-mastering-claude-ai.md)
+Source: [../tutorial-3-mastering-claude-ai.md](/Assignments/tutorial-3-mastering-claude-ai.md)
 
 ## Paste-Ready Markdown
 
@@ -796,7 +732,7 @@ FILE: Assignments/rubrics/wiredup-rubric.md
 
 # Wiredup Rubric
 
-Source: [../wiredup.md](../wiredup.md)
+Source: [../wiredup.md](/Assignments/wiredup.md)
 
 ## Paste-Ready Markdown
 
@@ -946,14 +882,14 @@ The tutorial is Claude-centered, but the engineering takeaway transfers cleanly.
 
 ## Submission
 
-Add `prompt-lab-journal.md` to your `prompt-lab` repo and submit the GitHub link via [Gradescope](https://www.gradescope.com/courses/1293005).
+Add `prompt-lab-journal.md` to your `prompt-lab` repo and submit the GitHub link via the course dropbox.
 
 ## Resources
 
 ### Lesson Plans
 
-- [**Day 01**: Copilot ≠ Coworker](../Lessons/copilot-neq-coworker.md): How AI dev tools differ from autocomplete.
-- [**Day 02**: Memory Is Everything](../Lessons/memory-is-everything.md): How context shapes every response.
+- [**Day 01**: Copilot ≠ Coworker](/Lessons/copilot-neq-coworker.md): How AI dev tools differ from autocomplete.
+- [**Day 02**: Memory Is Everything](/Lessons/memory-is-everything.md): How context shapes every response.
 
 ### External
 
@@ -1043,16 +979,16 @@ Claude Code in Action is still useful even if you later spend time in Codex. The
 
 ## Submission
 
-Add `workflow-audit.md` to your `firstbuild` repo and submit the GitHub link via [Gradescope](https://www.gradescope.com/courses/1293005).
+Add `workflow-audit.md` to your `firstbuild` repo and submit the GitHub link via the course dropbox.
 
 ## Resources
 
 ### Lesson Plans
 
-- [**Day 05**: Words Before Code](../Lessons/words-before-code.md): Why specifications drive the entire workflow.
-- [**Day 06**: Nothing Survives First Contact](../Lessons/nothing-survives-first-contact.md): Testing against the real world.
-- [**Day 07**: Somebody Else's Spaghetti](../Lessons/somebody-elses-spaghetti.md): Working with code you didn't write.
-- [**Day 08**: House Rules](../Lessons/house-rules.md): Team conventions and linting with AI.
+- [**Day 05**: Words Before Code](/Lessons/words-before-code.md): Why specifications drive the entire workflow.
+- [**Day 06**: Nothing Survives First Contact](/Lessons/nothing-survives-first-contact.md): Testing against the real world.
+- [**Day 07**: Somebody Else's Spaghetti](/Lessons/somebody-elses-spaghetti.md): Working with code you didn't write.
+- [**Day 08**: House Rules](/Lessons/house-rules.md): Team conventions and linting with AI.
 
 ### External
 
@@ -1115,7 +1051,7 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 ### Part 2 — Architecture Proposal
 
 - [ ] Create a file called `architecture.md` in your **final project** repo.
-- [ ] Write a **1-page architecture proposal** for your [makeanything](makeanything.md) final project that incorporates at least 2 of the 3 patterns (RAG, MCP, Agent SDK).
+- [ ] Write a **1-page architecture proposal** for your [makeanything](/Assignments/makeanything.md) final project that incorporates at least 2 of the 3 patterns (RAG, MCP, Agent SDK).
 - [ ] Include a **system diagram** (text-based is fine — use Mermaid, ASCII, or a screenshot of a sketch).
 - [ ] For each pattern you're using, explain:
   - Why this pattern fits your project.
@@ -1151,16 +1087,16 @@ This specialization focuses on Claude-specific material, but the architecture pa
 
 ## Submission
 
-Add `architecture.md` and `poc-notes.md` to your **final project** repo and submit the GitHub link via [Gradescope](https://www.gradescope.com/courses/1293005).
+Add `architecture.md` and `poc-notes.md` to your **final project** repo and submit the GitHub link via the course dropbox.
 
 ## Resources
 
 ### Lesson Plans
 
-- [**Day 09**: Give It Eyes and Ears](../Lessons/give-it-eyes-and-ears.md): MCP servers and extending Claude's capabilities.
-- [**Day 10**: What Do You Even Do All Day?](../Lessons/what-do-you-even-do-all-day.md): Agent observability and monitoring.
-- [**Day 11**: One Config to Rule Them All](../Lessons/one-config-to-rule-them-all.md): Deploying AI tools across a team.
-- [**Day 12**: Debugging the Debugger](../Lessons/debugging-the-debugger.md): When the tool itself fails.
+- [**Day 09**: Give It Eyes and Ears](/Lessons/give-it-eyes-and-ears.md): MCP servers and extending Claude's capabilities.
+- [**Day 10**: What Do You Even Do All Day?](/Lessons/what-do-you-even-do-all-day.md): Agent observability and monitoring.
+- [**Day 11**: One Config to Rule Them All](/Lessons/one-config-to-rule-them-all.md): Deploying AI tools across a team.
+- [**Day 12**: Debugging the Debugger](/Lessons/debugging-the-debugger.md): When the tool itself fails.
 
 ### External
 
@@ -1264,14 +1200,12 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 
 ## Submission
 
-Submit your GitHub repo link via [Gradescope](https://www.gradescope.com/courses/1293005).
-
 ## Resources
 
 ### Lesson Plans
 
-- [**Day 09**: Give It Eyes and Ears](../Lessons/give-it-eyes-and-ears.md): Connecting your dev tools to live documentation, browsers, and external services.
-- [**Day 10**: What Do You Even Do All Day?](../Lessons/what-do-you-even-do-all-day.md): How the developer's daily routine changes with more capable tools.
+- [**Day 09**: Give It Eyes and Ears](/Lessons/give-it-eyes-and-ears.md): Connecting your dev tools to live documentation, browsers, and external services.
+- [**Day 10**: What Do You Even Do All Day?](/Lessons/what-do-you-even-do-all-day.md): How the developer's daily routine changes with more capable tools.
 
 ### Reference
 
@@ -2129,7 +2063,7 @@ Start with the official docs and current model pages first. The remaining links 
 
 1. [Claude Code Troubleshooting](https://code.claude.com/docs/en/troubleshooting): Official troubleshooting guide.
 1. [Claude Code How It Works](https://code.claude.com/docs/en/how-claude-code-works): Understanding the internals helps debug failures.
-1. [Debugging by Thinking](https://jvns.ca/blog/2019/06/23/a-few-debugging-tips/): Julia Evans' debugging tips (applicable to AI tools too).
+1. [What Does Debugging a Program Look Like?](https://jvns.ca/blog/2019/06/23/a-few-debugging-resources/): Julia Evans' debugging tips (applicable to AI tools too).
 1. [The Art of Debugging](https://www.amazon.com/Art-Debugging-GDB-DDD-Eclipse/dp/1593271743): Systematic debugging methodology.
 1. [OpenAI Codex](https://developers.openai.com/codex/): Official Codex documentation for coding-agent workflows and troubleshooting.
 
@@ -3088,7 +3022,7 @@ Start with the official docs and current model pages first. The remaining links 
 1. [Claude Code Best Practices: Testing](https://code.claude.com/docs/en/best-practices): Official recommendations for testing AI-generated code.
 1. [OpenAI Codex](https://developers.openai.com/codex/): Official Codex documentation for task-based coding and review workflows.
 1. [The Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html): Martin Fowler's comprehensive guide to testing strategy.
-1. [Succeeding with Agile](https://www.mountaingoatsoftware.com/books/succeeding-with-agile): Mike Cohn's book introducing the test pyramid.
+1. [Succeeding with Agile](https://www.mountaingoatsoftware.com/books/succeeding-with-agile-software-development-using-scrum): Mike Cohn's book introducing the test pyramid.
 1. [How OpenAI Uses Codex](https://cdn.openai.com/pdf/6a2631dc-783e-479b-b1a4-af0cfbd38630/how-openai-uses-codex.pdf): Official examples of coding-agent review and verification workflows.
 
 ---
@@ -3304,7 +3238,7 @@ Create a reusable `.claude/` template that any team could adopt:
 
 Start with the official docs and current model pages first. The remaining links add historical context, canonical books, or supporting examples.
 
-1. [Claude Code for Teams](https://code.claude.com/docs/en/teams): Official documentation on team deployment.
+1. [Set Up Claude Code for Your Organization](https://code.claude.com/docs/en/admin-setup): Official documentation on team deployment.
 1. [Claude Code Best Practices: Teams](https://code.claude.com/docs/en/best-practices): Team-specific configuration recommendations.
 1. [The Technology Adoption Lifecycle](https://en.wikipedia.org/wiki/Technology_adoption_life_cycle): Framework for understanding how tools spread through organizations.
 1. [Measuring Developer Productivity](https://queue.acm.org/detail.cfm?id=3454124): ACM article on productivity metrics that actually work.
@@ -4501,7 +4435,6 @@ FILE: README.md
 1. [Course Documentation Ops](#course-documentation-ops)
 1. [Additional Resources](#additional-resources)
 
-
 ## Course Description
 
 _This course treats AI engineering like a real job. You will ship real work with coding agents that plan, use tools, inspect a codebase, and operate against live verification steps. We use Claude Code and Codex as parallel workflow hosts for the same engineering habits: scoped tasks, durable repo instructions, live context, tool use, verification, and review. By the end of the course, you will know how to design the context those systems receive, evaluate the work they produce, and decide when a faster agent loop is worth the risk and cost._
@@ -4519,7 +4452,6 @@ By the end of the course, you will be able to&hellip;
 1. Compare assistant-style autocomplete workflows with agent-driven workflows and choose the right one for the task.
 1. Design and implement agent-assisted features in new and existing codebases using durable repo context, tests, and review.
 1. Evaluate failure modes, costs, and integration tradeoffs when using Claude Code, Codex, MCP servers, and related tooling.
-
 
 ## Schedule
 
@@ -4547,8 +4479,6 @@ _Product details in this course are current as of April 2026. Before you buy a p
 
 ### Deliverables
 
-_ALL deliverables **must** be submitted to [Gradescope](https://www.gradescope.com/courses/1293005) by **11:59PM PST** on the date due._
-
 📚 Assignment | 🔗 Criteria | 📆 Due Date
 :-- | --- | ---
 :test_tube: **[Tutorial 1: The Prompt Lab](Assignments/tutorial-1-prompt-engineering.md)** | [Requirements](Assignments/tutorial-1-prompt-engineering.md) | March 30, 2026 _(Monday)_
@@ -4562,10 +4492,6 @@ _ALL deliverables **must** be submitted to [Gradescope](https://www.gradescope.c
 
 ## Evaluation
 
-We're using [Gradescope](https://www.gradescope.com/courses/1293005) for all submissions and feedback. When grades post, you'll get notified right away so you can see your feedback. You can submit a regrade request if you think there's a mistake.
-
-Your [Gradescope](https://www.gradescope.com/courses/1293005) login is your Dominican University email.
-
 **To pass this course, complete the following**:
 
 - Complete all [assignments](#deliverables), the [final project](#final-project), and the [final presentation](#final-presentation) as assigned in class and described in the sections below.
@@ -4573,8 +4499,6 @@ Your [Gradescope](https://www.gradescope.com/courses/1293005) login is your Domi
 - Actively participate in class and abide by the attendance policy.
 
 ### Assignments
-
-Three hands-on assignments build on each other throughout the course. Each one validates a core skill set — you'll build something new, fix something old, and wire tools together. Three interactive tutorials reinforce foundational skills at key moments — prompt engineering, CLI mastery, and advanced architecture patterns. All assignments and tutorials must be turned in on [Gradescope](https://www.gradescope.com/courses/1293005).
 
 :star: **Coursera Certification Opportunity:** Tutorial 3 ([Mastering Claude AI](Assignments/tutorial-3-mastering-claude-ai.md)) is part of a Coursera specialization that offers a completion certificate with paid enrollment. If you're graduating in May and building your portfolio, it can serve as one more signal of serious follow-through alongside the actual project work you show. Free audit covers all the course content without the certificate.
 
@@ -4598,7 +4522,7 @@ If you require accommodations or have extenuating circumstances such as prolonge
 
 ## Instructor Automation
 
-Instructors managing Gradescope setup can use the Node-based planning workflow documented in [instructors.md](instructors.md). The guide covers rubric export, structured rubric JSON, the Gradescope manifest, the `gradescope:plan` dry-run, the `--new` course-planning flag, and the test suite.
+Instructors managing course operations can use the Node-based planning workflow documented in [instructors.md](instructors.md).
 
 ## Course Documentation Ops
 
@@ -4627,6 +4551,8 @@ Start with the official docs and current model pages first. The remaining links 
 - [Context7 MCP Server](https://github.com/upstash/context7): Live library documentation for your development workflow.
 - [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook): Recipes and patterns for building with Claude.
 - [How OpenAI Uses Codex](https://cdn.openai.com/pdf/6a2631dc-783e-479b-b1a4-af0cfbd38630/how-openai-uses-codex.pdf): Official engineering examples showing how Codex is used in production workflows.
+- [The box an agent runs in — Rohan Adwankar](https://rohanadwankar.github.io/posts/platforms.html): Technical notes comparing how coding-agent platforms isolate and run agents (e.g. Firecracker microVMs), useful context for where agent work actually executes.
+- [Toward Recursive Self-Improvement: How GLM Built Its Own Inference Infrastructure](https://z.ai/blog/glm-built-its-inference-infrastructure): Zhipu GLM engineering write-up on using the model to improve its own inference stack (agent loop, validation, hardware adaptation).
 
 ### Claude Code Access for Students
 
@@ -4731,11 +4657,11 @@ The workflow does **not** sync anything to Gradescope yet.
 
 ## Files
 
-1. [automation/gradescope.course.json](automation/gradescope.course.json) is the source of truth for course metadata, due dates, file links, and Gradescope IDs.
-1. [Assignments/rubrics](Assignments/rubrics) stores generated rubric exports.
-1. [scripts/export-rubrics.mjs](scripts/export-rubrics.mjs) generates rubric exports.
-1. [scripts/plan-gradescope-sync.mjs](scripts/plan-gradescope-sync.mjs) builds the dry-run plan.
-1. [tests/gradescope-rubrics.test.mjs](tests/gradescope-rubrics.test.mjs), [tests/gradescope-planner.test.mjs](tests/gradescope-planner.test.mjs), and [tests/gradescope-manifest.test.mjs](tests/gradescope-manifest.test.mjs) cover the rubric and planning logic.
+1. [automation/gradescope.course.json](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/blob/master/automation/gradescope.course.json) is the source of truth for course metadata, due dates, file links, and Gradescope IDs.
+1. [Assignments/rubrics](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/tree/master/Assignments/rubrics) stores generated rubric exports.
+1. [scripts/export-rubrics.mjs](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/blob/master/scripts/export-rubrics.mjs) generates rubric exports.
+1. [scripts/plan-gradescope-sync.mjs](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/blob/master/scripts/plan-gradescope-sync.mjs) builds the dry-run plan.
+1. [tests/gradescope-rubrics.test.mjs](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/blob/master/tests/gradescope-rubrics.test.mjs), [tests/gradescope-planner.test.mjs](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/blob/master/tests/gradescope-planner.test.mjs), and [tests/gradescope-manifest.test.mjs](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/blob/master/tests/gradescope-manifest.test.mjs) cover the rubric and planning logic.
 
 ## Rubric Exports
 
@@ -4786,7 +4712,7 @@ This JSON is the machine-readable layer for future UI automation. It exists beca
 
 ## Gradescope Manifest
 
-The manifest in [automation/gradescope.course.json](automation/gradescope.course.json) tracks:
+The manifest in [automation/gradescope.course.json](https://github.com/Tech-at-DU/ACS-4220-AI-Engineering/blob/master/automation/gradescope.course.json) tracks:
 
 1. Existing course metadata such as `gradescopeCourseId` and timezone.
 1. New-course defaults such as `courseNumber`, `term`, `year`, and `school`.
@@ -4810,7 +4736,7 @@ This command:
 1. Confirms each source assignment exists.
 1. Confirms each rubric Markdown and JSON export exists.
 1. Verifies due dates against the syllabus.
-1. Writes a dry-run plan to [automation/out/gradescope-plan.json](automation/out/gradescope-plan.json).
+1. Writes a dry-run plan to `automation/out/gradescope-plan.json`.
 
 ## Existing Course Mode
 

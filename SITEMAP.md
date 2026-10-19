@@ -5,7 +5,6 @@
 ## .codex
 
 - [llms-sitemap skill](.codex/skills/llms-sitemap/SKILL.md)
-- [llms-sitemap skill](.codex/skills/llms-sitemap/SKILL.md)
 
 ## Assignments
 

@@ -1,6 +1,6 @@
 # makeanything Project Rubric
 
-Source: [../makeanything.md](../makeanything.md)
+Source: [../makeanything.md](/Assignments/makeanything.md)
 
 ## Paste-Ready Markdown
 

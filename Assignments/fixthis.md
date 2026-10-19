@@ -90,5 +90,5 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 
 ### Lesson Plans
 
-- [**Day 07**: Somebody Else's Spaghetti](../Lessons/somebody-elses-spaghetti.md): Navigating a large, unfamiliar codebase.
-- [**Day 08**: House Rules](../Lessons/house-rules.md): Teaching your tools how YOUR project works.
+- [**Day 07**: Somebody Else's Spaghetti](/Lessons/somebody-elses-spaghetti.md): Navigating a large, unfamiliar codebase.
+- [**Day 08**: House Rules](/Lessons/house-rules.md): Teaching your tools how YOUR project works.

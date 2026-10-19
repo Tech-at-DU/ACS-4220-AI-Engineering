@@ -105,7 +105,7 @@ export function buildMarkdownExport(rubric) {
   const lines = [
     `# ${rubric.assignmentTitle} Rubric`,
     "",
-    `Source: [../${rubric.sourceBasename}](../${rubric.sourceBasename})`,
+    `Source: [../${rubric.sourceBasename}](/Assignments/${rubric.sourceBasename})`,
     "",
     "## Paste-Ready Markdown",
     "",

@@ -50,7 +50,7 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 ### Part 2 — Architecture Proposal
 
 - [ ] Create a file called `architecture.md` in your **final project** repo.
-- [ ] Write a **1-page architecture proposal** for your [makeanything](makeanything.md) final project that incorporates at least 2 of the 3 patterns (RAG, MCP, Agent SDK).
+- [ ] Write a **1-page architecture proposal** for your [makeanything](/Assignments/makeanything.md) final project that incorporates at least 2 of the 3 patterns (RAG, MCP, Agent SDK).
 - [ ] Include a **system diagram** (text-based is fine — use Mermaid, ASCII, or a screenshot of a sketch).
 - [ ] For each pattern you're using, explain:
   - Why this pattern fits your project.
@@ -92,10 +92,10 @@ Add `architecture.md` and `poc-notes.md` to your **final project** repo and subm
 
 ### Lesson Plans
 
-- [**Day 09**: Give It Eyes and Ears](../Lessons/give-it-eyes-and-ears.md): MCP servers and extending Claude's capabilities.
-- [**Day 10**: What Do You Even Do All Day?](../Lessons/what-do-you-even-do-all-day.md): Agent observability and monitoring.
-- [**Day 11**: One Config to Rule Them All](../Lessons/one-config-to-rule-them-all.md): Deploying AI tools across a team.
-- [**Day 12**: Debugging the Debugger](../Lessons/debugging-the-debugger.md): When the tool itself fails.
+- [**Day 09**: Give It Eyes and Ears](/Lessons/give-it-eyes-and-ears.md): MCP servers and extending Claude's capabilities.
+- [**Day 10**: What Do You Even Do All Day?](/Lessons/what-do-you-even-do-all-day.md): Agent observability and monitoring.
+- [**Day 11**: One Config to Rule Them All](/Lessons/one-config-to-rule-them-all.md): Deploying AI tools across a team.
+- [**Day 12**: Debugging the Debugger](/Lessons/debugging-the-debugger.md): When the tool itself fails.
 
 ### External
 

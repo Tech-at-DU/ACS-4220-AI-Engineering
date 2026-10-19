@@ -38,7 +38,7 @@ Commit a proposal document describing the problem you'll solve. Put it in a file
 ## Instructions
 
 1. You need 70%+ to pass.
-1. Check the [syllabus](../README.md) for due dates and commit velocity rules.
+1. Check the [syllabus](/README.md) for due dates and commit velocity rules.
 1. Copy this doc and commit it to your repo. Use the checkboxes to track what you've done.
 1. Items marked with :star: are bonus points. Do any, all, or none.
 

@@ -1,6 +1,6 @@
 # Fixthis Rubric
 
-Source: [../fixthis.md](../fixthis.md)
+Source: [../fixthis.md](/Assignments/fixthis.md)
 
 ## Paste-Ready Markdown
 

@@ -196,5 +196,5 @@ Start with the official docs and current model pages first. The remaining links 
 1. [Claude Code Best Practices: Testing](https://code.claude.com/docs/en/best-practices): Official recommendations for testing AI-generated code.
 1. [OpenAI Codex](https://developers.openai.com/codex/): Official Codex documentation for task-based coding and review workflows.
 1. [The Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html): Martin Fowler's comprehensive guide to testing strategy.
-1. [Succeeding with Agile](https://www.mountaingoatsoftware.com/books/succeeding-with-agile): Mike Cohn's book introducing the test pyramid.
+1. [Succeeding with Agile](https://www.mountaingoatsoftware.com/books/succeeding-with-agile-software-development-using-scrum): Mike Cohn's book introducing the test pyramid.
 1. [How OpenAI Uses Codex](https://cdn.openai.com/pdf/6a2631dc-783e-479b-b1a4-af0cfbd38630/how-openai-uses-codex.pdf): Official examples of coding-agent review and verification workflows.

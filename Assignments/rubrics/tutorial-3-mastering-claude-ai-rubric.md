@@ -1,6 +1,6 @@
 # Tutorial 3: Mastering Claude AI Rubric
 
-Source: [../tutorial-3-mastering-claude-ai.md](../tutorial-3-mastering-claude-ai.md)
+Source: [../tutorial-3-mastering-claude-ai.md](/Assignments/tutorial-3-mastering-claude-ai.md)
 
 ## Paste-Ready Markdown
 

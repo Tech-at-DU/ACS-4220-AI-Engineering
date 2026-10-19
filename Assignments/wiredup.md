@@ -93,8 +93,8 @@ Complete each task in the order they appear. Use [GitHub Task List](https://help
 
 ### Lesson Plans
 
-- [**Day 09**: Give It Eyes and Ears](../Lessons/give-it-eyes-and-ears.md): Connecting your dev tools to live documentation, browsers, and external services.
-- [**Day 10**: What Do You Even Do All Day?](../Lessons/what-do-you-even-do-all-day.md): How the developer's daily routine changes with more capable tools.
+- [**Day 09**: Give It Eyes and Ears](/Lessons/give-it-eyes-and-ears.md): Connecting your dev tools to live documentation, browsers, and external services.
+- [**Day 10**: What Do You Even Do All Day?](/Lessons/what-do-you-even-do-all-day.md): How the developer's daily routine changes with more capable tools.
 
 ### Reference
 

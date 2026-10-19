@@ -67,7 +67,7 @@ for path in ASSIGNMENTS:
         paste_lines.append("")
 
     md_lines = [f"# {title} Rubric", ""]
-    md_lines.append(f"Source: [../{path.name}](../{path.name})")
+    md_lines.append(f"Source: [../{path.name}](/Assignments/{path.name})")
     md_lines.append("")
     md_lines.append("## Paste-Ready Markdown")
     md_lines.append("")

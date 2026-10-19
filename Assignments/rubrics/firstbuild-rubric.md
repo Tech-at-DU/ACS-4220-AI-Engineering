@@ -1,6 +1,6 @@
 # Firstbuild Rubric
 
-Source: [../firstbuild.md](../firstbuild.md)
+Source: [../firstbuild.md](/Assignments/firstbuild.md)
 
 ## Paste-Ready Markdown
 

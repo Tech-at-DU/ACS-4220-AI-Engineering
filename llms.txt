@@ -56,7 +56,6 @@ Use this file as a navigation map. Prefer markdown files directly instead of ren
 ## .codex
 
 - [llms-sitemap skill](.codex/skills/llms-sitemap/SKILL.md): .codex/skills/llms-sitemap/SKILL.md
-- [llms-sitemap skill](.codex/skills/llms-sitemap/SKILL.md): .codex/skills/llms-sitemap/SKILL.md
 
 ## Optional
 
