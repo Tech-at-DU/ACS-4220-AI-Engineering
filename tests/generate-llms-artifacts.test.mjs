@@ -4,11 +4,12 @@ import { mkdtempSync, cpSync, mkdirSync, writeFileSync, readFileSync } from "nod
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
 
-const REPO_ROOT = "/home/runner/work/ACS-4220-AI-Engineering/ACS-4220-AI-Engineering";
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SCRIPT_SOURCE = path.join(REPO_ROOT, "scripts", "generate-llms-artifacts.py");
 
-test("generate-llms-artifacts uses tracked markdown files only", () => {
+test("generate-llms-artifacts uses tracked markdown files only and skips .claude", () => {
   const tempRoot = mkdtempSync(path.join(tmpdir(), "llms-artifacts-"));
   const tempRepo = path.join(tempRoot, "repo");
 
@@ -55,18 +56,18 @@ test("generate-llms-artifacts uses tracked markdown files only", () => {
   const llms = readFileSync(path.join(tempRepo, "llms.txt"), "utf8");
   const full = readFileSync(path.join(tempRepo, "llms-full.txt"), "utf8");
 
-  assert.match(sitemap, /## \.claude/);
-  assert.match(sitemap, /\.claude\/CLAUDE\.md/);
+  assert.doesNotMatch(sitemap, /## \.claude/);
+  assert.doesNotMatch(sitemap, /\.claude\/CLAUDE\.md/);
   assert.doesNotMatch(sitemap, /node_modules\/demo\/ignored\.md/);
   assert.doesNotMatch(sitemap, /automation\/out\/ignored\.md/);
 
-  assert.match(llms, /## \.claude/);
-  assert.match(llms, /\.claude\/CLAUDE\.md/);
+  assert.doesNotMatch(llms, /## \.claude/);
+  assert.doesNotMatch(llms, /\.claude\/CLAUDE\.md/);
   assert.doesNotMatch(llms, /node_modules\/demo\/ignored\.md/);
   assert.doesNotMatch(llms, /automation\/out\/ignored\.md/);
 
   assert.match(full, /FILE: README\.md/);
-  assert.match(full, /FILE: \.claude\/CLAUDE\.md/);
+  assert.doesNotMatch(full, /FILE: \.claude\/CLAUDE\.md/);
   assert.match(full, /FILE: Lessons\/week-1\.md/);
   assert.doesNotMatch(full, /Ignored dependency markdown/);
   assert.doesNotMatch(full, /Generated automation markdown/);
