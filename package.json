@@ -8,6 +8,7 @@
     "export:rubrics:python": "python3 scripts/export_rubrics.py",
     "gradescope:plan": "node scripts/plan-gradescope-sync.mjs",
     "lint:md": "npx --yes markdownlint-cli2 \"**/*.md\"",
+    "test": "node --test tests/*.test.mjs",
     "test:gradescope": "node --test tests/gradescope-*.test.mjs"
   }
 }

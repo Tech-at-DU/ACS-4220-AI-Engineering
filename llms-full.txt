@@ -141,7 +141,6 @@ README should preserve:
 ```
 Lessons/      # 12 lesson plans (weeks 1-6, 2 per week)
 Assignments/  # 3 assignments + 3 tutorials + final project
-Images/       # Slide headers and diagrams
 .claude/      # Claude Code config (CLAUDE.md, settings.json)
 ```
 
