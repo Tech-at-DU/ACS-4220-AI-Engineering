@@ -4,6 +4,7 @@
 ## Table of Contents
 
 1. [Course Description](#course-description)
+1. [Course Goals](#course-goals)
 1. [Prerequisites](#prerequisites)
 1. [Learning Outcomes](#learning-outcomes)
 1. [Schedule](#schedule)
@@ -20,6 +21,16 @@
 ## Course Description
 
 _This course treats AI engineering like a real job. You will ship real work with coding agents that plan, use tools, inspect a codebase, and operate against live verification steps. We use Claude Code and Codex as parallel workflow hosts for the same engineering habits: scoped tasks, durable repo instructions, live context, tool use, verification, and review. By the end of the course, you will know how to design the context those systems receive, evaluate the work they produce, and decide when a faster agent loop is worth the risk and cost._
+
+Projects can address real problems in the trades and other hands-on technical work, such as healthcare operations or accounting workflows. You still build and ship code. Licensed clinical or accounting advice is outside this course.
+
+## Course Goals
+
+**GOAL 1:** Demonstrate how to use AI to find, isolate, and build a practical solution that actually solves a real problem that exists in real life, according to real people, and publish it for public use.
+
+**GOAL 2:** Facilitate and assist each person individually while they do each step for themselves.
+
+GOAL 2 is the instructor's commitment. You still do each step yourself. The four learning outcomes remain the measurable technical outcomes.
 
 ## Prerequisites
 
@@ -87,6 +98,14 @@ _Product details in this course are current as of April 2026. Before you buy a p
 ### Final Project
 
 Complete the final project according to the associated [project rubric](Assignments/makeanything.md). This is your portfolio piece — choose something you care about and demonstrate end-to-end mastery of the workflow.
+
+The repository, README, tests, review, and live presentation in that spec remain required. Also required:
+
+1. A published app or website, with the code link.
+1. A hand-written blog outlining how you got the idea, what worked, what didn't, how you made it happen anyway, overcoming what didn't work, the tough stuff that kept you up at night, and exactly three bullet points on how you might improve the project now that it exists. Hand-written means written by you, in your own words. It does not require handwriting on paper, and it does not add a new blanket AI-use rule.
+1. The code link, the app or website link, and the blog posted as three separate LinkedIn items.
+
+Before you publish, remove secrets and private, proprietary, client, student, or patient data. Use synthetic or public data for demonstrations.
 
 ### Final Presentation
 
