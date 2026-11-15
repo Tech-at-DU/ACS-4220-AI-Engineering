@@ -1,3 +1,5 @@
+<p align="center"><strong><a href="Projects/00-start-brainstorm-projects.md">Start here: Brainstorm your project</a></strong></p>
+
 # 🤖 ACS 4220: AI Engineering
 
 <!-- omit in toc -->
@@ -23,6 +25,8 @@
 _This course treats AI engineering like a real job. You will ship real work with coding agents that plan, use tools, inspect a codebase, and operate against live verification steps. We use Claude Code and Codex as parallel workflow hosts for the same engineering habits: scoped tasks, durable repo instructions, live context, tool use, verification, and review. By the end of the course, you will know how to design the context those systems receive, evaluate the work they produce, and decide when a faster agent loop is worth the risk and cost._
 
 Projects can address real problems in the trades and other hands-on technical work, such as healthcare operations or accounting workflows. You still build and ship code. Licensed clinical or accounting advice is outside this course.
+
+Learn how to find the right problem before building the wrong AI. You'll examine a real workflow and decide what should stay human and what could be improved. Then you'll build and test one practical solution. You'll finish with a working prototype, proof that it helps, and the confidence to apply AI responsibly in the real world.
 
 ## Course Goals
 

@@ -1,3 +1,4 @@
+- **[Start here: Brainstorm your project](Projects/00-start-brainstorm-projects.md)**
 - **[Syllabus](README.md)**
 - **[Instructor Guide](instructors.md)**
 - **Course Docs Ops**
