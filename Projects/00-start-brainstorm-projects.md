@@ -59,7 +59,7 @@ Wait for the user to name the workflow before starting. Do not invent one.
 
 - No "where can we use AI?" starting point.
 - No broad agent or full automation on first pass.
-- If the exception rate is greater than about 30%, redesign the workflow before you add AI.
+- If the exception rate is greater than ~30%, redesign the workflow before you add AI.
 - If you cannot measure the improvement in one week, the problem is still wrong.
 
 ## Output you finish with
